@@ -7,7 +7,7 @@ export const resources = [
         gradeLevel: "Grade 3",
         language: "EN/ES",
         type: "Worksheet",
-        url: "#",
+        url: "https://drive.google.com/drive/folders/1JC8K2S3jEZR5TpDwoPJWNkHTUM2brXmB?dmr=1&ec=wgc-drive-%5Bmodule%5D-goto",
         description: "Equivalent fractions + number line",
         section: "learning"
     },
@@ -18,7 +18,7 @@ export const resources = [
         gradeLevel: "Grade 4",
         language: "EN",
         type: "Worksheet",
-        url: "#",
+        url: "https://drive.google.com/drive/folders/1JC8K2S3jEZR5TpDwoPJWNkHTUM2brXmB?dmr=1&ec=wgc-drive-%5Bmodule%5D-goto",
         description: "Comprehensive review set",
         section: "learning"
     },
@@ -29,7 +29,7 @@ export const resources = [
         gradeLevel: "Grade 5",
         language: "EN/ES",
         type: "Worksheet",
-        url: "#",
+        url: "https://drive.google.com/drive/folders/1JC8K2S3jEZR5TpDwoPJWNkHTUM2brXmB?dmr=1&ec=wgc-drive-%5Bmodule%5D-goto",
         description: "Understanding decimals in real contexts",
         section: "learning"
     },
@@ -40,7 +40,7 @@ export const resources = [
         gradeLevel: "Grade 6",
         language: "EN",
         type: "Slides",
-        url: "#",
+        url: "https://drive.google.com/drive/folders/1JC8K2S3jEZR5TpDwoPJWNkHTUM2brXmB?dmr=1&ec=wgc-drive-%5Bmodule%5D-goto",
         description: "Introduction to ratio concepts",
         section: "learning"
     },
@@ -51,7 +51,7 @@ export const resources = [
         gradeLevel: "Grade 7",
         language: "EN",
         type: "Worksheet",
-        url: "#",
+        url: "https://drive.google.com/drive/folders/1JC8K2S3jEZR5TpDwoPJWNkHTUM2brXmB?dmr=1&ec=wgc-drive-%5Bmodule%5D-goto",
         description: "Negative numbers practice",
         section: "learning"
     },
@@ -62,7 +62,7 @@ export const resources = [
         gradeLevel: "Grade 8",
         language: "EN/ES",
         type: "Worksheet",
-        url: "#",
+        url: "https://drive.google.com/drive/folders/1JC8K2S3jEZR5TpDwoPJWNkHTUM2brXmB?dmr=1&ec=wgc-drive-%5Bmodule%5D-goto",
         description: "Solving single variable equations",
         section: "learning"
     },
@@ -73,7 +73,7 @@ export const resources = [
         gradeLevel: "Middle School",
         language: "EN/KR",
         type: "Slides",
-        url: "#",
+        url: "https://drive.google.com/drive/folders/1jtH5o_SW8OqDVDKvf1D4eES5I4T7j415?usp=drive_link",
         description: "Parts of Speech deep dive",
         section: "learning"
     },
@@ -84,7 +84,7 @@ export const resources = [
         gradeLevel: "Middle School",
         language: "EN/ES",
         type: "Doc",
-        url: "#",
+        url: "https://drive.google.com/drive/folders/1jtH5o_SW8OqDVDKvf1D4eES5I4T7j415?usp=drive_link",
         description: "Structured paragraph builder",
         section: "learning"
     },
@@ -95,7 +95,7 @@ export const resources = [
         gradeLevel: "High School",
         language: "EN",
         type: "Doc",
-        url: "#",
+        url: "https://drive.google.com/drive/folders/1jtH5o_SW8OqDVDKvf1D4eES5I4T7j415?usp=drive_link",
         description: "Essay planning tool",
         section: "learning"
     },
@@ -106,7 +106,7 @@ export const resources = [
         gradeLevel: "High School",
         language: "EN/ES",
         type: "Worksheet",
-        url: "#",
+        url: "https://drive.google.com/drive/folders/1jtH5o_SW8OqDVDKvf1D4eES5I4T7j415?usp=drive_link",
         description: "Key academic terms for essays",
         section: "learning"
     },

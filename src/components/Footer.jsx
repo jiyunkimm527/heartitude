@@ -40,11 +40,11 @@ const Footer = () => {
                         <ul style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
                             <li style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', color: '#d1d5db' }}>
                                 <Mail size={18} />
-                                <span>hello@heartitude.org</span>
+                                <span>jiyunkimm0503@gmail.com</span>
                             </li>
                             <li style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', color: '#d1d5db' }}>
                                 <Instagram size={18} />
-                                <span>@heartitude.club</span>
+                                <span>@heartitude_ba</span>
                             </li>
                         </ul>
                     </div>

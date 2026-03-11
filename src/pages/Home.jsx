@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 import PageHero from '../components/PageHero';
 
-import schoolBanner from '../assets/school_banner.png';
+import schoolBanner from '../assets/WebP Image.webp';
 
 const Home = () => {
     return (

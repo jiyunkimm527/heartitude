@@ -22,13 +22,13 @@ const Contact = () => {
                     <div>
                         <h2 style={{ fontSize: '1.5rem', fontWeight: 'bold', marginBottom: '1.5rem' }}>Get in Touch</h2>
                         <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
-                            <a href="mailto:jiyunkimm0503@gmail.com" style={{ display: 'flex', alignItems: 'center', gap: '1rem', fontSize: '1.1rem', padding: '1rem', backgroundColor: 'white', borderRadius: 'var(--radius-md)', boxShadow: 'var(--shadow-sm)' }}>
+                            <a href="mailto:hello@heartitude.org" style={{ display: 'flex', alignItems: 'center', gap: '1rem', fontSize: '1.1rem', padding: '1rem', backgroundColor: 'white', borderRadius: 'var(--radius-md)', boxShadow: 'var(--shadow-sm)' }}>
                                 <Mail color="var(--color-primary)" />
-                                <span>jiyunkimm0503@gmail.com</span>
+                                <span>hello@heartitude.org</span>
                             </a>
                             <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" style={{ display: 'flex', alignItems: 'center', gap: '1rem', fontSize: '1.1rem', padding: '1rem', backgroundColor: 'white', borderRadius: 'var(--radius-md)', boxShadow: 'var(--shadow-sm)' }}>
                                 <Instagram color="#E1306C" />
-                                <span>@heartitude_ba</span>
+                                <span>@heartitude.club</span>
                             </a>
                         </div>
 

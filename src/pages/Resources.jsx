@@ -40,7 +40,7 @@ const ResourceCard = ({ resource }) => (
             className="btn btn-outline"
             style={{ width: '100%', marginTop: 'auto', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem' }}
         >
-            Open <ExternalLink size={16} />
+            {resource.url !== '#' ? 'Open Folder' : 'Open'} <ExternalLink size={16} />
         </a>
     </div>
 );

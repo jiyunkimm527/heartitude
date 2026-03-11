@@ -34,7 +34,7 @@ const Navbar = () => {
                         <img src="/src/assets/logo.png" alt="Heartitude Logo" style={{ height: '160px', width: 'auto' }} />
                         <div style={{ display: 'flex', flexDirection: 'column', gap: '2px' }}>
                             <img src="/src/assets/balboa_logo.png" alt="Balboa Academy" style={{ height: '60px', width: 'auto', marginLeft: '-20px' }} />
-                            <span style={{ fontSize: '1.5rem', fontWeight: 'bold', color: 'var(--color-primary)' }}>Heartitude Club</span>
+                            <span style={{ fontSize: '1.5rem', fontWeight: 'bold', color: 'var(--color-primary)' }}>Heartitude</span>
                         </div>
                     </Link>
 
