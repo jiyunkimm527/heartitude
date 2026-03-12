@@ -8,7 +8,7 @@ const ResourceCard = ({ resource }) => (
     <div className="card" style={{ padding: '1.5rem', display: 'flex', flexDirection: 'column', height: '100%' }}>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '1rem' }}>
             <span style={{
-                fontSize: '0.50rem',
+                fontSize: '0.75rem',
                 fontWeight: 'bold',
                 textTransform: 'uppercase',
                 color: resource.category === 'Math' ? 'var(--color-blue-program)' : '#d97706',
