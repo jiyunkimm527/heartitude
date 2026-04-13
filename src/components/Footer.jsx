@@ -7,13 +7,13 @@ const Footer = () => {
     const { t } = useTranslation();
 
     return (
-        <footer style={{ backgroundColor: '#111827', color: 'white', paddingTop: '4rem', paddingBottom: '2rem' }}>
+        <footer style={{ backgroundColor: '#111827', color: 'white', paddingTop: '2rem', paddingBottom: '1rem' }}>
             <div className="container">
                 <div className="footer-grid" style={{
                     display: 'grid',
                     gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
-                    gap: '3rem',
-                    marginBottom: '3rem'
+                    gap: '1.5rem',
+                    marginBottom: '1.5rem'
                 }}>
                     {/* Brand */}
                     <div>
@@ -46,11 +46,11 @@ const Footer = () => {
                         <ul style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
                             <li style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', color: '#d1d5db' }}>
                                 <Mail size={18} />
-                                <span>jiyunkimm0503@gmail.com</span>
+                                <a href="mailto:jiyunkimm0503@gmail.com" style={{ color: '#d1d5db' }}>jiyunkimm0503@gmail.com</a>
                             </li>
                             <li style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', color: '#d1d5db' }}>
                                 <Instagram size={18} />
-                                <span>@heartitude_ba</span>
+                                <a href="https://instagram.com/heartitude_ba" target="_blank" rel="noopener noreferrer" style={{ color: '#d1d5db' }}>instagram.com/heartitude_ba</a>
                             </li>
                         </ul>
                     </div>
