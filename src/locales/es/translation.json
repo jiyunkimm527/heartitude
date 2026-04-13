@@ -1,0 +1,154 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "about": "Acerca de",
+    "programs": "Programas",
+    "resources": "Recursos",
+    "impact": "Impacto",
+    "getInvolved": "Participa",
+    "contact": "Contacto"
+  },
+  "home": {
+    "heroTitle": "Apoyo que mantiene el aprendizaje en marcha.",
+    "heroSubtitle": "En Panamá, notamos una barrera invisible: los estudiantes se quedan atrás no solo por el idioma o la falta de información, sino también por el cansancio y los recursos de apoyo limitados. Heartitude responde con apoyo de aprendizaje escolar, apoyo en espacios de cuidado, y herramientas BioRhythm que facilitan el acceso a rutinas y materiales educativos.",
+    "volunteerBtn": "Sé voluntario",
+    "partnerBtn": "Ser socio",
+    "bannerText": "Apoyo práctico que mantiene el aprendizaje continuo—en la escuela y en los espacios de cuidado.",
+    "pathTitle": "Un camino hacia adelante",
+    "pathSubtitle": "Cómo ayudamos a los estudiantes a navegar su camino educativo.",
+    "bioRhythmLabel": "Herramientas BioRhythm (Base de investigación)",
+    "bioRhythmSub": "Pronóstico de Enfoque + Lista de Estudio",
+    "track1Title": "Apoyo de Aprendizaje Escolar",
+    "track1Sub": "Apoyo en escuelas públicas + Guía de Inicio Escolar",
+    "track1Steps": {
+      "1": { "title": "Alianza y planificación", "desc": "Colaborando con las escuelas." },
+      "2": { "title": "Apoyo semanal", "desc": "Sesiones regulares de tutoría." },
+      "3": { "title": "Creación de materiales", "desc": "Contenido EN/ES y Guía de Inicio Escolar." },
+      "4": { "title": "Mejorar el entorno", "desc": "Cambios simples y de bajo costo." }
+    },
+    "track2Title": "Apoyo de Aprendizaje en Espacios de Cuidado",
+    "track2Sub": "Apoyo en cuidado + Paquete de Aprendizaje para Espacios de Cuidado",
+    "track2Disclaimer": "Solo apoyo educativo—no se da consejo médico.",
+    "track2Steps": {
+      "1": { "title": "Alianza y apoyo", "desc": "En espacios de cuidado." },
+      "2": { "title": "Apoyo flexible", "desc": "Sesiones cortas y adaptables." },
+      "3": { "title": "Paquete de cuidado", "desc": "Tarjetas de rutina y menú de aprendizaje." },
+      "4": { "title": "Mejorar la oferta", "desc": "Rincones tranquilos e iluminación." }
+    },
+    "missionTileTitle": "Nuestra Misión",
+    "missionTileDesc": "Un club de servicio estudiantil que apoya el aprendizaje y el cuidado.",
+    "missionTileLink": "Leer más →",
+    "involvedTileTitle": "Participa",
+    "involvedTileDesc": "Sé voluntario o socio para llevar los paquetes a tu comunidad.",
+    "involvedTileLink": "Únete →"
+  },
+  "about": {
+    "heroTitle": "Acerca de Heartitude",
+    "heroSubtitle": "Un club de servicio estudiantil que apoya el aprendizaje y el cuidado.",
+    "missionTitle": "Nuestra Misión",
+    "missionText1": "Heartitude es una mezcla de 'Corazón' + 'Actitud'—presentarse con empatía, consistencia y resolución práctica de problemas. En Panamá, observamos que las brechas de aprendizaje a menudo provienen de una combinación de falta de información del sistema escolar, barreras idiomáticas, cansancio y recursos de apoyo limitados.",
+    "missionText2": "Respondemos a través de dos líneas de servicio—Apoyo de Aprendizaje Escolar y Apoyo de Aprendizaje en Espacios de Cuidado—impulsadas por BioRhythm, un enfoque de medición y lista de verificación desarrollado por estudiantes que ayuda a identificar mejoras simples y de bajo costo (iluminación, ruido, rutinas) y mantiene el aprendizaje continuo.",
+    "missionDisclaimer": "* Solo apoyo educativo—no se da consejo médico.",
+    "whyTitle": "Por qué comenzamos",
+    "whyText": "Notamos que los estudiantes en dos entornos muy diferentes—escuelas con pocos recursos y hospitales—enfrentaban un desafío similar: la falta de continuidad y orientación accesible. Heartitude nació de la idea de que herramientas simples y prácticas combinadas con apoyo humano constante pueden conectar estos puntos.",
+    "valuesTitle": "Nuestros Valores",
+    "values": {
+      "accessibility": { "title": "Accesibilidad", "desc": "Hacer que el apoyo sea fácil de encontrar y usar." },
+      "consistency": { "title": "Consistencia", "desc": "Brindar rutinas confiables a los estudiantes." },
+      "empathy": { "title": "Empatía", "desc": "Comprender los desafíos únicos de cada estudiante." }
+    }
+  },
+  "programs": {
+    "heroTitle": "Nuestros Programas",
+    "heroSubtitle": "Apoyo específico para dos comunidades distintas con necesidades compartidas de orientación y continuidad.",
+    "bioTitle": "Herramientas BioRhythm (Base de Investigación)",
+    "bioText": "Medimos señales ambientales simples (ruido, luz, temperatura) y señales de estudio (tiempo de estudio, tiempo de reacción, precisión) para crear el <strong>Pronóstico de Enfoque + Lista de Estudio</strong>. Esto nos ayuda a recomendar mejoras de bajo costo como ubicación de iluminación, rincones tranquilos y mejor distribución de horarios.",
+    "schoolTitle": "Apoyo de Aprendizaje Escolar",
+    "schoolDesc": "Enfocado en matemáticas de primaria y apoyo de inglés en secundaria, ayudando a los estudiantes a navegar los requisitos escolares con confianza.",
+    "schoolActivitiesTitle": "Actividades principales",
+    "schoolActivities": [
+      "• Apoyo de aprendizaje de Matemáticas en primaria + Inglés en secundaria.",
+      "• Mentoría sobre hábitos de estudio y rutinas."
+    ],
+    "schoolPackTitle": "Guía de Inicio Escolar",
+    "schoolPackItems": [
+      "• Lista de verificación de orientación del sistema escolar.",
+      "• Lista de contactos clave y planificador de rutina semanal."
+    ],
+    "careTitle": "Apoyo de Aprendizaje en Espacios de Cuidado",
+    "careDesc": "Llevando momentos de aprendizaje a entornos de cuidado con rutinas tranquilas y apoyo adaptable.",
+    "careDisclaimer": "Solo apoyo educativo—no se da consejo médico.",
+    "careActivitiesTitle": "Actividades principales",
+    "careActivities": [
+      "• Apoyo de aprendizaje adaptado para entornos de cuidado.",
+      "• Rutinas tranquilas para reducir la ansiedad."
+    ],
+    "carePackTitle": "Paquete de Espacios de Cuidado",
+    "carePackItems": [
+      "• Menú de aprendizaje para tiempos de espera.",
+      "• Tarjetas de rutina simples."
+    ]
+  },
+  "resources": {
+    "heroTitle": "Recursos",
+    "heroSubtitle": "Materiales gratuitos para estudiantes, familiares y escuelas.",
+    "tabLearning": "Materiales de Aprendizaje",
+    "tabBridgeline": "Guía de Inicio Escolar",
+    "filterAll": "Todos",
+    "filterMath": "Matemáticas",
+    "filterEnglish": "Inglés",
+    "filterEsl": "ESL",
+    "filterStudy": "Hábitos de Estudio",
+    "downloadBtn": "Abrir recurso"
+  },
+  "impact": {
+    "heroTitle": "Nuestro Impacto",
+    "heroSubtitle": "Midiendo la diferencia que hacemos en la vida de los estudiantes.",
+    "comingSoonTitle": "Informe de Impacto Detallado — Próximamente",
+    "comingSoonText": "Actualmente estamos recopilando datos de nuestros programas piloto. Vuelve pronto para ver cómo Heartitude está cambiando vidas a través de tutorías y guías educativas."
+  },
+  "getInvolved": {
+    "heroTitle": "Participa",
+    "heroSubtitle": "Únete a nosotros para hacer una diferencia. Ya sea que quieras ser voluntario o asociarte con nosotros, necesitamos tu ayuda.",
+    "volunteerTitle": "Ser Voluntario",
+    "volunteerDesc": "Buscamos personas apasionadas para ayudar con tutorías y creación de contenido.",
+    "openRolesTitle": "Puestos disponibles:",
+    "openRoles": ["Tutores (Matemáticas / Inglés)", "Ayudantes de Contenido (Guías, Listas)", "Coordinadores de Socios"],
+    "volunteerBtn": "Solicitar ser voluntario",
+    "partnerTitle": "Ser Socio",
+    "partnerDesc": "Escuelas, ONGs y centros de cuidado pueden solicitar la Guía de Inicio Escolar, paquetes de Espacios de Cuidado y guías de implementación.",
+    "servicesTitle": "Servicios:",
+    "services": ["Implementación del Paquete Guía de Inicio Escolar", "Configuración del Programa de Tutorías", "Optimización del Entorno"],
+    "partnerBtn": "Consulta para socios"
+  },
+  "contact": {
+    "heroTitle": "Contáctanos",
+    "heroSubtitle": "¿Tienes una pregunta o quieres colaborar? Nos encantaría saber de ti.",
+    "formName": "Nombre",
+    "formEmail": "Correo electrónico",
+    "formSubject": "Asunto",
+    "formMessage": "Mensaje",
+    "formBtn": "Enviar mensaje",
+    "formSuccess": "¡Gracias! Tu mensaje ha sido enviado.",
+    "infoTitle": "Información de contacto",
+    "infoEmail": "Correo",
+    "infoInstagram": "Instagram",
+    "infoResponse": "Respondemos en un plazo de 2 días hábiles."
+  },
+  "footer": {
+    "tagline": "Conectando el aprendizaje y el cuidado—donde los estudiantes más lo necesitan. Apoyando a estudiantes en escuelas con pocos recursos y entornos de cuidado pediátrico.",
+    "quickLinks": "Enlaces rápidos",
+    "linkAbout": "Acerca de nosotros",
+    "linkPrograms": "Nuestros programas",
+    "linkImpact": "Impacto",
+    "linkVolunteer": "Ser voluntario",
+    "contactTitle": "Contáctanos",
+    "copyright": "© 2026 Heartitude Club. Todos los derechos reservados."
+  },
+  "storyMap": {
+    "title": "Dónde operamos",
+    "subtitle": "Apoyando a estudiantes en escuelas públicas y espacios de cuidado en Panamá.",
+    "school": "Escuela",
+    "careSpace": "Espacio de cuidado"
+  }
+}

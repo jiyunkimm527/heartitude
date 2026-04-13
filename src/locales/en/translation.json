@@ -1,0 +1,154 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "programs": "Programs",
+    "resources": "Resources",
+    "impact": "Impact",
+    "getInvolved": "Get Involved",
+    "contact": "Contact"
+  },
+  "home": {
+    "heroTitle": "Support that keeps learning going.",
+    "heroSubtitle": "In Panama, we noticed an invisible barrier: students fall behind not only from language or missing information, but also from fatigue and limited support resources. Heartitude responds with school learning support, care-space learning support, and BioRhythm tools that make routines and learning materials easier to access.",
+    "volunteerBtn": "Volunteer with Us",
+    "partnerBtn": "Partner Inquiry",
+    "bannerText": "Practical support that keeps learning continuous—at school and in care spaces.",
+    "pathTitle": "A Path forward",
+    "pathSubtitle": "How we help students navigate their educational journey.",
+    "bioRhythmLabel": "BioRhythm Tools (Research Backbone)",
+    "bioRhythmSub": "Focus Forecast + Study Checklist",
+    "track1Title": "School Learning Support",
+    "track1Sub": "Public school support + School Start Pack",
+    "track1Steps": {
+      "1": { "title": "Partner & Plan", "desc": "Collaborating with schools." },
+      "2": { "title": "Weekly Support", "desc": "Regular tutoring sessions." },
+      "3": { "title": "Build Materials", "desc": "EN/ES content & School Start Pack." },
+      "4": { "title": "Improve Env.", "desc": "Simple low-cost changes." }
+    },
+    "track2Title": "Care-Space Learning Support",
+    "track2Sub": "care support + Care-Space Learning Pack",
+    "track2Disclaimer": "Educational support only—no medical advice.",
+    "track2Steps": {
+      "1": { "title": "Partner & Support", "desc": "In care spaces." },
+      "2": { "title": "Flexible Support", "desc": "Short, adaptable sessions." },
+      "3": { "title": "Care-Space Pack", "desc": "Routine cards & learning menu." },
+      "4": { "title": "Improve Offering", "desc": "Quiet corners & lighting." }
+    },
+    "missionTileTitle": "Our Mission",
+    "missionTileDesc": "A student-led service club supporting learning and care.",
+    "missionTileLink": "Read More →",
+    "involvedTileTitle": "Get Involved",
+    "involvedTileDesc": "Volunteer with us or partner to bring packs to your community.",
+    "involvedTileLink": "Join Us →"
+  },
+  "about": {
+    "heroTitle": "About Heartitude",
+    "heroSubtitle": "A student-led service club supporting learning and care.",
+    "missionTitle": "Our Mission",
+    "missionText1": "Heartitude is a blend of 'Heart' + 'Attitude'—showing up with empathy, consistency, and practical problem-solving. In Panama, we observed that learning gaps often come from a mix of missing school-system information, language barriers, fatigue, and limited support resources.",
+    "missionText2": "We respond through two service tracks—School Learning Support and Care-Space Learning Support—powered by BioRhythm, a student-built measurement-and-checklist approach that helps identify simple, low-cost improvements (lighting, noise, routines) and keeps learning continuous.",
+    "missionDisclaimer": "* Educational support only—no medical advice.",
+    "whyTitle": "Why We Started",
+    "whyText": "We noticed that students in two very different settings—under-resourced schools and hospitals—faced a similar challenge: a lack of continuity and accessible guidance. Heartitude was born from the idea that simple, practical tools combined with consistent human support can connect these dots.",
+    "valuesTitle": "Our Values",
+    "values": {
+      "accessibility": { "title": "Accessibility", "desc": "Making support easy to find and use." },
+      "consistency": { "title": "Consistency", "desc": "Providing reliable routines for learners." },
+      "empathy": { "title": "Empathy", "desc": "Understanding the unique challenges of each student." }
+    }
+  },
+  "programs": {
+    "heroTitle": "Our Programs",
+    "heroSubtitle": "Targeted support for two distinct communities with shared needs for guidance and continuity.",
+    "bioTitle": "BioRhythm Tools (Research Backbone)",
+    "bioText": "We measure simple environmental signals (noise, light, temperature) and study signals (study time, reaction time, accuracy) to create the <strong>Focus Forecast + Study Checklist</strong>. This helps us recommend low-cost improvements like lighting placement, quiet corners, and better time-slot distribution.",
+    "schoolTitle": "School Learning Support",
+    "schoolDesc": "Focused on elementary math and middle/high school English support, helping students navigate school requirements with confidence.",
+    "schoolActivitiesTitle": "Key Activities",
+    "schoolActivities": [
+      "• Elementary Math + Middle/High English learning support.",
+      "• Mentoring on study habits & routines."
+    ],
+    "schoolPackTitle": "School Start Pack",
+    "schoolPackItems": [
+      "• School system orientation checklist.",
+      "• Key contacts list & weekly routine planner."
+    ],
+    "careTitle": "Care-Space Learning Support",
+    "careDesc": "Bringing learning moments into care settings with calm routines and adaptable support.",
+    "careDisclaimer": "Educational support only—no medical advice.",
+    "careActivitiesTitle": "Key Activities",
+    "careActivities": [
+      "• Learning support adapted for care settings.",
+      "• Calm routines to reduce anxiety."
+    ],
+    "carePackTitle": "Care-Space Pack",
+    "carePackItems": [
+      "• Waiting-time learning menu.",
+      "• Simple routine cards."
+    ]
+  },
+  "resources": {
+    "heroTitle": "Resources",
+    "heroSubtitle": "Free materials for students, families, and schools.",
+    "tabLearning": "Learning Materials",
+    "tabBridgeline": "School Start Guide",
+    "filterAll": "All",
+    "filterMath": "Math",
+    "filterEnglish": "English",
+    "filterEsl": "ESL",
+    "filterStudy": "Study Skills",
+    "downloadBtn": "Open Resource"
+  },
+  "impact": {
+    "heroTitle": "Our Impact",
+    "heroSubtitle": "Measuring the difference we make in students' lives.",
+    "comingSoonTitle": "Detailed Impact Report Coming Soon",
+    "comingSoonText": "We are currently collecting data from our pilot programs. Check back soon to see how Heartitude is changing lives through tutoring and guidance kits."
+  },
+  "getInvolved": {
+    "heroTitle": "Get Involved",
+    "heroSubtitle": "Join us in making a difference. Whether you want to volunteer or partner with us, we need your help.",
+    "volunteerTitle": "Volunteer",
+    "volunteerDesc": "We're looking for passionate individuals to help with tutoring and content creation.",
+    "openRolesTitle": "Open Roles:",
+    "openRoles": ["Tutors (Math / English)", "Content Helpers (Guides, Checklists)", "Partner Coordinators"],
+    "volunteerBtn": "Apply to Volunteer",
+    "partnerTitle": "Partner",
+    "partnerDesc": "Schools, NGOs, and care centers can request School Start Guide & Care-Space packs and implementation guides.",
+    "servicesTitle": "Services:",
+    "services": ["School Start Guide Pack Implementation", "Tutoring Program Setup", "Environment Optimization"],
+    "partnerBtn": "Partner Inquiry"
+  },
+  "contact": {
+    "heroTitle": "Contact Us",
+    "heroSubtitle": "Have a question or want to collaborate? We'd love to hear from you.",
+    "formName": "Name",
+    "formEmail": "Email",
+    "formSubject": "Subject",
+    "formMessage": "Message",
+    "formBtn": "Send Message",
+    "formSuccess": "Thank you! Your message has been sent.",
+    "infoTitle": "Contact Information",
+    "infoEmail": "Email",
+    "infoInstagram": "Instagram",
+    "infoResponse": "We respond within 2 business days."
+  },
+  "footer": {
+    "tagline": "Connecting learning and care—where students need it most. Supporting learners in under-resourced schools and pediatric care settings.",
+    "quickLinks": "Quick Links",
+    "linkAbout": "About Us",
+    "linkPrograms": "Our Programs",
+    "linkImpact": "Impact",
+    "linkVolunteer": "Volunteer",
+    "contactTitle": "Contact Us",
+    "copyright": "© 2026 Heartitude Club. All rights reserved."
+  },
+  "storyMap": {
+    "title": "Where We Operate",
+    "subtitle": "Supporting students in public schools and care spaces across Panama.",
+    "school": "School",
+    "careSpace": "Care Space"
+  }
+}
