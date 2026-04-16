@@ -1,126 +1,10 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import PageHero from '../components/PageHero';
 import Section from '../components/Section';
-import { useLocation } from 'react-router-dom';
-import { BookOpen, CheckCircle } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 
 const Programs = () => {
-    const { hash } = useLocation();
     const { t } = useTranslation();
-
-    useEffect(() => {
-        if (hash) {
-            const element = document.getElementById(hash.replace('#', ''));
-            if (element) {
-                element.scrollIntoView({ behavior: 'smooth' });
-            }
-        }
-    }, [hash]);
-
-    const BioRhythmSection = () => (
-        <div style={{
-            backgroundColor: '#f9fafb',
-            borderRadius: 'var(--radius-lg)',
-            padding: '3rem',
-            marginBottom: '4rem',
-            border: '1px solid #e5e7eb'
-        }}>
-            <h2 style={{ fontSize: '2rem', fontWeight: 'bold', marginBottom: '1rem', color: '#1f2937', textAlign: 'center' }}>
-                {t('programs.bioTitle')}
-            </h2>
-            <p
-                style={{ fontSize: '1.1rem', lineHeight: '1.7', color: '#4b5563', textAlign: 'center', maxWidth: '800px', margin: '0 auto 2rem auto' }}
-                dangerouslySetInnerHTML={{ __html: t('programs.bioText') }}
-            />
-        </div>
-    );
-
-    const SchoolSupport = () => (
-        <div id="school-support" style={{
-            backgroundColor: 'white',
-            borderRadius: 'var(--radius-lg)',
-            overflow: 'hidden',
-            boxShadow: 'var(--shadow-md)',
-            borderLeft: '8px solid var(--color-red-program)',
-            marginBottom: '4rem'
-        }}>
-            <div style={{ padding: '3rem' }}>
-                <h2 style={{ fontSize: '2.25rem', fontWeight: 'bold', marginBottom: '1.5rem', color: 'var(--color-primary)' }}>
-                    {t('programs.schoolTitle')}
-                </h2>
-                <p style={{ fontSize: '1.1rem', lineHeight: '1.7', color: 'var(--color-text)', marginBottom: '2rem' }}>
-                    {t('programs.schoolDesc')}
-                </p>
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '3rem' }}>
-                    <div>
-                        <h3 style={{ fontSize: '1.25rem', fontWeight: 'bold', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                            <BookOpen size={20} color="var(--color-red-program)" /> {t('programs.schoolActivitiesTitle')}
-                        </h3>
-                        <ul style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', color: 'var(--color-text-light)' }}>
-                            {t('programs.schoolActivities', { returnObjects: true }).map((item, i) => (
-                                <li key={i}>{item}</li>
-                            ))}
-                        </ul>
-                    </div>
-                    <div>
-                        <h3 style={{ fontSize: '1.25rem', fontWeight: 'bold', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                            <CheckCircle size={20} color="var(--color-red-program)" /> {t('programs.schoolPackTitle')}
-                        </h3>
-                        <ul style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', color: 'var(--color-text-light)' }}>
-                            {t('programs.schoolPackItems', { returnObjects: true }).map((item, i) => (
-                                <li key={i}>{item}</li>
-                            ))}
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    );
-
-    const CareSpaceSupport = () => (
-        <div id="care-space-support" style={{
-            backgroundColor: 'white',
-            borderRadius: 'var(--radius-lg)',
-            overflow: 'hidden',
-            boxShadow: 'var(--shadow-md)',
-            borderLeft: '8px solid var(--color-blue-program)'
-        }}>
-            <div style={{ padding: '3rem' }}>
-                <h2 style={{ fontSize: '2.25rem', fontWeight: 'bold', marginBottom: '1.5rem', color: 'var(--color-primary)' }}>
-                    {t('programs.careTitle')}
-                </h2>
-                <p style={{ fontSize: '1.1rem', lineHeight: '1.7', color: 'var(--color-text)', marginBottom: '0.5rem' }}>
-                    {t('programs.careDesc')}
-                </p>
-                <p style={{ fontSize: '0.9rem', color: '#6b7280', fontStyle: 'italic', marginBottom: '2rem' }}>
-                    {t('programs.careDisclaimer')}
-                </p>
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '3rem' }}>
-                    <div>
-                        <h3 style={{ fontSize: '1.25rem', fontWeight: 'bold', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                            <BookOpen size={20} color="var(--color-blue-program)" /> {t('programs.careActivitiesTitle')}
-                        </h3>
-                        <ul style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', color: 'var(--color-text-light)' }}>
-                            {t('programs.careActivities', { returnObjects: true }).map((item, i) => (
-                                <li key={i}>{item}</li>
-                            ))}
-                        </ul>
-                    </div>
-                    <div>
-                        <h3 style={{ fontSize: '1.25rem', fontWeight: 'bold', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                            <CheckCircle size={20} color="var(--color-blue-program)" /> {t('programs.carePackTitle')}
-                        </h3>
-                        <ul style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', color: 'var(--color-text-light)' }}>
-                            {t('programs.carePackItems', { returnObjects: true }).map((item, i) => (
-                                <li key={i}>{item}</li>
-                            ))}
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    );
 
     return (
         <>
@@ -130,9 +14,130 @@ const Programs = () => {
                 imageSrc="/images/hero-programs.jpg"
             />
             <Section>
-                <BioRhythmSection />
-                <SchoolSupport />
-                <CareSpaceSupport />
+                {/* Editorial 2-column grid */}
+                <div style={{
+                    display: 'grid',
+                    gridTemplateColumns: '1fr 1px 1fr',
+                    gap: '0 5rem',
+                    alignItems: 'start',
+                }}>
+
+                    {/* ── Track 01 ── */}
+                    <div>
+                        <p style={{
+                            fontSize: '0.72rem',
+                            fontWeight: '700',
+                            letterSpacing: '0.14em',
+                            textTransform: 'uppercase',
+                            color: '#9ca3af',
+                            marginBottom: '1.25rem',
+                        }}>01</p>
+
+                        <h2 style={{
+                            fontSize: '1.75rem',
+                            fontWeight: '800',
+                            color: '#1c1108',
+                            letterSpacing: '-0.02em',
+                            lineHeight: 1.2,
+                            marginBottom: '2rem',
+                        }}>
+                            {t('programs.track1Title')}
+                        </h2>
+
+                        {/* Subjects */}
+                        <ul style={{ display: 'flex', flexDirection: 'column', gap: '0.85rem', marginBottom: '2rem' }}>
+                            <li style={{ display: 'flex', flexDirection: 'column', paddingLeft: '1rem', borderLeft: '2px solid #fde68a' }}>
+                                <span style={{ fontSize: '0.95rem', fontWeight: '700', color: '#1c1108' }}>
+                                    {t('programs.track1English')}
+                                </span>
+                                <span style={{ fontSize: '0.875rem', color: '#6b7280', marginTop: '0.2rem' }}>
+                                    {t('programs.track1EnglishSchedule')}
+                                </span>
+                            </li>
+                            <li style={{ display: 'flex', flexDirection: 'column', paddingLeft: '1rem', borderLeft: '2px solid #fde68a' }}>
+                                <span style={{ fontSize: '0.95rem', fontWeight: '700', color: '#1c1108' }}>
+                                    {t('programs.track1Math')}
+                                </span>
+                                <span style={{ fontSize: '0.875rem', color: '#6b7280', marginTop: '0.2rem' }}>
+                                    {t('programs.track1MathSchedule')}
+                                </span>
+                            </li>
+                        </ul>
+
+                        <p style={{ fontSize: '0.925rem', color: '#374151', lineHeight: 1.75, marginBottom: '2.5rem' }}>
+                            {t('programs.track1Materials')}
+                        </p>
+
+                        {/* Health Record Booklet */}
+                        <div style={{ borderTop: '1px solid #e5e7eb', paddingTop: '1.5rem' }}>
+                            <div style={{ marginBottom: '0.5rem' }}>
+                                <span style={{ fontSize: '0.875rem', fontWeight: '700', color: '#1c1108' }}>
+                                    {t('programs.track1HealthTitle')}
+                                </span>
+                            </div>
+                            <p style={{ fontSize: '0.875rem', color: '#6b7280', lineHeight: 1.7 }}>
+                                {t('programs.track1HealthDesc')}
+                            </p>
+                        </div>
+                    </div>
+
+                    {/* ── Divider ── */}
+                    <div style={{ backgroundColor: '#e5e7eb', height: '100%', minHeight: '400px' }} />
+
+                    {/* ── Track 02 ── */}
+                    <div>
+                        <p style={{
+                            fontSize: '0.72rem',
+                            fontWeight: '700',
+                            letterSpacing: '0.14em',
+                            textTransform: 'uppercase',
+                            color: '#9ca3af',
+                            marginBottom: '1.25rem',
+                        }}>02</p>
+
+                        <h2 style={{
+                            fontSize: '1.75rem',
+                            fontWeight: '800',
+                            color: '#1c1108',
+                            letterSpacing: '-0.02em',
+                            lineHeight: 1.2,
+                            marginBottom: '0.75rem',
+                        }}>
+                            {t('programs.track2Title')}
+                        </h2>
+
+                        <span style={{
+                            display: 'inline-block',
+                            fontSize: '0.7rem',
+                            fontWeight: '700',
+                            letterSpacing: '0.08em',
+                            textTransform: 'uppercase',
+                            color: '#6b7280',
+                            backgroundColor: '#f3f4f6',
+                            padding: '0.25rem 0.6rem',
+                            borderRadius: '4px',
+                            marginBottom: '2rem',
+                        }}>
+                            {t('programs.track2Badge')}
+                        </span>
+
+                        <p style={{
+                            fontSize: '1rem',
+                            fontWeight: '700',
+                            color: '#1c1108',
+                            lineHeight: 1.5,
+                            marginBottom: '1.25rem',
+                            paddingLeft: '1rem',
+                            borderLeft: '2px solid #fde68a',
+                        }}>
+                            {t('programs.track2Premise')}
+                        </p>
+
+                        <p style={{ fontSize: '0.925rem', color: '#374151', lineHeight: 1.75 }}>
+                            {t('programs.track2Desc')}
+                        </p>
+                    </div>
+                </div>
             </Section>
         </>
     );

@@ -9,7 +9,7 @@
     "contact": "Contact"
   },
   "home": {
-    "heroTitle": "Support that keeps learning going.",
+    "heroTitle": "We keep students learning — no matter where they are.",
     "heroSubtitle": "In Panama, we noticed an invisible barrier: students fall behind not only from language or missing information, but also from fatigue and limited support resources. Heartitude responds with school learning support, care-space learning support, and BioRhythm tools that make routines and learning materials easier to access.",
     "volunteerBtn": "Volunteer with Us",
     "partnerBtn": "Partner Inquiry",
@@ -21,19 +21,64 @@
     "track1Title": "School Learning Support",
     "track1Sub": "Public school support + School Start Pack",
     "track1Steps": {
-      "1": { "title": "Partner & Plan", "desc": "Collaborating with schools." },
-      "2": { "title": "Weekly Support", "desc": "Regular tutoring sessions." },
-      "3": { "title": "Build Materials", "desc": "EN/ES content & School Start Pack." },
-      "4": { "title": "Improve Env.", "desc": "Simple low-cost changes." }
+      "1": {
+        "title": "Partner & Plan",
+        "desc": "Collaborating with schools."
+      },
+      "2": {
+        "title": "Weekly Support",
+        "desc": "Regular tutoring sessions."
+      },
+      "3": {
+        "title": "Build Materials",
+        "desc": "EN/ES content & School Start Pack."
+      },
+      "4": {
+        "title": "Improve Env.",
+        "desc": "Simple low-cost changes."
+      }
     },
     "track2Title": "Care-Space Learning Support",
     "track2Sub": "care support + Care-Space Learning Pack",
     "track2Disclaimer": "Educational support only—no medical advice.",
     "track2Steps": {
-      "1": { "title": "Partner & Support", "desc": "In care spaces." },
-      "2": { "title": "Flexible Support", "desc": "Short, adaptable sessions." },
-      "3": { "title": "Care-Space Pack", "desc": "Routine cards & learning menu." },
-      "4": { "title": "Improve Offering", "desc": "Quiet corners & lighting." }
+      "1": {
+        "title": "Partner & Support",
+        "desc": "In care spaces."
+      },
+      "2": {
+        "title": "Flexible Support",
+        "desc": "Short, adaptable sessions."
+      },
+      "3": {
+        "title": "Care-Space Pack",
+        "desc": "Routine cards & learning menu."
+      },
+      "4": {
+        "title": "Improve Offering",
+        "desc": "Quiet corners & lighting."
+      }
+    },
+    "valuesEyebrow": "Our Name, Our Promise",
+    "valuesHeading": "Our name says it all.",
+    "valuesSubtitle": "Heartitude — a blend of Heart, Attitude, and Altitude.",
+    "heart": {
+      "num": "01",
+      "title": "Heart",
+      "sub": "Heart of Compassion",
+      "desc": "We represent the empathy and sincerity needed to address the invisible barriers in Panama."
+    },
+    "attitude": {
+      "num": "02",
+      "title": "Attitude",
+      "sub": "Action",
+      "desc": "True change doesn't come from mere sympathy, but from a proactive and professional attitude toward solving problems."
+    },
+    "altitude": {
+      "num": "03",
+      "title": "Altitude",
+      "sub": "Elevating Potential",
+      "desc": "We aim to lift every student higher — raising the bar on what accessible learning can look like."
     },
     "missionTileTitle": "Our Mission",
     "missionTileDesc": "A student-led service club supporting learning and care.",
@@ -46,48 +91,44 @@
     "heroTitle": "About Heartitude",
     "heroSubtitle": "A student-led service club supporting learning and care.",
     "missionTitle": "Our Mission",
-    "missionText1": "Heartitude is a blend of 'Heart' + 'Attitude'—showing up with empathy, consistency, and practical problem-solving. In Panama, we observed that learning gaps often come from a mix of missing school-system information, language barriers, fatigue, and limited support resources.",
-    "missionText2": "We respond through two service tracks—School Learning Support and Care-Space Learning Support—powered by BioRhythm, a student-built measurement-and-checklist approach that helps identify simple, low-cost improvements (lighting, noise, routines) and keeps learning continuous.",
-    "missionDisclaimer": "* Educational support only—no medical advice.",
+    "missionText1": "Heartitude — a blend of 'Heart' and 'Attitude.' A commitment to showing up with warmth, consistency, and purpose. That is what this name stands for.",
+    "missionText2": "Education should not depend on where you learn. Heartitude is a student-led service club for preschool and elementary students who are falling behind — not because of their ability, but because of their circumstances: children in environments that need more support, children kept from school by illness, or children without the space and conditions to study. For those who are sick, we offer more than academic support — we offer warmth, companionship, and emotional encouragement.",
+    "missionText3a": "We help in two ways. First, we create and share quality learning materials, and study math and English together — online or in person. Being present for a child is part of what we do.",
+    "missionText3b": "Second, we study the environments where children learn. We measure how noise, lighting, temperature, and humidity affect learning — and find practical, low-cost improvements, with the goal of giving every child a better chance to focus.",
     "whyTitle": "Why We Started",
-    "whyText": "We noticed that students in two very different settings—under-resourced schools and hospitals—faced a similar challenge: a lack of continuity and accessible guidance. Heartitude was born from the idea that simple, practical tools combined with consistent human support can connect these dots.",
+    "whyText": "We saw children with equal potential standing at very different starting lines. Some had no access to lessons at all — no tutoring, no materials, studying alone. Others had lessons, but learned in hospital waiting rooms, noisy care spaces, or environments where focus was nearly impossible. Heartitude was born from that observation: no child should fall behind simply because of the circumstances they were born into. We exist to close that gap.",
     "valuesTitle": "Our Values",
     "values": {
-      "accessibility": { "title": "Accessibility", "desc": "Making support easy to find and use." },
-      "consistency": { "title": "Consistency", "desc": "Providing reliable routines for learners." },
-      "empathy": { "title": "Empathy", "desc": "Understanding the unique challenges of each student." }
+      "accessibility": {
+        "title": "Accessibility",
+        "desc": "Reaching every child, wherever they are."
+      },
+      "consistency": {
+        "title": "Consistency",
+        "desc": "Showing up, online or in person, steadily and reliably."
+      },
+      "empathy": {
+        "title": "Empathy",
+        "desc": "Understanding each child and meeting them where they are."
+      }
     }
   },
   "programs": {
     "heroTitle": "Our Programs",
-    "heroSubtitle": "Targeted support for two distinct communities with shared needs for guidance and continuity.",
-    "bioTitle": "BioRhythm Tools (Research Backbone)",
-    "bioText": "We measure simple environmental signals (noise, light, temperature) and study signals (study time, reaction time, accuracy) to create the <strong>Focus Forecast + Study Checklist</strong>. This helps us recommend low-cost improvements like lighting placement, quiet corners, and better time-slot distribution.",
-    "schoolTitle": "School Learning Support",
-    "schoolDesc": "Focused on elementary math and middle/high school English support, helping students navigate school requirements with confidence.",
-    "schoolActivitiesTitle": "Key Activities",
-    "schoolActivities": [
-      "• Elementary Math + Middle/High English learning support.",
-      "• Mentoring on study habits & routines."
-    ],
-    "schoolPackTitle": "School Start Pack",
-    "schoolPackItems": [
-      "• School system orientation checklist.",
-      "• Key contacts list & weekly routine planner."
-    ],
-    "careTitle": "Care-Space Learning Support",
-    "careDesc": "Bringing learning moments into care settings with calm routines and adaptable support.",
-    "careDisclaimer": "Educational support only—no medical advice.",
-    "careActivitiesTitle": "Key Activities",
-    "careActivities": [
-      "• Learning support adapted for care settings.",
-      "• Calm routines to reduce anxiety."
-    ],
-    "carePackTitle": "Care-Space Pack",
-    "carePackItems": [
-      "• Waiting-time learning menu.",
-      "• Simple routine cards."
-    ]
+    "heroSubtitle": "We go where learning is needed.",
+    "track1Title": "Learning Content Support",
+    "track1English": "English",
+    "track1EnglishSchedule": "Weekday afternoons, online",
+    "track1Math": "Math",
+    "track1MathSchedule": "Every Saturday, in-person school visits",
+    "track1Materials": "We create and provide our own learning materials and worksheets. Beyond academics, we show up with warmth and emotional encouragement.",
+    "track1HealthTitle": "Health Record Booklet",
+    "track1HealthBadge": "Coming Soon",
+    "track1HealthDesc": "A practical tool to help children track vaccinations, medications, and health routines.",
+    "track2Title": "Learning Environment Support",
+    "track2Badge": "BioRhythm · Research Backbone",
+    "track2Premise": "Reducing anxiety is the first condition for learning.",
+    "track2Desc": "We measure how noise, lighting, temperature, and humidity in hospitals and care spaces affect a child's sense of calm and ability to focus. We then research practical, low-cost improvements — such as lighting placement and quiet corner setup — to create better learning conditions."
   },
   "resources": {
     "heroTitle": "Resources",
@@ -103,9 +144,53 @@
   },
   "impact": {
     "heroTitle": "Our Impact",
-    "heroSubtitle": "Measuring the difference we make in students' lives.",
-    "comingSoonTitle": "Detailed Impact Report Coming Soon",
-    "comingSoonText": "We are currently collecting data from our pilot programs. Check back soon to see how Heartitude is changing lives through tutoring and guidance kits."
+    "heroSubtitle": "Small actions. Real change. One child at a time.",
+    "principlesTitle": "What We Stand For",
+    "principlesIntro": "Everything Heartitude does is rooted in values shared by educators and organizations around the world.",
+    "principles": [
+      {
+        "quote": "Every child deserves an equal opportunity to learn — regardless of where they are born or the circumstances they face.",
+        "source": "SDG 4 · UNESCO",
+        "note": "We exist to close the gap between potential and opportunity."
+      },
+      {
+        "quote": "Opening the door to education is not enough. The conditions inside must also be right.",
+        "source": "UNESCO Education Framework",
+        "note": "We research the environments where children learn — and work to improve them."
+      },
+      {
+        "quote": "No child should be left behind because of illness, poverty, or circumstance.",
+        "source": "Leave No One Behind · UN 2030",
+        "note": "We show up for children who have no other support — in person, online, and beyond."
+      }
+    ],
+    "activitiesTitle": "What We Have Done",
+    "activities": [
+      {
+        "date": "March 2025",
+        "title": "English Online Support",
+        "desc": "Launched weekday afternoon online English sessions for students at a local Panama City school.",
+        "status": "active"
+      },
+      {
+        "date": "April 2025 —",
+        "title": "Math In-Person Visits",
+        "desc": "Started weekly Saturday in-person math tutoring visits to a local school.",
+        "status": "active"
+      },
+      {
+        "date": "Ongoing",
+        "title": "Learning Materials",
+        "desc": "Creating and distributing custom worksheets and study materials for math and English.",
+        "status": "active"
+      },
+      {
+        "date": "In Preparation",
+        "title": "BioRhythm Research",
+        "desc": "Preparing to measure and study learning environment factors — noise, lighting, temperature, and humidity.",
+        "status": "pending"
+      }
+    ]
   },
   "getInvolved": {
     "heroTitle": "Get Involved",
@@ -113,12 +198,20 @@
     "volunteerTitle": "Volunteer",
     "volunteerDesc": "We're looking for passionate individuals to help with tutoring and content creation.",
     "openRolesTitle": "Open Roles:",
-    "openRoles": ["Tutors (Math / English)", "Content Helpers (Guides, Checklists)", "Partner Coordinators"],
+    "openRoles": [
+      "Tutors (Math / English)",
+      "Content Helpers (Guides, Checklists)",
+      "Partner Coordinators"
+    ],
     "volunteerBtn": "Apply to Volunteer",
     "partnerTitle": "Partner",
     "partnerDesc": "Schools, NGOs, and care centers can request School Start Guide & Care-Space packs and implementation guides.",
     "servicesTitle": "Services:",
-    "services": ["School Start Guide Pack Implementation", "Tutoring Program Setup", "Environment Optimization"],
+    "services": [
+      "School Start Guide Pack Implementation",
+      "Tutoring Program Setup",
+      "Environment Optimization"
+    ],
     "partnerBtn": "Partner Inquiry"
   },
   "contact": {
@@ -129,6 +222,7 @@
     "formSubject": "Subject",
     "formMessage": "Message",
     "formBtn": "Send Message",
+    "formTitle": "Send a Message",
     "formSuccess": "Thank you! Your message has been sent.",
     "infoTitle": "Contact Information",
     "infoEmail": "Email",

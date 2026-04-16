@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
-import Button from './Button';
 import { useTranslation } from 'react-i18next';
 
 const Navbar = () => {
@@ -16,17 +15,17 @@ const Navbar = () => {
     };
 
     const navLinks = [
-        { name: t('nav.home'), path: '/' },
-        { name: t('nav.about'), path: '/about' },
-        { name: t('nav.programs'), path: '/programs' },
-        { name: t('nav.resources'), path: '/resources' },
-        { name: t('nav.impact'), path: '/impact' },
-        { name: t('nav.getInvolved'), path: '/get-involved' },
-        { name: t('nav.contact'), path: '/contact' },
+        { name: t('nav.home'),       path: '/',            cls: 'nav-link-home'      },
+        { name: t('nav.about'),      path: '/about',       cls: 'nav-link-about'     },
+        { name: t('nav.programs'),   path: '/programs',    cls: 'nav-link-programs'  },
+        { name: t('nav.resources'),  path: '/resources',   cls: 'nav-link-resources' },
+        { name: t('nav.impact'),     path: '/impact',      cls: 'nav-link-impact'    },
+        { name: t('nav.getInvolved'),path: '/get-involved',cls: 'nav-link-involved'  },
+        { name: t('nav.contact'),    path: '/contact',     cls: 'nav-link-contact'   },
     ];
 
     return (
-        <nav className="bg-white shadow-sm sticky top-0 z-50" style={{
+        <nav style={{
             position: 'sticky',
             top: 0,
             zIndex: 50,
@@ -34,82 +33,132 @@ const Navbar = () => {
             backdropFilter: 'blur(10px)',
             borderBottom: '1px solid #f3f4f6'
         }}>
+            <style>{`
+                @media (min-width: 900px) {
+                    .desktop-nav { display: flex !important; }
+                    .mobile-menu-btn { display: none !important; }
+                }
+                .nav-link-item {
+                    color: #475569;
+                    font-weight: 600;
+                    font-size: 0.75rem;
+                    text-transform: uppercase;
+                    letter-spacing: 0.08em;
+                    font-family: var(--font-heading);
+                    white-space: nowrap;
+                    text-decoration: none;
+                    display: inline-flex;
+                    justify-content: center;
+                    align-items: center;
+                    padding: 0.35rem 0;
+                    transition: color 0.2s;
+                }
+                .nav-link-item.nav-active {
+                    color: #4f46e5;
+                    font-weight: 700;
+                }
+                .nav-link-item:hover {
+                    color: #4f46e5;
+                }
+                .nav-link-home     { width: 72px;  }
+                .nav-link-about    { width: 88px;  }
+                .nav-link-programs { width: 104px; }
+                .nav-link-resources{ width: 98px;  }
+                .nav-link-impact   { width: 78px;  }
+                .nav-link-involved { width: 108px; }
+                .nav-link-contact  { width: 90px;  }
+                .lang-btn {
+                    background: none;
+                    border: 1.5px solid #4f46e5;
+                    border-radius: 20px;
+                    width: 52px;
+                    height: 30px;
+                    cursor: pointer;
+                    font-weight: 700;
+                    font-size: 0.75rem;
+                    color: #4f46e5;
+                    letter-spacing: 0.07em;
+                    transition: all 0.2s;
+                    flex-shrink: 0;
+                }
+                .lang-btn:hover {
+                    background: #4f46e5;
+                    color: white;
+                }
+            `}</style>
+
             <div className="container">
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '0.75rem 0' }}>
-                    {/* Logo */}
+                <div style={{
+                    display: 'grid',
+                    gridTemplateColumns: 'auto 1fr auto',
+                    alignItems: 'center',
+                    /* 헤더 상하 패딩: 로고 크기에 맞춰 균형있게 */
+                    padding: '0.5rem 0',
+                    gap: '1.5rem'
+                }}>
+                    {/* 열 1: 로고 */}
                     <Link to="/" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none', flexShrink: 0 }}>
                         <img
                             src="/images/logo.png"
                             alt="Heartitude - Balboa Academy"
-                            style={{ height: '90px', width: 'auto', display: 'block', flexShrink: 0 }}
+                            style={{ height: '68px', width: 'auto', display: 'block' }}
                         />
                     </Link>
 
-                    {/* Desktop Nav */}
-                    <div className="desktop-nav" style={{ display: 'none', marginLeft: '3rem' }}>
-                        <style>{`
-              @media (min-width: 768px) {
-                .desktop-nav { display: flex !important; align-items: center; gap: 2rem; }
-                .mobile-menu-btn { display: none !important; }
-              }
-            `}</style>
+                    {/* 열 2: 데스크톱 네비게이션 */}
+                    <div
+                        className="desktop-nav"
+                        style={{
+                            display: 'none',
+                            justifyContent: 'space-evenly',
+                            alignItems: 'center',
+                            gap: '0',
+                            flexWrap: 'nowrap',
+                            maxWidth: '780px',
+                            margin: '0 auto',
+                            width: '100%'
+                        }}
+                    >
                         {navLinks.map((link) => (
                             <NavLink
-                                key={link.name}
+                                key={link.path}
                                 to={link.path}
-                                style={({ isActive }) => ({
-                                    color: isActive ? 'var(--color-nap-blue)' : 'var(--color-primary)',
-                                    fontWeight: isActive ? '700' : '500',
-                                    fontSize: '0.9rem',
-                                    textTransform: 'uppercase',
-                                    letterSpacing: '0.05em',
-                                    transition: 'color 0.2s',
-                                    fontFamily: 'var(--font-heading)',
-                                    whiteSpace: 'nowrap'
-                                })}
+                                className={({ isActive }) =>
+                                    isActive
+                                        ? `nav-link-item nav-active ${link.cls}`
+                                        : `nav-link-item ${link.cls}`
+                                }
                             >
                                 {link.name}
                             </NavLink>
                         ))}
+                    </div>
 
-                        {/* Language Toggle */}
-                        <button
-                            onClick={toggleLanguage}
-                            style={{
-                                background: 'none',
-                                border: '2px solid var(--color-nap-blue)',
-                                borderRadius: '20px',
-                                padding: '0.3rem 0.9rem',
-                                cursor: 'pointer',
-                                fontWeight: '700',
-                                fontSize: '0.85rem',
-                                color: 'var(--color-nap-blue)',
-                                letterSpacing: '0.05em',
-                                transition: 'all 0.2s'
-                            }}
-                        >
+                    {/* 열 3: 언어 전환 버튼 + 모바일 메뉴 버튼 */}
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+                        <button className="lang-btn" onClick={toggleLanguage}>
                             {i18n.language === 'es' ? 'EN' : 'ES'}
                         </button>
 
+                        {/* 모바일 햄버거 */}
+                        <button
+                            className="mobile-menu-btn"
+                            onClick={toggleMenu}
+                            style={{
+                                background: 'none',
+                                border: 'none',
+                                cursor: 'pointer',
+                                color: 'var(--color-primary)'
+                            }}
+                        >
+                            {isOpen ? <X size={24} /> : <Menu size={24} />}
+                        </button>
                     </div>
-
-                    {/* Mobile Menu Button */}
-                    <button
-                        className="mobile-menu-btn"
-                        onClick={toggleMenu}
-                        style={{
-                            background: 'none',
-                            border: 'none',
-                            cursor: 'pointer',
-                            color: 'var(--color-primary)'
-                        }}
-                    >
-                        {isOpen ? <X size={24} /> : <Menu size={24} />}
-                    </button>
                 </div>
             </div>
 
-            {/* Mobile Nav Overlay */}
+
+            {/* 모바일 드롭다운 메뉴 */}
             {isOpen && (
                 <div style={{
                     position: 'absolute',
@@ -124,7 +173,7 @@ const Navbar = () => {
                     <div className="container" style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
                         {navLinks.map((link) => (
                             <Link
-                                key={link.name}
+                                key={link.path}
                                 to={link.path}
                                 onClick={() => setIsOpen(false)}
                                 style={{
@@ -132,13 +181,13 @@ const Navbar = () => {
                                     fontSize: '1.1rem',
                                     fontWeight: '500',
                                     color: 'var(--color-primary)',
-                                    borderBottom: '1px solid #f3f4f6'
+                                    borderBottom: '1px solid #f3f4f6',
+                                    textDecoration: 'none'
                                 }}
                             >
                                 {link.name}
                             </Link>
                         ))}
-
                     </div>
                 </div>
             )}

@@ -7,7 +7,8 @@ const Button = ({
   to, 
   onClick, 
   className = '',
-  type = 'button'
+  type = 'button',
+  style = {}
 }) => {
   const baseClass = 'btn';
   const variantClass = `btn-${variant}`;
@@ -15,14 +16,14 @@ const Button = ({
 
   if (to) {
     return (
-      <Link to={to} className={finalClassName}>
+      <Link to={to} className={finalClassName} style={style}>
         {children}
       </Link>
     );
   }
 
   return (
-    <button type={type} className={finalClassName} onClick={onClick}>
+    <button type={type} className={finalClassName} onClick={onClick} style={style}>
       {children}
     </button>
   );

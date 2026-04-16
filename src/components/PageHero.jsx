@@ -7,7 +7,7 @@ const PageHero = ({ title, subtitle, imageSrc, children, height }) => {
             width: '100%',
             height: height || '225px',
             minHeight: '200px',
-            backgroundColor: '#1f2937', // Fallback color
+            backgroundColor: '#1f2937',
             backgroundImage: imageSrc ? `url("${imageSrc}")` : 'none',
             backgroundSize: 'cover',
             backgroundPosition: 'center',
@@ -35,7 +35,8 @@ const PageHero = ({ title, subtitle, imageSrc, children, height }) => {
                     fontFamily: 'var(--font-heading)',
                     maxWidth: '900px',
                     margin: '0 auto 1.5rem auto',
-                    lineHeight: '1.2'
+                    lineHeight: '1.2',
+                    whiteSpace: 'pre-line'
                 }}>
                     {title}
                 </h1>

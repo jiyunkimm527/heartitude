@@ -2,118 +2,183 @@ import React, { useState } from 'react';
 import PageHero from '../components/PageHero';
 import Section from '../components/Section';
 import { resources } from '../data/resources';
-import { ExternalLink } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
-const ResourceCard = ({ resource }) => (
-    <div className="card" style={{ padding: '1.5rem', display: 'flex', flexDirection: 'column', height: '100%' }}>
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '1rem' }}>
-            <span style={{
-                fontSize: '0.75rem',
-                fontWeight: 'bold',
-                textTransform: 'uppercase',
-                color: resource.category === 'Math' ? 'var(--color-blue-program)' : '#d97706',
-                backgroundColor: resource.category === 'Math' ? 'var(--color-blue-bg)' : '#fef3c7',
-                padding: '0.25rem 0.5rem',
-                borderRadius: '4px'
+const CATEGORIES = ['Math', 'English', 'BioRhythm'];
+
+const CategoryTab = ({ label, active, onClick }) => (
+    <button
+        onClick={onClick}
+        style={{
+            padding: '0.6rem 1.5rem',
+            borderRadius: '999px',
+            border: active ? 'none' : '1px solid #e5e7eb',
+            backgroundColor: active ? '#1c1108' : 'transparent',
+            color: active ? '#ffffff' : '#6b7280',
+            fontWeight: '600',
+            fontSize: '0.875rem',
+            cursor: 'pointer',
+            transition: 'all 0.2s',
+            letterSpacing: '0.02em',
+        }}
+    >
+        {label}
+    </button>
+);
+
+const ResourceCard = ({ resource }) => {
+    const [showViewer, setShowViewer] = useState(false);
+    const hasLink = resource.url && resource.url !== '#';
+
+    return (
+        <>
+            <div style={{
+                padding: '1.5rem',
+                backgroundColor: '#ffffff',
+                border: '1px solid #e5e7eb',
+                borderRadius: '8px',
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '0.75rem',
             }}>
-                {resource.category}
-            </span>
-            <span style={{ fontSize: '0.85rem', color: 'var(--color-text-light)' }}>{resource.type}</span>
-        </div>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                    <span style={{
+                        fontSize: '0.7rem',
+                        fontWeight: '700',
+                        textTransform: 'uppercase',
+                        letterSpacing: '0.08em',
+                        color: '#b45309',
+                        backgroundColor: '#fef3c7',
+                        padding: '0.2rem 0.5rem',
+                        borderRadius: '4px',
+                    }}>
+                        {resource.gradeLevel}
+                    </span>
+                    <span style={{ fontSize: '0.8rem', color: '#9ca3af' }}>{resource.type}</span>
+                </div>
 
-        <h3 style={{ fontSize: '1.1rem', fontWeight: 'bold', marginBottom: '0.5rem', lineHeight: '1.4' }}>
-            {resource.title}
-        </h3>
-        <p style={{ fontSize: '0.95rem', color: 'var(--color-text-light)', marginBottom: '1rem', flex: 1 }}>
-            {resource.description}
+                <h3 style={{ fontSize: '1rem', fontWeight: '700', color: '#1c1108', lineHeight: 1.4 }}>
+                    {resource.title}
+                </h3>
+
+                <p style={{ fontSize: '0.875rem', color: '#6b7280', lineHeight: 1.65, flex: 1 }}>
+                    {resource.description}
+                </p>
+
+                <button
+                    onClick={() => hasLink && setShowViewer(true)}
+                    disabled={!hasLink}
+                    style={{
+                        marginTop: 'auto',
+                        padding: '0.55rem 1rem',
+                        borderRadius: '6px',
+                        border: 'none',
+                        backgroundColor: hasLink ? '#1c1108' : '#f3f4f6',
+                        color: hasLink ? '#ffffff' : '#9ca3af',
+                        fontWeight: '600',
+                        fontSize: '0.85rem',
+                        cursor: hasLink ? 'pointer' : 'default',
+                        transition: 'opacity 0.2s',
+                    }}
+                >
+                    {hasLink ? 'Open Resource' : 'Coming Soon'}
+                </button>
+            </div>
+
+            {/* Iframe Modal Viewer */}
+            {showViewer && (
+                <div
+                    onClick={() => setShowViewer(false)}
+                    style={{
+                        position: 'fixed', inset: 0,
+                        backgroundColor: 'rgba(0,0,0,0.6)',
+                        zIndex: 1000,
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        padding: '2rem',
+                    }}
+                >
+                    <div
+                        onClick={e => e.stopPropagation()}
+                        style={{
+                            width: '100%',
+                            maxWidth: '900px',
+                            height: '80vh',
+                            backgroundColor: '#fff',
+                            borderRadius: '12px',
+                            overflow: 'hidden',
+                            display: 'flex',
+                            flexDirection: 'column',
+                        }}
+                    >
+                        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '1rem 1.5rem', borderBottom: '1px solid #e5e7eb' }}>
+                            <span style={{ fontWeight: '700', color: '#1c1108', fontSize: '0.95rem' }}>{resource.title}</span>
+                            <button
+                                onClick={() => setShowViewer(false)}
+                                style={{ background: 'none', border: 'none', fontSize: '1.25rem', cursor: 'pointer', color: '#6b7280' }}
+                            >✕</button>
+                        </div>
+                        <iframe
+                            src={resource.url}
+                            title={resource.title}
+                            style={{ flex: 1, border: 'none', width: '100%' }}
+                        />
+                    </div>
+                </div>
+            )}
+        </>
+    );
+};
+
+const EmptyState = ({ category }) => (
+    <div style={{
+        gridColumn: '1 / -1',
+        textAlign: 'center',
+        padding: '4rem 2rem',
+        color: '#9ca3af',
+    }}>
+        <div style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>📂</div>
+        <p style={{ fontSize: '1rem', fontWeight: '600', color: '#6b7280', marginBottom: '0.5rem' }}>
+            {category} materials are being prepared.
         </p>
-
-        <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap', marginBottom: '1.5rem', fontSize: '0.85rem', color: 'var(--color-text-light)' }}>
-            <span style={{ backgroundColor: '#f3f4f6', padding: '0.25rem 0.5rem', borderRadius: '4px' }}>{resource.gradeLevel}</span>
-            <span style={{ backgroundColor: '#f3f4f6', padding: '0.25rem 0.5rem', borderRadius: '4px' }}>{resource.language}</span>
-        </div>
-
-        <a
-            href={resource.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn btn-outline"
-            style={{ width: '100%', marginTop: 'auto', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem' }}
-        >
-            {resource.url !== '#' ? 'Open Folder' : 'Open'} <ExternalLink size={16} />
-        </a>
+        <p style={{ fontSize: '0.875rem' }}>
+            Check back soon — we'll add resources here as they're created.
+        </p>
     </div>
 );
 
 const Resources = () => {
-    const [activeTab, setActiveTab] = useState('learning'); // 'learning' or 'bridgeline'
-
-    const learningResources = resources.filter(r => r.section === 'learning');
-    const bridgeLineResources = resources.filter(r => r.section === 'bridgeline');
+    const [activeCategory, setActiveCategory] = useState('Math');
+    const filtered = resources.filter(r => r.category === activeCategory);
 
     return (
         <>
             <PageHero
-                title="Resources & Materials"
-                subtitle="Access our library of tutoring worksheets, learning guides, and School Start Guide Packs."
+                title="Resources"
+                subtitle="Free learning materials for students and families — added as we create them."
                 imageSrc="/images/hero-resources.jpg"
             />
-            {/* Note Section moved below Hero */}
-            <div style={{ padding: '2rem 0', textAlign: 'center', backgroundColor: '#fffbeb' }}>
-                <p style={{
-                    maxWidth: '800px',
-                    margin: '0 auto',
-                    color: '#92400e',
-                    fontSize: '0.95rem',
-                    fontWeight: '500'
-                }}>
-                    Note: Materials are updated regularly. Educational support only—no medical advice.
-                </p>
-            </div>
 
             <Section>
-                {/* Tabs */}
-                <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '3rem', gap: '1rem' }}>
-                    <button
-                        onClick={() => setActiveTab('learning')}
-                        style={{
-                            padding: '0.75rem 1.5rem',
-                            borderRadius: '999px',
-                            border: activeTab === 'learning' ? 'none' : '1px solid #d1d5db',
-                            backgroundColor: activeTab === 'learning' ? 'var(--color-primary)' : 'transparent',
-                            color: activeTab === 'learning' ? 'white' : 'var(--color-text)',
-                            fontWeight: '600',
-                            cursor: 'pointer',
-                            transition: 'all 0.2s'
-                        }}
-                    >
-                        Learning Materials
-                    </button>
-                    <button
-                        onClick={() => setActiveTab('bridgeline')}
-                        style={{
-                            padding: '0.75rem 1.5rem',
-                            borderRadius: '999px',
-                            border: activeTab === 'bridgeline' ? 'none' : '1px solid #d1d5db',
-                            backgroundColor: activeTab === 'bridgeline' ? 'var(--color-red-program)' : 'transparent',
-                            color: activeTab === 'bridgeline' ? 'white' : 'var(--color-text)',
-                            fontWeight: '600',
-                            cursor: 'pointer',
-                            transition: 'all 0.2s'
-                        }}
-                    >
-                        School Start Guide Pack
-                    </button>
+                {/* Category Tabs */}
+                <div style={{ display: 'flex', justifyContent: 'center', gap: '0.75rem', marginBottom: '3rem', flexWrap: 'wrap' }}>
+                    {CATEGORIES.map(cat => (
+                        <CategoryTab
+                            key={cat}
+                            label={cat}
+                            active={activeCategory === cat}
+                            onClick={() => setActiveCategory(cat)}
+                        />
+                    ))}
                 </div>
 
-                {/* Content */}
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}>
-                    {activeTab === 'learning' && learningResources.map(resource => (
-                        <ResourceCard key={resource.id} resource={resource} />
-                    ))}
-                    {activeTab === 'bridgeline' && bridgeLineResources.map(resource => (
-                        <ResourceCard key={resource.id} resource={resource} />
-                    ))}
+                {/* Resource Grid */}
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '1.5rem' }}>
+                    {filtered.length === 0
+                        ? <EmptyState category={activeCategory} />
+                        : filtered.map(r => <ResourceCard key={r.id} resource={r} />)
+                    }
                 </div>
             </Section>
         </>

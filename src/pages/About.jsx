@@ -1,7 +1,6 @@
 import React from 'react';
 import Section from '../components/Section';
 import PageHero from '../components/PageHero';
-import StoryMapSection from '../components/StoryMapSection';
 import { useTranslation } from 'react-i18next';
 
 const About = () => {
@@ -18,33 +17,35 @@ const About = () => {
             <Section>
                 <div style={{ display: 'grid', gap: '4rem', maxWidth: '900px', margin: '0 auto' }}>
                     <div>
-                        <h2 style={{ fontSize: '2rem', fontWeight: 'bold', marginBottom: '1.5rem', color: 'var(--color-primary)' }}>
+                        <h2 style={{ fontSize: '2rem', fontWeight: 'bold', marginBottom: '1.5rem', color: '#1c1108' }}>
                             {t('about.missionTitle')}
                         </h2>
-                        <p style={{ fontSize: '1.2rem', lineHeight: '1.8', color: 'var(--color-text)', fontWeight: '400' }}>
+                        <p style={{ fontSize: '1.05rem', lineHeight: '1.85', color: '#374151', fontWeight: '400' }}>
                             {t('about.missionText1')}
                         </p>
-                        <p style={{ fontSize: '1.2rem', lineHeight: '1.8', color: 'var(--color-text)', fontWeight: '400', marginTop: '1rem' }}>
+                        <p style={{ fontSize: '1.05rem', lineHeight: '1.85', color: '#374151', fontWeight: '400', marginTop: '1.5rem' }}>
                             {t('about.missionText2')}
                         </p>
-                        <p style={{ fontSize: '0.9rem', color: 'var(--color-text-light)', marginTop: '1rem', fontStyle: 'italic' }}>
-                            {t('about.missionDisclaimer')}
+                        <p style={{ fontSize: '1.05rem', lineHeight: '1.85', color: '#374151', fontWeight: '400', marginTop: '1.5rem' }}>
+                            {t('about.missionText3a')}
                         </p>
+                        <p style={{ fontSize: '1.05rem', lineHeight: '1.85', color: '#374151', fontWeight: '400', marginTop: '1rem' }}>
+                            {t('about.missionText3b')}
+                        </p>
+
                     </div>
 
-                    <StoryMapSection />
-
                     <div>
-                        <h2 style={{ fontSize: '2rem', fontWeight: 'bold', marginBottom: '1.5rem', color: 'var(--color-primary)' }}>
+                        <h2 style={{ fontSize: '2rem', fontWeight: 'bold', marginBottom: '1.5rem', color: '#1c1108' }}>
                             {t('about.whyTitle')}
                         </h2>
-                        <p style={{ fontSize: '1.1rem', lineHeight: '1.8', color: 'var(--color-text)' }}>
+                        <p style={{ fontSize: '1.05rem', lineHeight: '1.85', color: '#374151' }}>
                             {t('about.whyText')}
                         </p>
                     </div>
 
                     <div>
-                        <h2 style={{ fontSize: '2rem', fontWeight: 'bold', marginBottom: '1.5rem', color: 'var(--color-primary)' }}>
+                        <h2 style={{ fontSize: '2rem', fontWeight: 'bold', marginBottom: '1.5rem', color: '#1c1108' }}>
                             {t('about.valuesTitle')}
                         </h2>
                         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '2rem' }}>

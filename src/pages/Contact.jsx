@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Section from '../components/Section';
 import PageHero from '../components/PageHero';
-import { Mail, Instagram, CheckCircle } from 'lucide-react';
+import { Mail, Instagram, CheckCircle, AlertCircle } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 
 const CONTACT_EMAIL = 'jiyunkimm0503@gmail.com';
@@ -52,7 +52,7 @@ const Contact = () => {
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '4rem' }}>
 
                     {/* Contact Info */}
-                    <div>
+                    <div style={{ paddingTop: '2rem' }}>
                         <h2 style={{ fontSize: '1.5rem', fontWeight: 'bold', marginBottom: '1.5rem' }}>
                             {t('contact.infoTitle')}
                         </h2>
@@ -75,11 +75,7 @@ const Contact = () => {
                             </a>
                         </div>
 
-                        <div style={{ marginTop: '2rem', padding: '1.25rem', backgroundColor: '#f0fdf4', borderRadius: 'var(--radius-md)', border: '1px solid #bbf7d0' }}>
-                            <p style={{ color: '#166534', fontSize: '0.9rem', margin: 0 }}>
-                                📬 {t('contact.infoResponse')}
-                            </p>
-                        </div>
+
 
                         <div style={{ marginTop: '2rem' }}>
                             <h3 style={{ fontSize: '1.1rem', fontWeight: 'bold', marginBottom: '0.75rem' }}>Privacy &amp; Safety</h3>
@@ -92,7 +88,7 @@ const Contact = () => {
                     {/* Form */}
                     <div className="card" style={{ padding: '2rem' }}>
                         <h2 style={{ fontSize: '1.5rem', fontWeight: 'bold', marginBottom: '1.5rem' }}>
-                            {t('contact.formBtn') === 'Enviar mensaje' ? 'Enviar un mensaje' : 'Send a Message'}
+                            {t('contact.formTitle')}
                         </h2>
 
                         {/* 성공 메시지 */}
