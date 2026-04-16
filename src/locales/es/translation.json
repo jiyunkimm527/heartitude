@@ -9,70 +9,70 @@
     "contact": "Contacto"
   },
   "home": {
-    "heroTitle": "Aprendizaje continuo —\nsin importar dónde estén.",
-    "heroSubtitle": "En Panamá, notamos una barrera invisible: los estudiantes se quedan atrás no solo por el idioma o la falta de información, sino también por el cansancio y los recursos de apoyo limitados. Heartitude responde con apoyo de aprendizaje escolar, apoyo en espacios de cuidado, y herramientas BioRhythm que facilitan el acceso a rutinas y materiales educativos.",
-    "volunteerBtn": "Sé voluntario",
-    "partnerBtn": "Ser socio",
-    "bannerText": "Apoyo práctico que mantiene el aprendizaje continuo—en la escuela y en los espacios de cuidado.",
-    "pathTitle": "Un camino hacia adelante",
-    "pathSubtitle": "Cómo ayudamos a los estudiantes a navegar su camino educativo.",
-    "bioRhythmLabel": "Herramientas BioRhythm (Base de investigación)",
-    "bioRhythmSub": "Pronóstico de Enfoque + Lista de Estudio",
-    "track1Title": "Apoyo de Aprendizaje Escolar",
-    "track1Sub": "Apoyo en escuelas públicas + Guía de Inicio Escolar",
+    "heroTitle": "El lugar donde aprendes no debería determinar cuánto aprendes.",
+    "heroSubtitle": "Heartitude es un club de servicio estudiantil en Panamá. Ofrecemos apoyo en inglés y matemáticas, creamos nuestros propios materiales y estudiamos los entornos donde los niños aprenden — para que cada niño tenga una oportunidad justa de concentrarse y crecer.",
+    "volunteerBtn": "Ser Voluntario",
+    "partnerBtn": "Consulta de Asociación",
+    "bannerText": "Vamos donde el aprendizaje es necesario — con tutoría, materiales y la convicción de que cada niño merece un comienzo igual.",
+    "pathTitle": "Cómo Ayudamos",
+    "pathSubtitle": "Dos líneas de servicio, un objetivo: aprendizaje igualitario para cada niño.",
+    "bioRhythmLabel": "BioRhythm (Base de Investigación)",
+    "bioRhythmSub": "Midiendo lo que el aprendizaje necesita",
+    "track1Title": "Apoyo al Contenido de Aprendizaje",
+    "track1Sub": "Inglés en línea · Matemáticas presenciales, cada semana",
     "track1Steps": {
       "1": {
-        "title": "Alianza y planificación",
-        "desc": "Colaborando con las escuelas."
+        "title": "Inglés",
+        "desc": "Tardes entre semana — sesiones en línea para estudiantes."
       },
       "2": {
-        "title": "Apoyo semanal",
-        "desc": "Sesiones regulares de tutoría."
+        "title": "Matemáticas",
+        "desc": "Cada sábado — visitas presenciales a la escuela."
       },
       "3": {
-        "title": "Creación de materiales",
-        "desc": "Contenido EN/ES y Guía de Inicio Escolar."
+        "title": "Materiales",
+        "desc": "Hojas de trabajo y materiales de estudio personalizados, hechos por nosotros."
       },
       "4": {
-        "title": "Mejorar el entorno",
-        "desc": "Cambios simples y de bajo costo."
+        "title": "Apoyo Emocional",
+        "desc": "Presentes con calidez y aliento, más allá de lo académico."
       }
     },
-    "track2Title": "Apoyo de Aprendizaje en Espacios de Cuidado",
-    "track2Sub": "Apoyo en cuidado + Paquete de Aprendizaje para Espacios de Cuidado",
+    "track2Title": "Apoyo al Entorno de Aprendizaje",
+    "track2Sub": "Investigación BioRhythm — estudiando dónde aprenden los niños",
     "track2Disclaimer": "Solo apoyo educativo—no se da consejo médico.",
     "track2Steps": {
       "1": {
-        "title": "Alianza y apoyo",
-        "desc": "En espacios de cuidado."
+        "title": "Identificar",
+        "desc": "Observar los espacios donde los niños estudian."
       },
       "2": {
-        "title": "Apoyo flexible",
-        "desc": "Sesiones cortas y adaptables."
+        "title": "Medir",
+        "desc": "Registrar ruido, iluminación, temperatura y humedad."
       },
       "3": {
-        "title": "Paquete de cuidado",
-        "desc": "Tarjetas de rutina y menú de aprendizaje."
+        "title": "Analizar",
+        "desc": "Comprender cómo el entorno afecta la concentración y la ansiedad."
       },
       "4": {
-        "title": "Mejorar la oferta",
-        "desc": "Rincones tranquilos e iluminación."
+        "title": "Mejorar",
+        "desc": "Recomendar cambios prácticos y de bajo costo."
       }
     },
-    "valuesEyebrow": "Nuestro nombre, nuestra promesa",
+    "valuesEyebrow": "Nuestro Nombre, Nuestra Promesa",
     "valuesHeading": "Nuestro nombre lo dice todo.",
-    "valuesSubtitle": "Heartitude — una mezcla de Corazón, Actitud y Altitud.",
+    "valuesSubtitle": "Heartitude — una mezcla de Corazón y Actitud.",
     "heart": {
       "num": "01",
       "title": "Corazón",
-      "sub": "Corazón compasivo",
-      "desc": "Representamos la empatía y sinceridad necesarias para abordar las barreras invisibles en Panamá."
+      "sub": "Empatía en Acción",
+      "desc": "Nos presentamos con calidez y cuidado genuino por cada niño que apoyamos — no solo como tutores, sino como personas que creen en ellos."
     },
     "attitude": {
       "num": "02",
       "title": "Actitud",
-      "sub": "Acción",
-      "desc": "El verdadero cambio no viene de la simple simpatía, sino de una actitud proactiva y profesional para resolver problemas."
+      "sub": "Constante y Práctica",
+      "desc": "El cambio real viene de presentarse de manera constante y resolver problemas con enfoques prácticos y de bajo costo — semana tras semana."
     },
     "altitude": {
       "num": "03",
