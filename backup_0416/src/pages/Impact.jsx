@@ -21,19 +21,19 @@ const Impact = () => {
                 <div style={{ maxWidth: '860px', margin: '0 auto' }}>
 
                     <p style={{
-                        fontSize: 'var(--size-overline)',
+                        fontSize: '0.72rem',
                         fontWeight: '700',
                         letterSpacing: '0.14em',
                         textTransform: 'uppercase',
-                        color: 'var(--color-text-subtle)',
+                        color: '#9ca3af',
                         marginBottom: '1rem',
                     }}>
                         {t('impact.principlesTitle')}
                     </p>
 
                     <p style={{
-                        fontSize: 'var(--size-body-md)',
-                        color: 'var(--color-text-body)',
+                        fontSize: '1.05rem',
+                        color: '#374151',
                         lineHeight: 1.75,
                         marginBottom: '3rem',
                         maxWidth: '620px',
@@ -90,11 +90,11 @@ const Impact = () => {
                 <div style={{ maxWidth: '860px', margin: '0 auto' }}>
 
                     <p style={{
-                        fontSize: 'var(--size-overline)',
+                        fontSize: '0.72rem',
                         fontWeight: '700',
                         letterSpacing: '0.14em',
                         textTransform: 'uppercase',
-                        color: 'var(--color-text-subtle)',
+                        color: '#9ca3af',
                         marginBottom: '1rem',
                     }}>
                         {t('impact.activitiesTitle')}

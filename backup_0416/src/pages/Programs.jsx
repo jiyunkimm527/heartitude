@@ -18,26 +18,25 @@ const Programs = () => {
                 <div style={{
                     display: 'grid',
                     gridTemplateColumns: '1fr 1px 1fr',
-                    gap: '0 2rem',
+                    gap: '0 5rem',
                     alignItems: 'start',
-                    padding: '0 2.5rem',
                 }}>
 
                     {/* ── Track 01 ── */}
                     <div>
                         <p style={{
-                            fontSize: 'var(--size-overline)',
+                            fontSize: '0.72rem',
                             fontWeight: '700',
                             letterSpacing: '0.14em',
                             textTransform: 'uppercase',
-                            color: 'var(--color-text-subtle)',
+                            color: '#9ca3af',
                             marginBottom: '1.25rem',
                         }}>01</p>
 
                         <h2 style={{
-                            fontSize: 'var(--size-h2)',
+                            fontSize: '1.75rem',
                             fontWeight: '800',
-                            color: 'var(--color-text-dark)',
+                            color: '#1c1108',
                             letterSpacing: '-0.02em',
                             lineHeight: 1.2,
                             marginBottom: '2rem',
@@ -65,7 +64,7 @@ const Programs = () => {
                             </li>
                         </ul>
 
-                        <p style={{ fontSize: 'var(--size-body)', color: 'var(--color-text-body)', lineHeight: 1.75, marginBottom: '2.5rem' }}>
+                        <p style={{ fontSize: '0.925rem', color: '#374151', lineHeight: 1.75, marginBottom: '2.5rem' }}>
                             {t('programs.track1Materials')}
                         </p>
 
@@ -86,20 +85,20 @@ const Programs = () => {
                     <div style={{ backgroundColor: '#e5e7eb', height: '100%', minHeight: '400px' }} />
 
                     {/* ── Track 02 ── */}
-                    <div style={{ paddingLeft: '1.5rem' }}>
+                    <div>
                         <p style={{
-                            fontSize: 'var(--size-overline)',
+                            fontSize: '0.72rem',
                             fontWeight: '700',
                             letterSpacing: '0.14em',
                             textTransform: 'uppercase',
-                            color: 'var(--color-text-subtle)',
+                            color: '#9ca3af',
                             marginBottom: '1.25rem',
                         }}>02</p>
 
                         <h2 style={{
-                            fontSize: 'var(--size-h2)',
+                            fontSize: '1.75rem',
                             fontWeight: '800',
-                            color: 'var(--color-text-dark)',
+                            color: '#1c1108',
                             letterSpacing: '-0.02em',
                             lineHeight: 1.2,
                             marginBottom: '0.75rem',

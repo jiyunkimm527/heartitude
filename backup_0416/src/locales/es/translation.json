@@ -9,70 +9,70 @@
     "contact": "Contacto"
   },
   "home": {
-    "heroTitle": "El lugar donde aprendes no debería determinar cuánto aprendes.",
-    "heroSubtitle": "Heartitude es un club de servicio estudiantil en Panamá. Ofrecemos apoyo en inglés y matemáticas, creamos nuestros propios materiales y estudiamos los entornos donde los niños aprenden — para que cada niño tenga una oportunidad justa de concentrarse y crecer.",
-    "volunteerBtn": "Ser Voluntario",
-    "partnerBtn": "Consulta de Asociación",
-    "bannerText": "Vamos donde el aprendizaje es necesario — con tutoría, materiales y la convicción de que cada niño merece un comienzo igual.",
-    "pathTitle": "Cómo Ayudamos",
-    "pathSubtitle": "Dos líneas de servicio, un objetivo: aprendizaje igualitario para cada niño.",
-    "bioRhythmLabel": "BioRhythm (Base de Investigación)",
-    "bioRhythmSub": "Midiendo lo que el aprendizaje necesita",
-    "track1Title": "Apoyo al Contenido de Aprendizaje",
-    "track1Sub": "Inglés en línea · Matemáticas presenciales, cada semana",
+    "heroTitle": "Aprendizaje continuo —\nsin importar dónde estén.",
+    "heroSubtitle": "En Panamá, notamos una barrera invisible: los estudiantes se quedan atrás no solo por el idioma o la falta de información, sino también por el cansancio y los recursos de apoyo limitados. Heartitude responde con apoyo de aprendizaje escolar, apoyo en espacios de cuidado, y herramientas BioRhythm que facilitan el acceso a rutinas y materiales educativos.",
+    "volunteerBtn": "Sé voluntario",
+    "partnerBtn": "Ser socio",
+    "bannerText": "Apoyo práctico que mantiene el aprendizaje continuo—en la escuela y en los espacios de cuidado.",
+    "pathTitle": "Un camino hacia adelante",
+    "pathSubtitle": "Cómo ayudamos a los estudiantes a navegar su camino educativo.",
+    "bioRhythmLabel": "Herramientas BioRhythm (Base de investigación)",
+    "bioRhythmSub": "Pronóstico de Enfoque + Lista de Estudio",
+    "track1Title": "Apoyo de Aprendizaje Escolar",
+    "track1Sub": "Apoyo en escuelas públicas + Guía de Inicio Escolar",
     "track1Steps": {
       "1": {
-        "title": "Inglés",
-        "desc": "Tardes entre semana — sesiones en línea para estudiantes."
+        "title": "Alianza y planificación",
+        "desc": "Colaborando con las escuelas."
       },
       "2": {
-        "title": "Matemáticas",
-        "desc": "Cada sábado — visitas presenciales a la escuela."
+        "title": "Apoyo semanal",
+        "desc": "Sesiones regulares de tutoría."
       },
       "3": {
-        "title": "Materiales",
-        "desc": "Hojas de trabajo y materiales de estudio personalizados, hechos por nosotros."
+        "title": "Creación de materiales",
+        "desc": "Contenido EN/ES y Guía de Inicio Escolar."
       },
       "4": {
-        "title": "Apoyo Emocional",
-        "desc": "Presentes con calidez y aliento, más allá de lo académico."
+        "title": "Mejorar el entorno",
+        "desc": "Cambios simples y de bajo costo."
       }
     },
-    "track2Title": "Apoyo al Entorno de Aprendizaje",
-    "track2Sub": "Investigación BioRhythm — estudiando dónde aprenden los niños",
+    "track2Title": "Apoyo de Aprendizaje en Espacios de Cuidado",
+    "track2Sub": "Apoyo en cuidado + Paquete de Aprendizaje para Espacios de Cuidado",
     "track2Disclaimer": "Solo apoyo educativo—no se da consejo médico.",
     "track2Steps": {
       "1": {
-        "title": "Identificar",
-        "desc": "Observar los espacios donde los niños estudian."
+        "title": "Alianza y apoyo",
+        "desc": "En espacios de cuidado."
       },
       "2": {
-        "title": "Medir",
-        "desc": "Registrar ruido, iluminación, temperatura y humedad."
+        "title": "Apoyo flexible",
+        "desc": "Sesiones cortas y adaptables."
       },
       "3": {
-        "title": "Analizar",
-        "desc": "Comprender cómo el entorno afecta la concentración y la ansiedad."
+        "title": "Paquete de cuidado",
+        "desc": "Tarjetas de rutina y menú de aprendizaje."
       },
       "4": {
-        "title": "Mejorar",
-        "desc": "Recomendar cambios prácticos y de bajo costo."
+        "title": "Mejorar la oferta",
+        "desc": "Rincones tranquilos e iluminación."
       }
     },
-    "valuesEyebrow": "Nuestro Nombre, Nuestra Promesa",
+    "valuesEyebrow": "Nuestro nombre, nuestra promesa",
     "valuesHeading": "Nuestro nombre lo dice todo.",
-    "valuesSubtitle": "Heartitude — una mezcla de Corazón y Actitud.",
+    "valuesSubtitle": "Heartitude — una mezcla de Corazón, Actitud y Altitud.",
     "heart": {
       "num": "01",
       "title": "Corazón",
-      "sub": "Empatía en Acción",
-      "desc": "Nos presentamos con calidez y cuidado genuino por cada niño que apoyamos — no solo como tutores, sino como personas que creen en ellos."
+      "sub": "Corazón compasivo",
+      "desc": "Representamos la empatía y sinceridad necesarias para abordar las barreras invisibles en Panamá."
     },
     "attitude": {
       "num": "02",
       "title": "Actitud",
-      "sub": "Constante y Práctica",
-      "desc": "El cambio real viene de presentarse de manera constante y resolver problemas con enfoques prácticos y de bajo costo — semana tras semana."
+      "sub": "Acción",
+      "desc": "El verdadero cambio no viene de la simple simpatía, sino de una actitud proactiva y profesional para resolver problemas."
     },
     "altitude": {
       "num": "03",
@@ -85,9 +85,7 @@
     "missionTileLink": "Leer más →",
     "involvedTileTitle": "Participa",
     "involvedTileDesc": "Sé voluntario o socio para llevar los paquetes a tu comunidad.",
-    "involvedTileLink": "Únete →",
-    "partnersLabel": "Aliados Comunitarios",
-    "partnersSubtitle": "Organizaciones junto a las cuales servimos con orgullo en Ciudad de Panamá"
+    "involvedTileLink": "Únete →"
   },
   "about": {
     "heroTitle": "Acerca de Heartitude",
@@ -169,27 +167,15 @@
     "activitiesTitle": "Lo Que Hemos Hecho",
     "activities": [
       {
-        "date": "Enero 2026",
-        "title": "Inicio de Alianza con Latidos",
-        "desc": "Asistimos a las sesiones de apoyo emocional de Fundación Latidos, iniciamos la planificación del currículo de matemáticas y comenzamos el desarrollo de una aplicación educativa.",
-        "status": "active"
-      },
-      {
-        "date": "Febrero 2026",
-        "title": "Materiales de Conversación en Inglés",
-        "desc": "Desarrollamos guías de conversación en inglés y hojas de práctica originales utilizadas en las sesiones semanales en línea — abarcando saludos, vocabulario cotidiano y diálogos básicos.",
-        "status": "active"
-      },
-      {
-        "date": "Marzo 2026",
+        "date": "Marzo 2025",
         "title": "Inglés en Línea",
-        "desc": "Iniciamos sesiones de tutoría de inglés en línea por las tardes para estudiantes de la Fundación Gabriel Lewis Galindo en Ciudad de Panamá.",
+        "desc": "Iniciamos sesiones de inglés en línea por las tardes para estudiantes de una escuela local en Ciudad de Panamá.",
         "status": "active"
       },
       {
-        "date": "Abril 2026",
+        "date": "Abril 2025 —",
         "title": "Matemáticas Presenciales",
-        "desc": "Comenzamos visitas semanales de tutoría presencial de matemáticas cada sábado para estudiantes de la Fundación Latidos en Ciudad de Panamá.",
+        "desc": "Comenzamos visitas semanales de tutoría presencial de matemáticas cada sábado en una escuela local.",
         "status": "active"
       },
       {
@@ -248,10 +234,7 @@
     "quickLinks": "Enlaces rápidos",
     "linkAbout": "Acerca de nosotros",
     "linkPrograms": "Nuestros programas",
-    "linkResources": "Recursos",
     "linkImpact": "Impacto",
-    "linkGetInvolved": "Participa",
-    "linkContact": "Contacto",
     "linkVolunteer": "Ser voluntario",
     "contactTitle": "Contáctanos",
     "copyright": "© 2026 Heartitude Club. Todos los derechos reservados."

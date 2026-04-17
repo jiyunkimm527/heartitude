@@ -12,7 +12,6 @@ const Navbar = () => {
     const toggleLanguage = () => {
         const next = i18n.language === 'es' ? 'en' : 'es';
         i18n.changeLanguage(next);
-        localStorage.setItem('i18nextLng', next);
     };
 
     const navLinks = [
@@ -53,25 +52,13 @@ const Navbar = () => {
                     align-items: center;
                     padding: 0.35rem 0;
                     transition: color 0.2s;
-                    position: relative;
                 }
                 .nav-link-item.nav-active {
-                    color: #1c1108;
+                    color: #4f46e5;
                     font-weight: 700;
                 }
-                .nav-link-item.nav-active::after {
-                    content: '';
-                    position: absolute;
-                    bottom: -4px;
-                    left: 50%;
-                    transform: translateX(-50%);
-                    width: 18px;
-                    height: 2.5px;
-                    background: #fbbf24;
-                    border-radius: 99px;
-                }
                 .nav-link-item:hover {
-                    color: #1c1108;
+                    color: #4f46e5;
                 }
                 .nav-link-home     { width: 72px;  }
                 .nav-link-about    { width: 88px;  }

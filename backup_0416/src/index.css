@@ -12,19 +12,6 @@
   --color-accent: #2563eb;
   --color-accent-light: #eff6ff;
 
-  /* ── Amber Brand Accent (warm, consistent) ── */
-  --color-amber: #fde68a;       /* border / underline accent */
-  --color-amber-mid: #fbbf24;   /* interactive amber */
-  --color-amber-dark: #b45309;  /* amber text / icon */
-  --color-amber-bg: #fef3c7;    /* light amber fill (step circles) */
-  --color-amber-deep: #1c1108;  /* warm near-black for badges/headings */
-
-  /* ── Text Color Hierarchy ── */
-  --color-text-dark: #1c1108;   /* headings — warm dark */
-  --color-text-body: #374151;   /* standard body paragraphs */
-  --color-text-muted: #6b7280;  /* secondary / descriptions */
-  --color-text-subtle: #9ca3af; /* overlines, timestamps, labels */
-
   /* Program Colors - refined */
   --color-red-program: #e11d48;
   --color-red-bg: #fff1f2;
@@ -46,16 +33,6 @@
   --font-heading: 'Inter', sans-serif;
   --font-body: 'Inter', sans-serif;
   --font-display: 'DM Serif Display', serif;
-
-  /* ── Typography Scale ── */
-  --size-overline: 0.72rem;   /* SMALL ALL-CAPS LABELS */
-  --size-body-sm: 0.875rem;   /* small descriptions */
-  --size-body: 0.925rem;      /* standard body */
-  --size-body-md: 1.05rem;    /* medium body / lead text */
-  --size-h4: 0.95rem;         /* card titles */
-  --size-h3: 1.4rem;          /* sub-section headings */
-  --size-h2: 1.75rem;         /* section headings (all pages use this) */
-  --size-h1: 2.25rem;         /* page-level section titles */
 
   /* Shadows */
   --shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 0.06), 0 1px 2px -1px rgb(0 0 0 / 0.04);
@@ -222,60 +199,4 @@ img {
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-}
-
-/* ── Typography Utilities ── */
-
-/* Small all-caps overline label (01, 02, FRAMEWORK, WHAT WE STAND FOR…) */
-.overline {
-  font-size: var(--size-overline);
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--color-text-subtle);
-}
-
-/* Standard section h2 */
-.section-h2 {
-  font-size: var(--size-h2);
-  font-weight: 800;
-  color: var(--color-text-dark);
-  letter-spacing: -0.02em;
-  line-height: 1.2;
-  margin-bottom: 1.5rem;
-}
-
-/* Body paragraph — standard */
-.body-text {
-  font-size: var(--size-body-md);
-  color: var(--color-text-body);
-  line-height: 1.75;
-}
-
-/* Secondary / description text */
-.body-muted {
-  font-size: var(--size-body);
-  color: var(--color-text-muted);
-  line-height: 1.75;
-}
-
-/* Amber accent left-border list item */
-.accent-list-item {
-  padding-left: 1rem;
-  border-left: 2px solid var(--color-amber);
-}
-
-/* Step number circle */
-.step-circle {
-  width: 26px;
-  height: 26px;
-  border-radius: 50%;
-  background-color: var(--color-amber-bg);
-  color: var(--color-amber-dark);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.75rem;
-  font-weight: 800;
-  flex-shrink: 0;
 }

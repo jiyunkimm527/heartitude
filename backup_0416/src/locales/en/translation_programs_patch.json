@@ -1,0 +1,19 @@
+{
+  "programs": {
+    "heroTitle": "Our Programs",
+    "heroSubtitle": "We go where learning is needed.",
+    "track1Title": "Learning Content Support",
+    "track1English": "English",
+    "track1EnglishSchedule": "Weekday afternoons, online",
+    "track1Math": "Math",
+    "track1MathSchedule": "Every Saturday, in-person school visits",
+    "track1Materials": "We create and provide our own learning materials and worksheets. Beyond academics, we show up with warmth and emotional encouragement.",
+    "track1HealthTitle": "Health Record Booklet",
+    "track1HealthBadge": "Coming Soon",
+    "track1HealthDesc": "A practical tool to help children track vaccinations, medications, and health routines.",
+    "track2Title": "Learning Environment Support",
+    "track2Badge": "BioRhythm · Research Backbone",
+    "track2Premise": "Reducing anxiety is the first condition for learning.",
+    "track2Desc": "We measure how noise, lighting, temperature, and humidity in hospitals and care spaces affect a child's sense of calm and ability to focus. We then research practical, low-cost improvements — such as lighting placement and quiet corner setup — to create better learning conditions."
+  }
+}

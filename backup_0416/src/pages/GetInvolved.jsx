@@ -32,18 +32,18 @@ const GetInvolved = () => {
                     {/* Volunteer */}
                     <div style={{ padding: '0 3rem 0 0' }}>
                         <p style={{
-                            fontSize: 'var(--size-overline)',
+                            fontSize: '0.72rem',
                             fontWeight: '700',
                             letterSpacing: '0.14em',
                             textTransform: 'uppercase',
-                            color: 'var(--color-text-subtle)',
+                            color: '#9ca3af',
                             marginBottom: '1.25rem',
                         }}>01</p>
 
                         <h2 style={{
-                            fontSize: 'var(--size-h2)',
+                            fontSize: '2rem',
                             fontWeight: '800',
-                            color: 'var(--color-text-dark)',
+                            color: '#111827',
                             letterSpacing: '-0.025em',
                             lineHeight: 1.15,
                             marginBottom: '1.25rem',
@@ -52,8 +52,8 @@ const GetInvolved = () => {
                         </h2>
 
                         <p style={{
-                            fontSize: 'var(--size-body)',
-                            color: 'var(--color-text-muted)',
+                            fontSize: '0.95rem',
+                            color: '#6b7280',
                             lineHeight: 1.75,
                             marginBottom: '2rem',
                             minHeight: '5.5rem',
@@ -115,18 +115,18 @@ const GetInvolved = () => {
                     {/* Partner */}
                     <div style={{ padding: '0 0 0 3rem' }}>
                         <p style={{
-                            fontSize: 'var(--size-overline)',
+                            fontSize: '0.72rem',
                             fontWeight: '700',
                             letterSpacing: '0.14em',
                             textTransform: 'uppercase',
-                            color: 'var(--color-text-subtle)',
+                            color: '#9ca3af',
                             marginBottom: '1.25rem',
                         }}>02</p>
 
                         <h2 style={{
-                            fontSize: 'var(--size-h2)',
+                            fontSize: '2rem',
                             fontWeight: '800',
-                            color: 'var(--color-text-dark)',
+                            color: '#111827',
                             letterSpacing: '-0.025em',
                             lineHeight: 1.15,
                             marginBottom: '1.25rem',
@@ -135,8 +135,8 @@ const GetInvolved = () => {
                         </h2>
 
                         <p style={{
-                            fontSize: 'var(--size-body)',
-                            color: 'var(--color-text-muted)',
+                            fontSize: '0.95rem',
+                            color: '#6b7280',
                             lineHeight: 1.75,
                             marginBottom: '2rem',
                             minHeight: '5.5rem',

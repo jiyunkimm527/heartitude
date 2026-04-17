@@ -1,23 +1,26 @@
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
+import LanguageDetector from 'i18next-browser-languagedetector';
 
 import es from './locales/es/translation.json';
 import en from './locales/en/translation.json';
 
-// 저장된 언어 읽기 (없으면 기본값 'es')
-const savedLang = localStorage.getItem('i18nextLng') || 'es';
-
 i18n
+    .use(LanguageDetector)
     .use(initReactI18next)
     .init({
         resources: {
             es: { translation: es },
             en: { translation: en }
         },
-        lng: savedLang,
+        lng: 'es',           // 기본 언어: 스페인어
         fallbackLng: 'es',
         interpolation: {
             escapeValue: false
+        },
+        detection: {
+            order: ['localStorage'],
+            caches: ['localStorage']
         }
     });
 

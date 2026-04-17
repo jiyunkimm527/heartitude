@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Resources Mockup — Heartitude</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: #f9fafb;
+    color: #1f2937;
+  }
+
+  /* ── Hero ─────────────────────────────── */
+  .hero {
+    background: linear-gradient(135deg, #1e3a5f 0%, #0f2545 100%);
+    padding: 4rem 2rem;
+    text-align: center;
+    color: white;
+  }
+  .hero h1 {
+    font-family: 'Nunito', sans-serif;
+    font-size: 2.8rem;
+    font-weight: 800;
+    margin-bottom: 0.75rem;
+  }
+  .hero p {
+    font-size: 1.1rem;
+    opacity: 0.85;
+    max-width: 560px;
+    margin: 0 auto;
+  }
+
+  /* ── Notice bar ──────────────────────── */
+  .notice {
+    background: #fffbeb;
+    border-bottom: 1px solid #fde68a;
+    padding: 0.85rem 2rem;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #92400e;
+    font-weight: 500;
+  }
+
+  /* ── Main layout ─────────────────────── */
+  .page { max-width: 1200px; margin: 0 auto; padding: 3rem 2rem; }
+
+  /* ── Section tabs ────────────────────── */
+  .section-tabs {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-bottom: 2.5rem;
+  }
+  .section-tab {
+    padding: 0.65rem 1.75rem;
+    border-radius: 999px;
+    border: 2px solid #d1d5db;
+    background: white;
+    font-weight: 700;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    color: #6b7280;
+  }
+  .section-tab.active-learn {
+    background: #1e3a5f; border-color: #1e3a5f; color: white;
+  }
+  .section-tab.active-bridge {
+    background: #c0392b; border-color: #c0392b; color: white;
+  }
+
+  /* ── Category filter chips ───────────── */
+  .filter-bar {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 2.5rem;
+  }
+  .chip {
+    padding: 0.4rem 1rem;
+    border-radius: 999px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: all 0.15s;
+  }
+  .chip-all   { background: #1e3a5f; color: white; }
+  .chip-math  { background: #dbeafe; color: #1e40af; border-color: #1e40af20; }
+  .chip-eng   { background: #dcfce7; color: #166534; border-color: #16653420; }
+  .chip-esl   { background: #ffedd5; color: #c2410c; border-color: #c2410c20; }
+  .chip-study { background: #f3e8ff; color: #6b21a8; border-color: #6b21a820; }
+
+  /* ── Grid ────────────────────────────── */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 1.5rem;
+  }
+
+  /* ── Card ────────────────────────────── */
+  .card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: box-shadow 0.2s, transform 0.2s;
+  }
+  .card:hover {
+    box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+    transform: translateY(-2px);
+  }
+
+  /* colour stripe at top of card */
+  .card-stripe { height: 5px; }
+  .stripe-math  { background: linear-gradient(90deg, #2563eb, #60a5fa); }
+  .stripe-eng   { background: linear-gradient(90deg, #16a34a, #4ade80); }
+  .stripe-esl   { background: linear-gradient(90deg, #ea580c, #fb923c); }
+  .stripe-study { background: linear-gradient(90deg, #7c3aed, #c084fc); }
+  .stripe-guide { background: linear-gradient(90deg, #c0392b, #e57373); }
+
+  .card-body { padding: 1.25rem 1.5rem 0; flex: 1; }
+
+  /* top row: category badge + type pill */
+  .card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.85rem;
+  }
+  .badge {
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 0.25rem 0.6rem;
+    border-radius: 6px;
+  }
+  .badge-math  { background: #dbeafe; color: #1e40af; }
+  .badge-eng   { background: #dcfce7; color: #166534; }
+  .badge-esl   { background: #ffedd5; color: #c2410c; }
+  .badge-study { background: #f3e8ff; color: #6b21a8; }
+  .badge-guide { background: #fee2e2; color: #991b1b; }
+
+  .type-pill {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-size: 0.78rem;
+    color: #6b7280;
+    background: #f3f4f6;
+    padding: 0.2rem 0.55rem;
+    border-radius: 6px;
+    font-weight: 500;
+  }
+  .type-icon { font-size: 0.85rem; }
+
+  /* title */
+  .card-title {
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 800;
+    line-height: 1.35;
+    margin-bottom: 0.4rem;
+    color: #111827;
+  }
+
+  /* description */
+  .card-desc {
+    font-size: 0.88rem;
+    color: #6b7280;
+    line-height: 1.5;
+    margin-bottom: 0.85rem;
+  }
+
+  /* meta tags */
+  .card-meta {
+    display: flex;
+    gap: 0.4rem;
+    flex-wrap: wrap;
+    margin-bottom: 1.1rem;
+  }
+  .meta-tag {
+    font-size: 0.75rem;
+    color: #374151;
+    background: #f9fafb;
+    border: 1px solid #e5e7eb;
+    padding: 0.2rem 0.55rem;
+    border-radius: 6px;
+    font-weight: 500;
+  }
+
+  /* card footer */
+  .card-footer {
+    padding: 0 1.5rem 1.25rem;
+  }
+  .btn-open {
+    width: 100%;
+    padding: 0.65rem;
+    border-radius: 8px;
+    font-size: 0.88rem;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    transition: all 0.2s;
+    text-decoration: none;
+  }
+  .btn-available {
+    background: #1e3a5f;
+    color: white;
+    border: none;
+  }
+  .btn-available:hover { background: #162d4a; }
+  .btn-soon {
+    background: white;
+    color: #9ca3af;
+    border: 1.5px dashed #d1d5db;
+    cursor: default;
+  }
+
+  /* ── Section label ───────────────────── */
+  .section-label {
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: #111827;
+    margin-bottom: 1.25rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #e5e7eb;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .subject-section { margin-bottom: 3rem; }
+</style>
+</head>
+<body>
+
+<!-- Hero -->
+<div class="hero">
+  <h1>📚 Resources &amp; Materials</h1>
+  <p>Access our library of tutoring worksheets, learning guides, and School Start Guide Packs.</p>
+</div>
+
+<!-- Notice -->
+<div class="notice">
+  📝 Materials are updated regularly. Educational support only — no medical advice.
+</div>
+
+<div class="page">
+
+  <!-- Section Tabs -->
+  <div class="section-tabs">
+    <button class="section-tab active-learn">📖 Learning Materials</button>
+    <button class="section-tab">🎒 School Start Guide Pack</button>
+  </div>
+
+  <!-- Filter chips -->
+  <div class="filter-bar">
+    <span class="chip chip-all">All</span>
+    <span class="chip chip-math">🔢 Math</span>
+    <span class="chip chip-eng">📝 English</span>
+    <span class="chip chip-esl">🌐 ESL</span>
+    <span class="chip chip-study">📌 Study Skills</span>
+  </div>
+
+  <!-- ── MATH Section ───────────────── -->
+  <div class="subject-section">
+    <div class="section-label">🔢 Math</div>
+    <div class="grid">
+
+      <!-- Card 1 -->
+      <div class="card">
+        <div class="card-stripe stripe-math"></div>
+        <div class="card-body">
+          <div class="card-top">
+            <span class="badge badge-math">Math</span>
+            <span class="type-pill"><span class="type-icon">📄</span> Worksheet</span>
+          </div>
+          <div class="card-title">Grade 3 Math — Fractions Practice</div>
+          <div class="card-desc">Equivalent fractions + number line exercises for hands-on practice.</div>
+          <div class="card-meta">
+            <span class="meta-tag">Grade 3</span>
+            <span class="meta-tag">EN / ES</span>
+          </div>
+        </div>
+        <div class="card-footer">
+          <a href="#" class="btn-open btn-available">📂 Open Folder ↗</a>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="card">
+        <div class="card-stripe stripe-math"></div>
+        <div class="card-body">
+          <div class="card-top">
+            <span class="badge badge-math">Math</span>
+            <span class="type-pill"><span class="type-icon">📄</span> Worksheet</span>
+          </div>
+          <div class="card-title">Grade 4 Math — Multiplication & Division Review</div>
+          <div class="card-desc">Comprehensive review set covering all multiplication and division concepts.</div>
+          <div class="card-meta">
+            <span class="meta-tag">Grade 4</span>
+            <span class="meta-tag">EN</span>
+          </div>
+        </div>
+        <div class="card-footer">
+          <a href="#" class="btn-open btn-available">📂 Open Folder ↗</a>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="card">
+        <div class="card-stripe stripe-math"></div>
+        <div class="card-body">
+          <div class="card-top">
+            <span class="badge badge-math">Math</span>
+            <span class="type-pill"><span class="type-icon">📊</span> Slides</span>
+          </div>
+          <div class="card-title">Grade 6 Math — Ratios & Proportions Intro</div>
+          <div class="card-desc">Introduction to ratio concepts with visual examples and practice problems.</div>
+          <div class="card-meta">
+            <span class="meta-tag">Grade 6</span>
+            <span class="meta-tag">EN</span>
+          </div>
+        </div>
+        <div class="card-footer">
+          <a href="#" class="btn-open btn-available">📂 Open Folder ↗</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ── ENGLISH Section ─────────────── -->
+  <div class="subject-section">
+    <div class="section-label">📝 English</div>
+    <div class="grid">
+
+      <!-- Card 4 -->
+      <div class="card">
+        <div class="card-stripe stripe-eng"></div>
+        <div class="card-body">
+          <div class="card-top">
+            <span class="badge badge-eng">English</span>
+            <span class="type-pill"><span class="type-icon">📊</span> Slides</span>
+          </div>
+          <div class="card-title">Middle School English — Grammar Essentials</div>
+          <div class="card-desc">Parts of Speech deep dive — perfect for reviewing grammar fundamentals.</div>
+          <div class="card-meta">
+            <span class="meta-tag">Middle School</span>
+            <span class="meta-tag">EN / KR</span>
+          </div>
+        </div>
+        <div class="card-footer">
+          <a href="#" class="btn-open btn-available">📂 Open Folder ↗</a>
+        </div>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="card">
+        <div class="card-stripe stripe-eng"></div>
+        <div class="card-body">
+          <div class="card-top">
+            <span class="badge badge-eng">English</span>
+            <span class="type-pill"><span class="type-icon">📃</span> Doc</span>
+          </div>
+          <div class="card-title">High School English — Thesis & Evidence Organizer</div>
+          <div class="card-desc">Essay planning tool to structure arguments with evidence effectively.</div>
+          <div class="card-meta">
+            <span class="meta-tag">High School</span>
+            <span class="meta-tag">EN</span>
+          </div>
+        </div>
+        <div class="card-footer">
+          <a href="#" class="btn-open btn-available">📂 Open Folder ↗</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ── ESL Section ─────────────────── -->
+  <div class="subject-section">
+    <div class="section-label">🌐 ESL</div>
+    <div class="grid">
+
+      <!-- Card 6 — Coming Soon -->
+      <div class="card">
+        <div class="card-stripe stripe-esl"></div>
+        <div class="card-body">
+          <div class="card-top">
+            <span class="badge badge-esl">ESL</span>
+            <span class="type-pill"><span class="type-icon">📋</span> PDF</span>
+          </div>
+          <div class="card-title">ESL Support — Classroom Phrases + School Communication</div>
+          <div class="card-desc">Essential phrases for school settings — perfect for newcomer families.</div>
+          <div class="card-meta">
+            <span class="meta-tag">All Ages</span>
+            <span class="meta-tag">EN / ES</span>
+            <span class="meta-tag" style="background:#fef9c3;color:#854d0e;border-color:#fde047;">⏳ Coming Soon</span>
+          </div>
+        </div>
+        <div class="card-footer">
+          <button class="btn-open btn-soon" disabled>🔒 Coming Soon</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ── Study Skills Section ────────── -->
+  <div class="subject-section">
+    <div class="section-label">📌 Study Skills</div>
+    <div class="grid">
+
+      <!-- Card 7 — Coming Soon -->
+      <div class="card">
+        <div class="card-stripe stripe-study"></div>
+        <div class="card-body">
+          <div class="card-top">
+            <span class="badge badge-study">Study Skills</span>
+            <span class="type-pill"><span class="type-icon">📋</span> PDF</span>
+          </div>
+          <div class="card-title">Study Skills — Weekly Study Checklist</div>
+          <div class="card-desc">Routine building checklist to help students stay consistent and on track.</div>
+          <div class="card-meta">
+            <span class="meta-tag">All Ages</span>
+            <span class="meta-tag">EN / KR</span>
+            <span class="meta-tag" style="background:#fef9c3;color:#854d0e;border-color:#fde047;">⏳ Coming Soon</span>
+          </div>
+        </div>
+        <div class="card-footer">
+          <button class="btn-open btn-soon" disabled>🔒 Coming Soon</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div><!-- /page -->
+
+</body>
+</html>

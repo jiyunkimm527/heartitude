@@ -86,23 +86,56 @@ const Home = () => {
 
                 <div style={{ maxWidth: '1100px', margin: '0 auto', padding: '0 1.5rem' }}>
 
-
+                    {/* BioRhythm Ribbon */}
+                    <div style={{
+                        background: 'linear-gradient(135deg, #0f172a 0%, #1e3a5f 50%, #312e81 100%)',
+                        borderRadius: '14px',
+                        padding: '1.75rem 2.5rem',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'space-between',
+                        gap: '1.5rem',
+                        marginBottom: '4rem',
+                        flexWrap: 'wrap',
+                        boxShadow: '0 8px 32px rgba(15,23,42,0.22)',
+                    }}>
+                        <div>
+                            <p style={{ fontSize: '0.7rem', fontWeight: '700', letterSpacing: '0.14em', textTransform: 'uppercase', color: 'rgba(165,180,252,0.9)', marginBottom: '0.4rem' }}>
+                                Research Backbone
+                            </p>
+                            <h3 style={{ fontSize: '1.2rem', fontWeight: '700', color: 'white', fontFamily: 'var(--font-heading)' }}>
+                                {t('home.bioRhythmLabel')}
+                            </h3>
+                        </div>
+                        <div style={{
+                            backgroundColor: 'rgba(255,255,255,0.08)',
+                            border: '1px solid rgba(255,255,255,0.15)',
+                            borderRadius: '10px',
+                            padding: '0.6rem 1.4rem',
+                            color: 'rgba(255,255,255,0.85)',
+                            fontSize: '0.9rem',
+                            fontWeight: '500',
+                            whiteSpace: 'nowrap',
+                        }}>
+                            {t('home.bioRhythmSub')}
+                        </div>
+                    </div>
 
                     {/* Track 1 */}
                     <div style={{ marginBottom: '5rem' }}>
                         <div style={{
                             display: 'flex', alignItems: 'center', gap: '1rem',
                             marginBottom: '2rem', paddingBottom: '1.25rem',
-                            borderBottom: '1px solid var(--color-amber)',
+                            borderBottom: '1px solid #fecdd3',
                         }}>
                             <span style={{
-                                backgroundColor: '#1c1108', color: 'white',
+                                backgroundColor: '#e11d48', color: 'white',
                                 borderRadius: '6px', padding: '0.2rem 0.7rem',
                                 fontSize: '0.68rem', fontWeight: '800', letterSpacing: '0.1em',
                                 textTransform: 'uppercase',
                             }}>Track 01</span>
                             <div>
-                                <h3 style={{ fontSize: '1.4rem', fontWeight: '700', color: '#1c1108', lineHeight: 1.2, letterSpacing: '-0.02em' }}>
+                                <h3 style={{ fontSize: '1.4rem', fontWeight: '700', color: 'var(--color-primary)', lineHeight: 1.2, letterSpacing: '-0.02em' }}>
                                     {t('home.track1Title')}
                                 </h3>
                                 <p style={{ fontSize: '0.875rem', color: 'var(--color-text-light)', marginTop: '0.2rem' }}>
@@ -117,18 +150,24 @@ const Home = () => {
                                     backgroundColor: 'white',
                                     borderRadius: '12px',
                                     padding: '1.6rem 1.5rem',
-                                    borderLeft: '3px solid var(--color-amber)',
+                                    borderLeft: '3px solid #e11d48',
                                     boxShadow: '0 1px 6px rgba(0,0,0,0.05)',
                                     transition: 'box-shadow 0.2s, transform 0.2s',
                                 }}
-                                    onMouseEnter={e => { e.currentTarget.style.boxShadow = '0 6px 24px rgba(180,83,9,0.1)'; e.currentTarget.style.transform = 'translateY(-2px)'; }}
+                                    onMouseEnter={e => { e.currentTarget.style.boxShadow = '0 6px 24px rgba(225,29,72,0.12)'; e.currentTarget.style.transform = 'translateY(-2px)'; }}
                                     onMouseLeave={e => { e.currentTarget.style.boxShadow = '0 1px 6px rgba(0,0,0,0.05)'; e.currentTarget.style.transform = 'translateY(0)'; }}
                                 >
-                                    <div className="step-circle" style={{ marginBottom: '0.9rem' }}>{num}</div>
-                                    <h4 style={{ fontSize: 'var(--size-h4)', fontWeight: '700', marginBottom: '0.45rem', color: 'var(--color-text-dark)', lineHeight: 1.3 }}>
+                                    <div style={{
+                                        width: '26px', height: '26px', borderRadius: '50%',
+                                        backgroundColor: '#fff1f2', color: '#e11d48',
+                                        display: 'flex', alignItems: 'center', justifyContent: 'center',
+                                        fontSize: '0.75rem', fontWeight: '800',
+                                        marginBottom: '0.9rem',
+                                    }}>{num}</div>
+                                    <h4 style={{ fontSize: '0.95rem', fontWeight: '700', marginBottom: '0.45rem', color: '#0f172a', lineHeight: 1.3 }}>
                                         {t(`home.track1Steps.${num}.title`)}
                                     </h4>
-                                    <p style={{ color: 'var(--color-text-muted)', fontSize: 'var(--size-body-sm)', lineHeight: '1.65' }}>
+                                    <p style={{ color: 'var(--color-text-light)', fontSize: '0.85rem', lineHeight: '1.65' }}>
                                         {t(`home.track1Steps.${num}.desc`)}
                                     </p>
                                 </div>
@@ -141,16 +180,16 @@ const Home = () => {
                         <div style={{
                             display: 'flex', alignItems: 'center', gap: '1rem',
                             marginBottom: '2rem', paddingBottom: '1.25rem',
-                            borderBottom: '1px solid var(--color-amber)',
+                            borderBottom: '1px solid #c7d2fe',
                         }}>
                             <span style={{
-                                backgroundColor: 'var(--color-amber-deep)', color: 'white',
+                                backgroundColor: '#4f46e5', color: 'white',
                                 borderRadius: '6px', padding: '0.2rem 0.7rem',
                                 fontSize: '0.68rem', fontWeight: '800', letterSpacing: '0.1em',
                                 textTransform: 'uppercase',
                             }}>Track 02</span>
                             <div>
-                                <h3 style={{ fontSize: '1.4rem', fontWeight: '700', color: '#1c1108', lineHeight: 1.2, letterSpacing: '-0.02em' }}>
+                                <h3 style={{ fontSize: '1.4rem', fontWeight: '700', color: 'var(--color-primary)', lineHeight: 1.2, letterSpacing: '-0.02em' }}>
                                     {t('home.track2Title')}
                                 </h3>
                                 <p style={{ fontSize: '0.875rem', color: 'var(--color-text-light)', marginTop: '0.2rem' }}>
@@ -165,18 +204,24 @@ const Home = () => {
                                     backgroundColor: 'white',
                                     borderRadius: '12px',
                                     padding: '1.6rem 1.5rem',
-                                    borderLeft: '3px solid var(--color-amber)',
+                                    borderLeft: '3px solid #4f46e5',
                                     boxShadow: '0 1px 6px rgba(0,0,0,0.05)',
                                     transition: 'box-shadow 0.2s, transform 0.2s',
                                 }}
-                                    onMouseEnter={e => { e.currentTarget.style.boxShadow = '0 6px 24px rgba(180,83,9,0.1)'; e.currentTarget.style.transform = 'translateY(-2px)'; }}
+                                    onMouseEnter={e => { e.currentTarget.style.boxShadow = '0 6px 24px rgba(79,70,229,0.12)'; e.currentTarget.style.transform = 'translateY(-2px)'; }}
                                     onMouseLeave={e => { e.currentTarget.style.boxShadow = '0 1px 6px rgba(0,0,0,0.05)'; e.currentTarget.style.transform = 'translateY(0)'; }}
                                 >
-                                    <div className="step-circle" style={{ marginBottom: '0.9rem' }}>{num}</div>
-                                    <h4 style={{ fontSize: 'var(--size-h4)', fontWeight: '700', marginBottom: '0.45rem', color: 'var(--color-text-dark)', lineHeight: 1.3 }}>
+                                    <div style={{
+                                        width: '26px', height: '26px', borderRadius: '50%',
+                                        backgroundColor: '#eef2ff', color: '#4f46e5',
+                                        display: 'flex', alignItems: 'center', justifyContent: 'center',
+                                        fontSize: '0.75rem', fontWeight: '800',
+                                        marginBottom: '0.9rem',
+                                    }}>{num}</div>
+                                    <h4 style={{ fontSize: '0.95rem', fontWeight: '700', marginBottom: '0.45rem', color: '#0f172a', lineHeight: 1.3 }}>
                                         {t(`home.track2Steps.${num}.title`)}
                                     </h4>
-                                    <p style={{ color: 'var(--color-text-muted)', fontSize: 'var(--size-body-sm)', lineHeight: '1.65' }}>
+                                    <p style={{ color: 'var(--color-text-light)', fontSize: '0.85rem', lineHeight: '1.65' }}>
                                         {t(`home.track2Steps.${num}.desc`)}
                                     </p>
                                 </div>
@@ -195,13 +240,27 @@ const Home = () => {
                     gap: '1.5rem'
                 }}>
                     {/* Mission Tile */}
-                    <Link to="/about" style={{ display: 'block', position: 'relative', borderRadius: 'var(--radius-xl)', overflow: 'hidden', color: 'white', backgroundColor: '#1e3a5f' }}>
-                        <div style={{ padding: '2rem 2.5rem' }}>
+                    <Link to="/about" style={{ display: 'block', position: 'relative', height: '280px', borderRadius: 'var(--radius-xl)', overflow: 'hidden', color: 'white' }}>
+                        <div style={{
+                            position: 'absolute', inset: 0,
+                            backgroundImage: 'url(/images/tile-mission.jpg)',
+                            backgroundSize: 'cover', backgroundPosition: 'center',
+                            backgroundColor: '#1e3a5f',
+                            transition: 'transform 0.4s ease',
+                        }}></div>
+                        <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(15,23,42,0.9) 0%, rgba(15,23,42,0.3) 60%, transparent 100%)' }}></div>
+                        <div style={{
+                            position: 'absolute', inset: 0,
+                            padding: '2.5rem',
+                            display: 'flex',
+                            flexDirection: 'column',
+                            justifyContent: 'flex-end',
+                        }}>
                             <p style={{ fontSize: '0.7rem', fontWeight: '700', letterSpacing: '0.12em', textTransform: 'uppercase', color: 'rgba(165,180,252,0.9)', marginBottom: '0.5rem' }}>Mission</p>
-                            <h2 style={{ fontSize: '1.5rem', fontWeight: '800', marginBottom: '0.4rem', letterSpacing: '-0.02em', lineHeight: 1.2 }}>
+                            <h2 style={{ fontSize: '1.75rem', fontWeight: '800', marginBottom: '0.5rem', letterSpacing: '-0.02em', lineHeight: 1.2 }}>
                                 {t('home.missionTileTitle')}
                             </h2>
-                            <p style={{ fontSize: '0.9rem', marginBottom: '1rem', opacity: 0.75, lineHeight: 1.5 }}>
+                            <p style={{ fontSize: '0.95rem', marginBottom: '1rem', opacity: 0.8, lineHeight: 1.5 }}>
                                 {t('home.missionTileDesc')}
                             </p>
                             <span style={{ fontSize: '0.85rem', fontWeight: '600', color: 'rgba(165,180,252,1)' }}>{t('home.missionTileLink')}</span>
@@ -209,55 +268,32 @@ const Home = () => {
                     </Link>
 
                     {/* Get Involved Tile */}
-                    <Link to="/get-involved" style={{ display: 'block', position: 'relative', borderRadius: 'var(--radius-xl)', overflow: 'hidden', color: 'white', backgroundColor: '#1e293b' }}>
-                        <div style={{ padding: '2rem 2.5rem' }}>
+                    <Link to="/get-involved" style={{ display: 'block', position: 'relative', height: '280px', borderRadius: 'var(--radius-xl)', overflow: 'hidden', color: 'white' }}>
+                        <div style={{
+                            position: 'absolute', inset: 0,
+                            backgroundImage: 'url(/images/tile-involved.jpg)',
+                            backgroundSize: 'cover', backgroundPosition: 'center',
+                            backgroundColor: '#1e293b',
+                            transition: 'transform 0.4s ease',
+                        }}></div>
+                        <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(15,23,42,0.9) 0%, rgba(15,23,42,0.3) 60%, transparent 100%)' }}></div>
+                        <div style={{
+                            position: 'absolute', inset: 0,
+                            padding: '2.5rem',
+                            display: 'flex',
+                            flexDirection: 'column',
+                            justifyContent: 'flex-end',
+                        }}>
                             <p style={{ fontSize: '0.7rem', fontWeight: '700', letterSpacing: '0.12em', textTransform: 'uppercase', color: 'rgba(252,211,77,0.9)', marginBottom: '0.5rem' }}>Join Us</p>
-                            <h2 style={{ fontSize: '1.5rem', fontWeight: '800', marginBottom: '0.4rem', letterSpacing: '-0.02em', lineHeight: 1.2 }}>
+                            <h2 style={{ fontSize: '1.75rem', fontWeight: '800', marginBottom: '0.5rem', letterSpacing: '-0.02em', lineHeight: 1.2 }}>
                                 {t('home.involvedTileTitle')}
                             </h2>
-                            <p style={{ fontSize: '0.9rem', marginBottom: '1rem', opacity: 0.75, lineHeight: 1.5 }}>
+                            <p style={{ fontSize: '0.95rem', marginBottom: '1rem', opacity: 0.8, lineHeight: 1.5 }}>
                                 {t('home.involvedTileDesc')}
                             </p>
                             <span style={{ fontSize: '0.85rem', fontWeight: '600', color: 'rgba(252,211,77,1)' }}>{t('home.involvedTileLink')}</span>
                         </div>
                     </Link>
-                </div>
-            </Section>
-
-            {/* ── Community Partners ── */}
-            <Section style={{ backgroundColor: '#f9fafb', paddingTop: '2.5rem', paddingBottom: '2.5rem' }}>
-                <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
-                    <p style={{
-                        fontSize: 'var(--size-overline)',
-                        fontWeight: '700',
-                        letterSpacing: '0.14em',
-                        textTransform: 'uppercase',
-                        color: 'var(--color-text-subtle)',
-                        marginBottom: '0.5rem',
-                    }}>{t('home.partnersLabel')}</p>
-                    <p style={{ fontSize: '0.95rem', color: 'var(--color-text-muted)' }}>{t('home.partnersSubtitle')}</p>
-                </div>
-                <div style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    gap: '4rem',
-                    flexWrap: 'wrap',
-                }}>
-                    <div style={{ textAlign: 'center' }}>
-                        <img
-                            src="/images/logo-latidos.png"
-                            alt="Fundación Latidos"
-                            style={{ height: '56px', width: 'auto', objectFit: 'contain', filter: 'grayscale(20%)', opacity: 0.85 }}
-                        />
-                    </div>
-                    <div style={{ textAlign: 'center' }}>
-                        <img
-                            src="/images/logo-gabriel-lewis.webp"
-                            alt="Fundación Gabriel Lewis Galindo"
-                            style={{ height: '52px', width: 'auto', objectFit: 'contain', filter: 'grayscale(20%)', opacity: 0.85 }}
-                        />
-                    </div>
                 </div>
             </Section>
         </>

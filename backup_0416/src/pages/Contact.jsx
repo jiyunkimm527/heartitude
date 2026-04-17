@@ -53,7 +53,7 @@ const Contact = () => {
 
                     {/* Contact Info */}
                     <div style={{ paddingTop: '2rem' }}>
-                        <h2 style={{ fontSize: 'var(--size-h2)', fontWeight: '800', marginBottom: '1.5rem', color: 'var(--color-text-dark)', letterSpacing: '-0.02em', lineHeight: 1.2 }}>
+                        <h2 style={{ fontSize: '1.5rem', fontWeight: 'bold', marginBottom: '1.5rem' }}>
                             {t('contact.infoTitle')}
                         </h2>
                         <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
@@ -78,8 +78,8 @@ const Contact = () => {
 
 
                         <div style={{ marginTop: '2rem' }}>
-                            <h3 style={{ fontSize: 'var(--size-h4)', fontWeight: '700', marginBottom: '0.75rem', color: 'var(--color-text-dark)' }}>Privacy &amp; Safety</h3>
-                            <p style={{ color: 'var(--color-text-muted)', fontSize: 'var(--size-body-sm)', lineHeight: '1.6' }}>
+                            <h3 style={{ fontSize: '1.1rem', fontWeight: 'bold', marginBottom: '0.75rem' }}>Privacy &amp; Safety</h3>
+                            <p style={{ color: 'var(--color-text-light)', fontSize: '0.9rem', lineHeight: '1.6' }}>
                                 We prioritize the privacy of our students and volunteers. No patient-identifying photos or personal data are shared. Our content is strictly educational support, not medical advice.
                             </p>
                         </div>
@@ -87,7 +87,7 @@ const Contact = () => {
 
                     {/* Form */}
                     <div className="card" style={{ padding: '2rem' }}>
-                        <h2 style={{ fontSize: 'var(--size-h2)', fontWeight: '800', marginBottom: '1.5rem', color: 'var(--color-text-dark)', letterSpacing: '-0.02em', lineHeight: 1.2 }}>
+                        <h2 style={{ fontSize: '1.5rem', fontWeight: 'bold', marginBottom: '1.5rem' }}>
                             {t('contact.formTitle')}
                         </h2>
 

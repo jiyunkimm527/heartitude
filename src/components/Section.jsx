@@ -4,13 +4,17 @@ const Section = ({
     children,
     className = '',
     id = '',
-    light = false
+    light = false,
+    style = {},
 }) => {
-    // light prop can be used to alternate background colors if needed
-    // checking if bg is needed, otherwise default transparent/white
+    const defaultBg = light ? 'var(--color-bg-light)' : 'transparent';
 
     return (
-        <section id={id} className={`section-padding ${className}`} style={{ backgroundColor: light ? 'var(--color-bg-light)' : 'transparent' }}>
+        <section
+            id={id}
+            className={`section-padding ${className}`}
+            style={{ backgroundColor: defaultBg, ...style }}
+        >
             <div className="container">
                 {children}
             </div>

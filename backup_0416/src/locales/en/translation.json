@@ -9,70 +9,70 @@
     "contact": "Contact"
   },
   "home": {
-    "heroTitle": "Where you learn should not determine how much you learn.",
-    "heroSubtitle": "Heartitude is a student-led service club in Panama. We provide English and math learning support, create our own materials, and research the environments where children learn — so every child has a fair chance to focus and grow.",
+    "heroTitle": "We keep students learning — no matter where they are.",
+    "heroSubtitle": "In Panama, we noticed an invisible barrier: students fall behind not only from language or missing information, but also from fatigue and limited support resources. Heartitude responds with school learning support, care-space learning support, and BioRhythm tools that make routines and learning materials easier to access.",
     "volunteerBtn": "Volunteer with Us",
     "partnerBtn": "Partner Inquiry",
-    "bannerText": "We go where learning is needed — with tutoring, materials, and the belief that every child deserves an equal start.",
-    "pathTitle": "How We Help",
-    "pathSubtitle": "Two service tracks, one goal: equal learning for every child.",
-    "bioRhythmLabel": "BioRhythm (Research Backbone)",
-    "bioRhythmSub": "Measuring what learning needs",
-    "track1Title": "Learning Content Support",
-    "track1Sub": "English online · Math in-person, every week",
+    "bannerText": "Practical support that keeps learning continuous—at school and in care spaces.",
+    "pathTitle": "A Path forward",
+    "pathSubtitle": "How we help students navigate their educational journey.",
+    "bioRhythmLabel": "BioRhythm Tools (Research Backbone)",
+    "bioRhythmSub": "Focus Forecast + Study Checklist",
+    "track1Title": "School Learning Support",
+    "track1Sub": "Public school support + School Start Pack",
     "track1Steps": {
       "1": {
-        "title": "English Support",
-        "desc": "Weekday afternoons — online sessions for students."
+        "title": "Partner & Plan",
+        "desc": "Collaborating with schools."
       },
       "2": {
-        "title": "Math Support",
-        "desc": "Every Saturday — in-person school visits."
+        "title": "Weekly Support",
+        "desc": "Regular tutoring sessions."
       },
       "3": {
-        "title": "Learning Materials",
-        "desc": "Custom worksheets and study materials, made by us."
+        "title": "Build Materials",
+        "desc": "EN/ES content & School Start Pack."
       },
       "4": {
-        "title": "Emotional Support",
-        "desc": "Present with warmth and encouragement, beyond academics."
+        "title": "Improve Env.",
+        "desc": "Simple low-cost changes."
       }
     },
-    "track2Title": "Learning Environment Support",
-    "track2Sub": "BioRhythm research — studying where children learn",
+    "track2Title": "Care-Space Learning Support",
+    "track2Sub": "care support + Care-Space Learning Pack",
     "track2Disclaimer": "Educational support only—no medical advice.",
     "track2Steps": {
       "1": {
-        "title": "Identify",
-        "desc": "Observe the spaces where children study."
+        "title": "Partner & Support",
+        "desc": "In care spaces."
       },
       "2": {
-        "title": "Measure",
-        "desc": "Record noise, lighting, temperature, and humidity."
+        "title": "Flexible Support",
+        "desc": "Short, adaptable sessions."
       },
       "3": {
-        "title": "Analyze",
-        "desc": "Understand how the environment affects focus and anxiety."
+        "title": "Care-Space Pack",
+        "desc": "Routine cards & learning menu."
       },
       "4": {
-        "title": "Improve",
-        "desc": "Recommend practical, low-cost changes."
+        "title": "Improve Offering",
+        "desc": "Quiet corners & lighting."
       }
     },
     "valuesEyebrow": "Our Name, Our Promise",
     "valuesHeading": "Our name says it all.",
-    "valuesSubtitle": "Heartitude — a blend of Heart and Attitude.",
+    "valuesSubtitle": "Heartitude — a blend of Heart, Attitude, and Altitude.",
     "heart": {
       "num": "01",
       "title": "Heart",
-      "sub": "Empathy in Action",
-      "desc": "We show up with warmth and genuine care for every child we support — not just as tutors, but as people who believe in them."
+      "sub": "Heart of Compassion",
+      "desc": "We represent the empathy and sincerity needed to address the invisible barriers in Panama."
     },
     "attitude": {
       "num": "02",
       "title": "Attitude",
-      "sub": "Consistent & Practical",
-      "desc": "Real change comes from showing up consistently and solving problems with practical, low-cost approaches — week after week."
+      "sub": "Action",
+      "desc": "True change doesn't come from mere sympathy, but from a proactive and professional attitude toward solving problems."
     },
     "altitude": {
       "num": "03",
@@ -85,9 +85,7 @@
     "missionTileLink": "Read More →",
     "involvedTileTitle": "Get Involved",
     "involvedTileDesc": "Volunteer with us or partner to bring packs to your community.",
-    "involvedTileLink": "Join Us →",
-    "partnersLabel": "Community Partners",
-    "partnersSubtitle": "Organizations we proudly serve alongside in Panama City"
+    "involvedTileLink": "Join Us →"
   },
   "about": {
     "heroTitle": "About Heartitude",
@@ -169,27 +167,15 @@
     "activitiesTitle": "What We Have Done",
     "activities": [
       {
-        "date": "January 2026",
-        "title": "Latidos Partnership Begins",
-        "desc": "Attended Fundación Latidos’ emotional support sessions, initiated math curriculum planning, and began development of an educational tutoring app.",
-        "status": "active"
-      },
-      {
-        "date": "February 2026",
-        "title": "English Conversation Materials",
-        "desc": "Developed original English conversation guides and practice sheets used in weekly online sessions — covering greetings, daily vocabulary, and basic dialogue.",
-        "status": "active"
-      },
-      {
-        "date": "March 2026",
+        "date": "March 2025",
         "title": "English Online Support",
-        "desc": "Launched weekday afternoon online English tutoring sessions for students at Fundación Gabriel Lewis Galindo in Panama City.",
+        "desc": "Launched weekday afternoon online English sessions for students at a local Panama City school.",
         "status": "active"
       },
       {
-        "date": "April 2026",
+        "date": "April 2025 —",
         "title": "Math In-Person Visits",
-        "desc": "Started weekly Saturday in-person math tutoring visits to students at Fundación Latidos in Panama City.",
+        "desc": "Started weekly Saturday in-person math tutoring visits to a local school.",
         "status": "active"
       },
       {
@@ -248,10 +234,7 @@
     "quickLinks": "Quick Links",
     "linkAbout": "About Us",
     "linkPrograms": "Our Programs",
-    "linkResources": "Resources",
     "linkImpact": "Impact",
-    "linkGetInvolved": "Get Involved",
-    "linkContact": "Contact",
     "linkVolunteer": "Volunteer",
     "contactTitle": "Contact Us",
     "copyright": "© 2026 Heartitude Club. All rights reserved."
