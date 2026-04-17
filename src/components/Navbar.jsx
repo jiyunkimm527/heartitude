@@ -38,6 +38,10 @@ const Navbar = () => {
                 @media (min-width: 900px) {
                     .desktop-nav { display: flex !important; }
                     .mobile-menu-btn { display: none !important; }
+                    .mobile-scroll-nav { display: none !important; }
+                }
+                @media (max-width: 899px) {
+                    .mobile-scroll-nav { display: flex !important; }
                 }
                 .nav-link-item {
                     color: #475569;
@@ -98,6 +102,37 @@ const Navbar = () => {
                     background: #4f46e5;
                     color: white;
                 }
+                .mobile-scroll-nav {
+                    display: none;
+                    overflow-x: auto;
+                    gap: 0;
+                    border-top: 1px solid #f3f4f6;
+                    -webkit-overflow-scrolling: touch;
+                    scrollbar-width: none;
+                }
+                .mobile-scroll-nav::-webkit-scrollbar {
+                    display: none;
+                }
+                .mobile-scroll-nav-link {
+                    flex-shrink: 0;
+                    padding: 0.6rem 1rem;
+                    font-size: 0.7rem;
+                    font-weight: 700;
+                    text-transform: uppercase;
+                    letter-spacing: 0.07em;
+                    color: #6b7280;
+                    text-decoration: none;
+                    white-space: nowrap;
+                    border-bottom: 2px solid transparent;
+                    transition: color 0.2s, border-color 0.2s;
+                }
+                .mobile-scroll-nav-link.nav-active {
+                    color: #1c1108;
+                    border-bottom-color: #fbbf24;
+                }
+                .mobile-scroll-nav-link:hover {
+                    color: #1c1108;
+                }
             `}</style>
 
             <div className="container">
@@ -147,63 +182,40 @@ const Navbar = () => {
                         ))}
                     </div>
 
-                    {/* 열 3: 언어 전환 버튼 + 모바일 메뉴 버튼 */}
+                    {/* 열 3: 언어 전환 버튼 */}
                     <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
                         <button className="lang-btn" onClick={toggleLanguage}>
                             {i18n.language === 'es' ? 'EN' : 'ES'}
-                        </button>
-
-                        {/* 모바일 햄버거 */}
-                        <button
-                            className="mobile-menu-btn"
-                            onClick={toggleMenu}
-                            style={{
-                                background: 'none',
-                                border: 'none',
-                                cursor: 'pointer',
-                                color: 'var(--color-primary)'
-                            }}
-                        >
-                            {isOpen ? <X size={24} /> : <Menu size={24} />}
                         </button>
                     </div>
                 </div>
             </div>
 
+            {/* 모바일 전용: 가로 스크롤 네비바 */}
+            <div
+                className="mobile-scroll-nav"
+                style={{
+                    borderTop: '1px solid #f3f4f6',
+                    backgroundColor: 'rgba(255,255,255,0.97)',
+                    paddingLeft: '0.5rem',
+                    paddingRight: '0.5rem',
+                }}
+            >
+                {navLinks.map((link) => (
+                    <NavLink
+                        key={link.path}
+                        to={link.path}
+                        className={({ isActive }) =>
+                            isActive
+                                ? 'mobile-scroll-nav-link nav-active'
+                                : 'mobile-scroll-nav-link'
+                        }
+                    >
+                        {link.name}
+                    </NavLink>
+                ))}
+            </div>
 
-            {/* 모바일 드롭다운 메뉴 */}
-            {isOpen && (
-                <div style={{
-                    position: 'absolute',
-                    top: '80px',
-                    left: 0,
-                    right: 0,
-                    backgroundColor: 'white',
-                    borderBottom: '1px solid #f3f4f6',
-                    padding: '1rem 0',
-                    boxShadow: 'var(--shadow-lg)'
-                }}>
-                    <div className="container" style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-                        {navLinks.map((link) => (
-                            <Link
-                                key={link.path}
-                                to={link.path}
-                                onClick={() => setIsOpen(false)}
-                                style={{
-                                    padding: '0.75rem 0',
-                                    fontSize: '1.1rem',
-                                    fontWeight: '500',
-                                    color: 'var(--color-primary)',
-                                    borderBottom: '1px solid #f3f4f6',
-                                    textDecoration: 'none'
-                                }}
-                            >
-                                {link.name}
-                            </Link>
-                        ))}
-                    </div>
-                </div>
-            )}
         </nav>
     );
 };
