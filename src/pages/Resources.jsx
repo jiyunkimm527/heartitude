@@ -163,7 +163,7 @@ const EmptyState = ({ cat }) => (
     </div>
 );
 
-const FeaturedAppCard = ({ app }) => {
+const FeaturedAppCard = ({ app, onOpenUrl }) => {
     const [hovered, setHovered] = useState(false);
     return (
         <div
@@ -278,10 +278,8 @@ const FeaturedAppCard = ({ app }) => {
                     </span>
                 </div>
 
-                <a
-                    href={app.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                <button
+                    onClick={() => onOpenUrl(app.url, app.title)}
                     style={{
                         display: 'flex',
                         alignItems: 'center',
@@ -292,7 +290,8 @@ const FeaturedAppCard = ({ app }) => {
                         color: '#ffffff',
                         fontWeight: '700',
                         fontSize: '0.875rem',
-                        textDecoration: 'none',
+                        border: 'none',
+                        cursor: 'pointer',
                         textAlign: 'center',
                         boxShadow: hovered ? '0 10px 15px -3px rgba(0,0,0,0.15)' : 'none',
                         transition: 'all 0.2s ease',
@@ -300,7 +299,7 @@ const FeaturedAppCard = ({ app }) => {
                     }}
                 >
                     {app.btnText}
-                </a>
+                </button>
             </div>
         </div>
     );
@@ -308,6 +307,8 @@ const FeaturedAppCard = ({ app }) => {
 
 const Resources = () => {
     const [activeKey, setActiveKey] = useState('Math');
+    const [embedUrl, setEmbedUrl] = useState(null);
+    const [embedTitle, setEmbedTitle] = useState('');
     const activeCat = CATEGORIES.find(c => c.key === activeKey);
     const filtered = resources.filter(r => r.category === activeKey);
 
@@ -345,6 +346,14 @@ const Resources = () => {
                         50% { transform: scale(1.3); opacity: 0.5; }
                         100% { transform: scale(0.95); opacity: 1; }
                     }
+                    @keyframes fadeIn {
+                        from { opacity: 0; }
+                        to { opacity: 1; }
+                    }
+                    @keyframes slideUp {
+                        from { transform: translateY(20px); opacity: 0; }
+                        to { transform: translateY(0); opacity: 1; }
+                    }
                 `}</style>
 
                 {/* Featured Apps Section for Math */}
@@ -370,7 +379,14 @@ const Resources = () => {
                             gap: '1.5rem',
                         }}>
                             {featuredApps.filter(app => app.category === 'Math').map(app => (
-                                <FeaturedAppCard key={app.id} app={app} />
+                                <FeaturedAppCard 
+                                    key={app.id} 
+                                    app={app} 
+                                    onOpenUrl={(url, title) => {
+                                        setEmbedUrl(url);
+                                        setEmbedTitle(title);
+                                    }}
+                                />
                             ))}
                         </div>
                     </div>
@@ -409,6 +425,96 @@ const Resources = () => {
                     }
                 </div>
             </Section>
+
+            {/* Embedded Iframe Modal Viewer */}
+            {embedUrl && (
+                <div
+                    onClick={() => setEmbedUrl(null)}
+                    style={{
+                        position: 'fixed',
+                        inset: 0,
+                        backgroundColor: 'rgba(15, 23, 42, 0.65)',
+                        backdropFilter: 'blur(4px)',
+                        zIndex: 9999,
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        padding: '1.5rem',
+                        animation: 'fadeIn 0.22s ease-out'
+                    }}
+                >
+                    <div
+                        onClick={e => e.stopPropagation()}
+                        style={{
+                            width: '100%',
+                            maxWidth: '1200px',
+                            height: '85vh',
+                            backgroundColor: '#ffffff',
+                            borderRadius: '16px',
+                            boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25)',
+                            overflow: 'hidden',
+                            display: 'flex',
+                            flexDirection: 'column',
+                            border: '1px solid #e2e8f0',
+                            animation: 'slideUp 0.3s cubic-bezier(0.34, 1.56, 0.64, 1)'
+                        }}
+                    >
+                        {/* Title Bar */}
+                        <div style={{
+                            display: 'flex',
+                            justifyContent: 'space-between',
+                            alignItems: 'center',
+                            padding: '1rem 1.5rem',
+                            borderBottom: '1px solid #e2e8f0',
+                            background: '#f8fafc',
+                            userSelect: 'none'
+                        }}>
+                            <span style={{ fontWeight: '800', color: '#1c1108', fontSize: '1rem' }}>
+                                {embedTitle}
+                            </span>
+                            <button
+                                onClick={() => setEmbedUrl(null)}
+                                style={{
+                                    background: 'none',
+                                    border: 'none',
+                                    fontSize: '1.25rem',
+                                    cursor: 'pointer',
+                                    color: '#64748b',
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    justifyContent: 'center',
+                                    width: '32px',
+                                    height: '32px',
+                                    borderRadius: '50%',
+                                    transition: 'all 0.2s',
+                                }}
+                                onMouseEnter={e => {
+                                    e.currentTarget.style.background = '#e2e8f0';
+                                    e.currentTarget.style.color = '#0f172a';
+                                }}
+                                onMouseLeave={e => {
+                                    e.currentTarget.style.background = 'none';
+                                    e.currentTarget.style.color = '#64748b';
+                                }}
+                            >
+                                ✕
+                            </button>
+                        </div>
+                        {/* Iframe View */}
+                        <iframe
+                            src={embedUrl}
+                            title={embedTitle}
+                            style={{
+                                flex: 1,
+                                border: 'none',
+                                width: '100%',
+                                height: '100%',
+                                background: '#ffffff'
+                            }}
+                        />
+                    </div>
+                </div>
+            )}
         </>
     );
 };
