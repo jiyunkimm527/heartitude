@@ -8,7 +8,7 @@ export const resources = [
     {
         id: 'm1',
         category: 'Math',
-        title: 'Grade 1 Math · 1학년 수학',
+        title: 'Grade 1 Math',
         description: 'Math worksheets and learning materials for Grade 1 students.',
         gradeLevel: 'Grade 1',
         type: 'Folder',
@@ -17,7 +17,7 @@ export const resources = [
     {
         id: 'm2',
         category: 'Math',
-        title: 'Grade 2 Math · 2학년 수학',
+        title: 'Grade 2 Math',
         description: 'Math worksheets and learning materials for Grade 2 students.',
         gradeLevel: 'Grade 2',
         type: 'Folder',
@@ -26,7 +26,7 @@ export const resources = [
     {
         id: 'm3',
         category: 'Math',
-        title: 'Grade 3 Math · 3학년 수학',
+        title: 'Grade 3 Math',
         description: 'Math worksheets and learning materials for Grade 3 students.',
         gradeLevel: 'Grade 3',
         type: 'Folder',
@@ -35,7 +35,7 @@ export const resources = [
     {
         id: 'm4',
         category: 'Math',
-        title: 'Grade 4 Math · 4학년 수학',
+        title: 'Grade 4 Math',
         description: 'Math worksheets and learning materials for Grade 4 students.',
         gradeLevel: 'Grade 4',
         type: 'Folder',
@@ -44,7 +44,7 @@ export const resources = [
     {
         id: 'm5',
         category: 'Math',
-        title: 'Grade 5 Math · 5학년 수학',
+        title: 'Grade 5 Math',
         description: 'Math worksheets and learning materials for Grade 5 students.',
         gradeLevel: 'Grade 5',
         type: 'Folder',
@@ -53,7 +53,7 @@ export const resources = [
     {
         id: 'm6',
         category: 'Math',
-        title: 'Grade 6 Math · 6학년 수학',
+        title: 'Grade 6 Math',
         description: 'Math worksheets and learning materials for Grade 6 students.',
         gradeLevel: 'Grade 6',
         type: 'Folder',
