@@ -5,15 +5,60 @@
 
 export const resources = [
     // ── MATH ──────────────────────────────────────────────
-    // {
-    //     id: 'm1',
-    //     category: 'Math',
-    //     title: '',
-    //     description: '',
-    //     gradeLevel: '',   // e.g. 'Pre-K', 'Grade 1–2', 'Grade 3–4', 'Grade 5–6'
-    //     type: '',          // e.g. 'Worksheet', 'Slides', 'PDF'
-    //     url: '',
-    // },
+    {
+        id: 'm1',
+        category: 'Math',
+        title: 'Grade 1 Math · 1학년 수학',
+        description: 'Math worksheets and learning materials for Grade 1 students.',
+        gradeLevel: 'Grade 1',
+        type: 'Folder',
+        url: 'https://drive.google.com/drive/folders/YOUR_GRADE1_FOLDER_ID',
+    },
+    {
+        id: 'm2',
+        category: 'Math',
+        title: 'Grade 2 Math · 2학년 수학',
+        description: 'Math worksheets and learning materials for Grade 2 students.',
+        gradeLevel: 'Grade 2',
+        type: 'Folder',
+        url: 'https://drive.google.com/drive/folders/YOUR_GRADE2_FOLDER_ID',
+    },
+    {
+        id: 'm3',
+        category: 'Math',
+        title: 'Grade 3 Math · 3학년 수학',
+        description: 'Math worksheets and learning materials for Grade 3 students.',
+        gradeLevel: 'Grade 3',
+        type: 'Folder',
+        url: 'https://drive.google.com/drive/folders/YOUR_GRADE3_FOLDER_ID',
+    },
+    {
+        id: 'm4',
+        category: 'Math',
+        title: 'Grade 4 Math · 4학년 수학',
+        description: 'Math worksheets and learning materials for Grade 4 students.',
+        gradeLevel: 'Grade 4',
+        type: 'Folder',
+        url: 'https://drive.google.com/drive/folders/YOUR_GRADE4_FOLDER_ID',
+    },
+    {
+        id: 'm5',
+        category: 'Math',
+        title: 'Grade 5 Math · 5학년 수학',
+        description: 'Math worksheets and learning materials for Grade 5 students.',
+        gradeLevel: 'Grade 5',
+        type: 'Folder',
+        url: 'https://drive.google.com/drive/folders/YOUR_GRADE5_FOLDER_ID',
+    },
+    {
+        id: 'm6',
+        category: 'Math',
+        title: 'Grade 6 Math · 6학년 수학',
+        description: 'Math worksheets and learning materials for Grade 6 students.',
+        gradeLevel: 'Grade 6',
+        type: 'Folder',
+        url: 'https://drive.google.com/drive/folders/YOUR_GRADE6_FOLDER_ID',
+    },
 
     // ── ENGLISH ────────────────────────────────────────────
     {

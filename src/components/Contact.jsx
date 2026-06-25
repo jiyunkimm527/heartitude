@@ -22,9 +22,9 @@ const Contact = () => {
                     <div>
                         <h2 style={{ fontSize: '1.5rem', fontWeight: 'bold', marginBottom: '1.5rem' }}>Get in Touch</h2>
                         <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
-                            <a href="mailto:hello@heartitude.org" style={{ display: 'flex', alignItems: 'center', gap: '1rem', fontSize: '1.1rem', padding: '1rem', backgroundColor: 'white', borderRadius: 'var(--radius-md)', boxShadow: 'var(--shadow-sm)' }}>
+                            <a href="mailto:hello@heartitude-panama.org" style={{ display: 'flex', alignItems: 'center', gap: '1rem', fontSize: '1.1rem', padding: '1rem', backgroundColor: 'white', borderRadius: 'var(--radius-md)', boxShadow: 'var(--shadow-sm)' }}>
                                 <Mail color="var(--color-primary)" />
-                                <span>hello@heartitude.org</span>
+                                <span>hello@heartitude-panama.org</span>
                             </a>
                             <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" style={{ display: 'flex', alignItems: 'center', gap: '1rem', fontSize: '1.1rem', padding: '1rem', backgroundColor: 'white', borderRadius: 'var(--radius-md)', boxShadow: 'var(--shadow-sm)' }}>
                                 <Instagram color="#E1306C" />

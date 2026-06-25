@@ -19,7 +19,7 @@ if not exist node_modules (
 
 echo.
 echo [2/2] 개발 서버 시작...
-echo  → http://localhost:5173 에서 실행됩니다
+echo  → http://localhost:2000 에서 실행됩니다
 echo.
 npm run dev
 pause
