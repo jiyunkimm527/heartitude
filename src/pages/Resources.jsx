@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import PageHero from '../components/PageHero';
 import Section from '../components/Section';
-import { resources } from '../data/resources';
+import { resources, featuredApps } from '../data/resources';
 import { useTranslation } from 'react-i18next';
 
 const CATEGORIES = [
@@ -163,6 +163,149 @@ const EmptyState = ({ cat }) => (
     </div>
 );
 
+const FeaturedAppCard = ({ app }) => {
+    const [hovered, setHovered] = useState(false);
+    return (
+        <div
+            onMouseEnter={() => setHovered(true)}
+            onMouseLeave={() => setHovered(false)}
+            style={{
+                position: 'relative',
+                background: '#ffffff',
+                border: '1px solid #e2e8f0',
+                borderRadius: '16px',
+                padding: '1.75rem',
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '1.25rem',
+                transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                transform: hovered ? 'translateY(-6px)' : 'translateY(0)',
+                boxShadow: hovered 
+                    ? '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)' 
+                    : '0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03)',
+                overflow: 'hidden'
+            }}
+        >
+            {/* Glowing top line with app gradient */}
+            <div style={{ 
+                position: 'absolute', 
+                top: 0, 
+                left: 0, 
+                right: 0, 
+                height: '6px', 
+                background: app.gradient 
+            }} />
+
+            {/* Header info */}
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: '1rem' }}>
+                <div>
+                    <span style={{ 
+                        fontSize: '0.72rem', 
+                        fontWeight: '700', 
+                        textTransform: 'uppercase', 
+                        color: '#64748b',
+                        letterSpacing: '0.06em'
+                    }}>
+                        {app.subtitle}
+                    </span>
+                    <h3 style={{ 
+                        fontSize: '1.15rem', 
+                        fontWeight: '800', 
+                        color: '#1c1108',
+                        marginTop: '0.2rem',
+                        lineHeight: 1.3
+                    }}>
+                        {app.title}
+                    </h3>
+                </div>
+                <div style={{
+                    width: '44px',
+                    height: '44px',
+                    borderRadius: '12px',
+                    background: app.gradient,
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    fontSize: '1.4rem',
+                    color: '#ffffff',
+                    boxShadow: '0 4px 10px rgba(0,0,0,0.1)',
+                    flexShrink: 0
+                }}>
+                    {app.icon}
+                </div>
+            </div>
+
+            {/* Description */}
+            <p style={{ 
+                fontSize: '0.85rem', 
+                color: '#475569', 
+                lineHeight: 1.6,
+                flex: 1
+            }}>
+                {app.description}
+            </p>
+
+            {/* Bottom row: Badge + Button */}
+            <div style={{ 
+                marginTop: '0.5rem', 
+                display: 'flex', 
+                flexDirection: 'column', 
+                gap: '1rem' 
+            }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                    <span style={{
+                        fontSize: '0.7rem',
+                        fontWeight: '700',
+                        color: '#0f172a',
+                        background: '#f1f5f9',
+                        padding: '0.25rem 0.65rem',
+                        borderRadius: '999px',
+                        display: 'inline-flex',
+                        alignItems: 'center',
+                        gap: '0.35rem'
+                    }}>
+                        {app.id === 'fa2' && (
+                            <span style={{
+                                width: '6px',
+                                height: '6px',
+                                background: '#10b981',
+                                borderRadius: '50%',
+                                display: 'inline-block',
+                                animation: 'pulse 1.8s infinite'
+                            }} />
+                        )}
+                        {app.badge}
+                    </span>
+                </div>
+
+                <a
+                    href={app.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        padding: '0.75rem',
+                        borderRadius: '8px',
+                        background: app.gradient,
+                        color: '#ffffff',
+                        fontWeight: '700',
+                        fontSize: '0.875rem',
+                        textDecoration: 'none',
+                        textAlign: 'center',
+                        boxShadow: hovered ? '0 10px 15px -3px rgba(0,0,0,0.15)' : 'none',
+                        transition: 'all 0.2s ease',
+                        opacity: hovered ? 0.92 : 1
+                    }}
+                >
+                    {app.btnText}
+                </a>
+            </div>
+        </div>
+    );
+};
+
 const Resources = () => {
     const [activeKey, setActiveKey] = useState('Math');
     const activeCat = CATEGORIES.find(c => c.key === activeKey);
@@ -194,6 +337,44 @@ const Resources = () => {
                         />
                     ))}
                 </div>
+
+                {/* CSS Micro-animations */}
+                <style>{`
+                    @keyframes pulse {
+                        0% { transform: scale(0.95); opacity: 1; }
+                        50% { transform: scale(1.3); opacity: 0.5; }
+                        100% { transform: scale(0.95); opacity: 1; }
+                    }
+                `}</style>
+
+                {/* Featured Apps Section for Math */}
+                {activeKey === 'Math' && (
+                    <div style={{ marginBottom: '3.5rem' }}>
+                        <h2 style={{
+                            fontSize: '1.25rem',
+                            fontWeight: '800',
+                            color: '#1c1108',
+                            marginBottom: '1.25rem',
+                            display: 'flex',
+                            alignItems: 'center',
+                            gap: '0.5rem',
+                            letterSpacing: '0.01em',
+                            borderBottom: '2px solid #f1f5f9',
+                            paddingBottom: '0.75rem'
+                        }}>
+                            ✨ Recommended Learning Apps
+                        </h2>
+                        <div style={{
+                            display: 'grid',
+                            gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+                            gap: '1.5rem',
+                        }}>
+                            {featuredApps.filter(app => app.category === 'Math').map(app => (
+                                <FeaturedAppCard key={app.id} app={app} />
+                            ))}
+                        </div>
+                    </div>
+                )}
 
                 {/* Count label */}
                 {filtered.length > 0 && (
