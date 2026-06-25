@@ -12,7 +12,7 @@ export const resources = [
         description: 'Math worksheets and learning materials for Grade 1 students.',
         gradeLevel: 'Grade 1',
         type: 'Folder',
-        url: 'https://drive.google.com/drive/folders/YOUR_GRADE1_FOLDER_ID',
+        url: 'https://drive.google.com/file/d/1qJQfMBezgT62KzxXiSZa87HIn76gdIis/view?usp=sharing',
     },
     {
         id: 'm2',
@@ -21,7 +21,7 @@ export const resources = [
         description: 'Math worksheets and learning materials for Grade 2 students.',
         gradeLevel: 'Grade 2',
         type: 'Folder',
-        url: 'https://drive.google.com/drive/folders/YOUR_GRADE2_FOLDER_ID',
+        url: 'https://drive.google.com/file/d/1ByR2qm4XQZeckH3ArC0INO3reKMDF6-w/view?usp=sharing',
     },
     {
         id: 'm3',
@@ -30,7 +30,7 @@ export const resources = [
         description: 'Math worksheets and learning materials for Grade 3 students.',
         gradeLevel: 'Grade 3',
         type: 'Folder',
-        url: 'https://drive.google.com/drive/folders/YOUR_GRADE3_FOLDER_ID',
+        url: '#',
     },
     {
         id: 'm4',
@@ -39,7 +39,7 @@ export const resources = [
         description: 'Math worksheets and learning materials for Grade 4 students.',
         gradeLevel: 'Grade 4',
         type: 'Folder',
-        url: 'https://drive.google.com/drive/folders/YOUR_GRADE4_FOLDER_ID',
+        url: 'https://drive.google.com/file/d/1ii4skFeWPV8ynu9wrk5u8txd3x0cm0-z/view?usp=sharing',
     },
     {
         id: 'm5',
@@ -48,7 +48,7 @@ export const resources = [
         description: 'Math worksheets and learning materials for Grade 5 students.',
         gradeLevel: 'Grade 5',
         type: 'Folder',
-        url: 'https://drive.google.com/drive/folders/YOUR_GRADE5_FOLDER_ID',
+        url: 'https://drive.google.com/file/d/1bb2nkvNjrimLu65Z5pB4N_U3WIS5LG7t/view?usp=sharing',
     },
     {
         id: 'm6',
@@ -57,7 +57,7 @@ export const resources = [
         description: 'Math worksheets and learning materials for Grade 6 students.',
         gradeLevel: 'Grade 6',
         type: 'Folder',
-        url: 'https://drive.google.com/drive/folders/YOUR_GRADE6_FOLDER_ID',
+        url: 'https://drive.google.com/file/d/1iiXNabJv5taAvVYRz9AUYvVbwXZHsZmd/view?usp=sharing',
     },
 
     // ── ENGLISH ────────────────────────────────────────────
