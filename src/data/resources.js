@@ -162,3 +162,30 @@ export const resources = [
     //     url: '',
     // },
 ];
+
+export const featuredApps = [
+    {
+        id: 'fa1',
+        category: 'Math',
+        title: 'Pre-K & Kids Basic Math App',
+        subtitle: 'Interactive Mobile Game',
+        description: 'Interactive learning app for early learners. Practice numbers, basic arithmetic, and multiplication tables (gu-gu-dan) directly on your mobile device or browser.',
+        badge: '📱 Mobile Friendly',
+        icon: '🎮',
+        gradient: 'linear-gradient(135deg, #06b6d4 0%, #0db9e8 100%)',
+        url: 'https://latidos-ninos.vercel.app/index.html',
+        btnText: 'Launch Kids Math App ➔'
+    },
+    {
+        id: 'fa2',
+        category: 'Math',
+        title: 'Core Math Learning Platform',
+        subtitle: 'Primary Source Portal',
+        description: 'Our central digital mathematics learning platform and the primary source for our textbooks. Access full interactive curriculum, modules, and progress tracking.',
+        badge: '⭐ Primary Platform',
+        icon: '🌐',
+        gradient: 'linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%)',
+        url: 'https://jy-matematica-panama.vercel.app/',
+        btnText: 'Open Learning Platform ➔'
+    }
+];
