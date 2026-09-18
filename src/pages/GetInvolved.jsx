@@ -204,17 +204,27 @@ const GetInvolved = () => {
 
     return (
         <>
+            <style>{`
+                @media (max-width: 768px) {
+                    .gi-flow-row { flex-direction: column !important; }
+                    .gi-flow-arrow { display: none !important; }
+                    .gi-pillar-grid { grid-template-columns: 1fr !important; }
+                    .gi-checkbox-grid { grid-template-columns: 1fr !important; }
+                    .gi-steps-grid { grid-template-columns: 1fr 1fr !important; }
+                    .gi-step-connector { display: none !important; }
+                }
+            `}</style>
             <PageHero
                 title={t('getInvolved.heroTitle')}
                 subtitle={t('getInvolved.heroSubtitle')}
                 images={[
-                    "/images/get-involved/panorama_3_4_5.jpg",
-                    "/images/get-involved/slide_06.jpg",
-                    "/images/get-involved/slide_07.jpg",
-                    "/images/get-involved/slide_08.jpg",
-                    "/images/get-involved/slide_09.jpg",
-                    "/images/get-involved/slide_01.jpg",
-                    "/images/get-involved/slide_02.jpg",
+                    "/images/get-involved/panorama_3_4_5.webp",
+                    "/images/get-involved/slide_06.webp",
+                    "/images/get-involved/slide_07.webp",
+                    "/images/get-involved/slide_08.webp",
+                    "/images/get-involved/slide_09.webp",
+                    "/images/get-involved/slide_01.webp",
+                    "/images/get-involved/slide_02.webp",
                 ]}
                 overlay="center"
             />
@@ -247,7 +257,7 @@ const GetInvolved = () => {
 
                                 {/* Cards */}
                                 {pillar.linked ? (
-                                    <div style={{ display: 'flex', alignItems: 'stretch', gap: '0' }}>
+                                    <div className="gi-flow-row" style={{ display: 'flex', alignItems: 'stretch', gap: '0' }}>
                                         {pillar.programs.map((p, i) => (
                                             <React.Fragment key={i}>
                                                 <div style={{
@@ -267,7 +277,7 @@ const GetInvolved = () => {
                                                     <p style={{ fontSize: '0.82rem', color: '#9ca3af', margin: 0 }}>· {p.status}</p>
                                                 </div>
                                                 {i < pillar.programs.length - 1 && (
-                                                    <div style={{ display: 'flex', alignItems: 'center', padding: '0 0.75rem', flexShrink: 0 }}>
+                                                    <div className="gi-flow-arrow" style={{ display: 'flex', alignItems: 'center', padding: '0 0.75rem', flexShrink: 0 }}>
                                                         <span style={{ fontSize: '1rem', color: '#d1d5db' }}>→</span>
                                                     </div>
                                                 )}
@@ -275,7 +285,7 @@ const GetInvolved = () => {
                                         ))}
                                     </div>
                                 ) : (
-                                    <div style={{ display: 'grid', gridTemplateColumns: `repeat(${pillar.cols}, 1fr)`, gap: '1.25rem' }}>
+                                    <div className="gi-pillar-grid" style={{ display: 'grid', gridTemplateColumns: `repeat(${pillar.cols}, 1fr)`, gap: '1.25rem' }}>
                                         {pillar.programs.map((p, i) => (
                                             <div key={i} style={{
                                                 background: '#f9fafb',
@@ -444,7 +454,7 @@ const GetInvolved = () => {
                                 <label style={{ display: 'block', fontSize: '0.82rem', fontWeight: '600', color: '#374151', marginBottom: '0.65rem' }}>
                                     Program Interest *
                                 </label>
-                                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.45rem 2rem' }}>
+                                <div className="gi-checkbox-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.45rem 2rem' }}>
                                     {[
                                         'Math Tutoring (Every Saturday)',
                                         'English Tutoring',
@@ -525,11 +535,11 @@ const GetInvolved = () => {
                         From application to your first session — here's what to expect.
                     </p>
 
-                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '1.5rem', position: 'relative' }}>
+                    <div className="gi-steps-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '1.5rem', position: 'relative' }}>
                         {nextSteps.map((step, i) => (
                             <div key={i} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', position: 'relative' }}>
                                 {i < nextSteps.length - 1 && (
-                                    <div style={{ position: 'absolute', top: '24px', left: '60%', width: '80%', height: '1px', background: '#e2e8f0', zIndex: 0 }} />
+                                    <div className="gi-step-connector" style={{ position: 'absolute', top: '24px', left: '60%', width: '80%', height: '1px', background: '#e2e8f0', zIndex: 0 }} />
                                 )}
                                 <div style={{
                                     width: '48px', height: '48px', borderRadius: '50%',

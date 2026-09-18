@@ -50,7 +50,7 @@ const PageHero = ({
                         transform: translate3d(0%, 0, 0);
                     }
                     100% {
-                        transform: translate3d(-50%, 0, 0);
+                        transform: translate3d(-25%, 0, 0);
                     }
                 }
                 .page-hero-track-scroll {
@@ -59,6 +59,8 @@ const PageHero = ({
                     height: 100%;
                     width: max-content;
                     will-change: transform;
+                    backface-visibility: hidden;
+                    transform: translateZ(0);
                     animation: heroScrollLeft ${scrollDuration}s linear infinite;
                 }
                 .page-hero-card:hover .page-hero-track-scroll {
@@ -141,11 +143,14 @@ const PageHero = ({
                     }}>
                         {scrollImages ? (
                             <div className="page-hero-track-scroll" style={{ display: 'flex', height: '100%', width: 'max-content' }}>
-                                {[...images, ...images].map((src, idx) => (
+                                {[...images, ...images, ...images, ...images].map((src, idx) => (
                                     <img
                                         key={idx}
                                         src={src}
                                         alt=""
+                                        loading="eager"
+                                        decoding="async"
+                                        fetchPriority={idx < images.length ? 'high' : 'auto'}
                                         style={{
                                             height: '100%',
                                             width: 'auto',

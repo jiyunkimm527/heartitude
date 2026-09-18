@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import PageHero from '../components/PageHero';
 import Section from '../components/Section';
 import { useTranslation } from 'react-i18next';
+import { ExternalLink } from 'lucide-react';
 
 /* ── CountUp Component with IntersectionObserver ── */
 const MetricCounter = ({ end, prefix = '', suffix = '', duration = 2000 }) => {
@@ -64,6 +65,7 @@ const Impact = () => {
             name: "Fundación Latidos",
             logo: "/images/logo-latidos.png",
             logoHeight: "44px",
+            url: "https://www.latidospanama.org",
             desc: isEs
                 ? "Una fundación dedicada a la cirugía, tratamiento y apoyo integral de niños con cardiopatías en Panamá. Junto a Latidos, Heartitude brinda tutoría matemática presencial semanal para sus pacientes pediátricos, acompañamiento hospitalario a las familias, una plataforma digital de gestión de pacientes adoptada oficialmente por la fundación, y campañas activas de recaudación de suministros médicos."
                 : "A foundation dedicated to the surgery, treatment, and holistic support of children with heart conditions in Panama. Together with Latidos, Heartitude provides weekly in-person math tutoring for their pediatric patients, bedside companionship for families, a digital patient management platform officially adopted by the foundation, and active medical supply fundraising campaigns.",
@@ -73,6 +75,7 @@ const Impact = () => {
             name: "Fundación Gabriel Lewis Galindo",
             logo: "/images/logo-gabriel-lewis.webp",
             logoHeight: "40px",
+            url: "https://fglg.org.pa",
             desc: isEs
                 ? "Colaboración para diseñar e impartir un programa de 12 sesiones de conversación en inglés para 25 estudiantes de escuelas públicas. FGLG otorgó certificados de reconocimiento a los 5 tutores de Heartitude por su contribución."
                 : "Collaborated to design and deliver a 12-session conversational English program for 25 public school students. FGLG awarded certificates of recognition to all 5 Heartitude tutors for their contribution.",
@@ -82,6 +85,7 @@ const Impact = () => {
             name: "Universidad de Panamá",
             logo: "/images/logo-universidad-panama.png",
             logoHeight: "36px",
+            url: "https://up.ac.pa",
             desc: isEs
                 ? "Tras revisar nuestra plataforma matemática, la Facultad de Ciencias de la Educación (GIEM) contactó directamente a Heartitude. Actualmente lideramos talleres en aulas universitarias junto a profesores, co-diseñando contenido instruccional y las funcionalidades de la próxima generación."
                 : "After reviewing our math platform, the Faculty of Educational Sciences (GIEM) reached out directly to Heartitude. We now lead workshops in university classrooms alongside professors, co-designing instructional content and next-generation platform features.",
@@ -91,6 +95,7 @@ const Impact = () => {
             name: "Hospital del Niño & Casita de Mausi",
             logo: "/images/logo-hospital-nino.png",
             logoHeight: "38px",
+            url: "https://hn.sld.pa",
             desc: isEs
                 ? "Acompañamiento y orientación a familias de pacientes cardíacos pediátricos, apoyo operativo a Fundación Latidos en sus actividades hospitalarias, y sede de investigación para nuestro estudio ambiental BioRhythm."
                 : "Family counseling and support for pediatric cardiac patients, operational assistance alongside Fundación Latidos during hospital activities, and research site for our BioRhythm environmental study.",
@@ -100,6 +105,7 @@ const Impact = () => {
             name: "Balboa Academy",
             logo: "/images/balboa_logo.png",
             logoHeight: "24px",
+            url: "https://www.balboaacademy.edu.pa",
             desc: isEs
                 ? "Donde Heartitude fue fundada como club estudiantil — proporcionando la red de tutores voluntarios, la estructura de liderazgo y la movilización comunitaria que impulsa nuestros programas."
                 : "Where Heartitude was founded as a student club — providing the volunteer tutor network, leadership structure, and community mobilization that powers our programs.",
@@ -108,20 +114,38 @@ const Impact = () => {
 
     return (
         <>
+            <style>{`
+                @media (max-width: 768px) {
+                    .imp-partner-row {
+                        grid-template-columns: 1fr !important;
+                        gap: 0.75rem !important;
+                    }
+                    .imp-timeline-row {
+                        display: flex !important;
+                        flex-direction: column !important;
+                        gap: 0.5rem !important;
+                        padding-bottom: 1.75rem !important;
+                        padding-left: 1rem !important;
+                        border-left: 2px solid #e5e7eb;
+                    }
+                    .imp-timeline-date { text-align: left !important; padding-top: 0 !important; }
+                    .imp-timeline-center { display: none !important; }
+                }
+            `}</style>
             <PageHero
                 title={t('impact.heroTitle')}
                 subtitle={t('impact.heroSubtitle')}
                 images={[
-                    "/images/impact/a1.jpg",
-                    "/images/impact/a2.jpeg",
-                    "/images/impact/a3.jpg",
-                    "/images/impact/b1.jpeg",
-                    "/images/impact/b2.jpeg",
-                    "/images/impact/b3.jpeg",
-                    "/images/impact/c1.jpeg",
-                    "/images/impact/c2.jpeg",
-                    "/images/impact/c3.jpeg",
-                    "/images/impact/c4.jpeg",
+                    "/images/impact/a1.webp",
+                    "/images/impact/a2.webp",
+                    "/images/impact/a3.webp",
+                    "/images/impact/b1.webp",
+                    "/images/impact/b2.webp",
+                    "/images/impact/b3.webp",
+                    "/images/impact/c1.webp",
+                    "/images/impact/c2.webp",
+                    "/images/impact/c3.webp",
+                    "/images/impact/c4.webp",
                 ]}
                 overlay="center"
             />
@@ -320,6 +344,7 @@ const Impact = () => {
                         {partnerList.map((p, i) => (
                             <div
                                 key={i}
+                                className="imp-partner-row"
                                 style={{
                                     display: 'grid',
                                     gridTemplateColumns: '200px 1fr',
@@ -336,15 +361,37 @@ const Impact = () => {
                                         display: 'flex',
                                         alignItems: 'center',
                                     }}>
-                                        <img
-                                            src={p.logo}
-                                            alt={p.name}
+                                        <a
+                                            href={p.url}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            title={`${p.name} - Open Website`}
                                             style={{
-                                                maxHeight: p.logoHeight || '36px',
-                                                maxWidth: '160px',
-                                                objectFit: 'contain',
+                                                display: 'inline-flex',
+                                                alignItems: 'center',
+                                                textDecoration: 'none',
+                                                cursor: 'pointer',
+                                                transition: 'opacity 0.2s ease, transform 0.2s ease',
                                             }}
-                                        />
+                                            onMouseEnter={e => {
+                                                e.currentTarget.style.opacity = '0.75';
+                                                e.currentTarget.style.transform = 'scale(1.02)';
+                                            }}
+                                            onMouseLeave={e => {
+                                                e.currentTarget.style.opacity = '1';
+                                                e.currentTarget.style.transform = 'scale(1)';
+                                            }}
+                                        >
+                                            <img
+                                                src={p.logo}
+                                                alt={p.name}
+                                                style={{
+                                                    maxHeight: p.logoHeight || '36px',
+                                                    maxWidth: '160px',
+                                                    objectFit: 'contain',
+                                                }}
+                                            />
+                                        </a>
                                     </div>
                                     <span style={{
                                         fontSize: '0.72rem',
@@ -366,7 +413,26 @@ const Impact = () => {
                                         marginBottom: '0.35rem',
                                         lineHeight: 1.35,
                                     }}>
-                                        {p.name}
+                                        <a
+                                            href={p.url}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            title={`${p.name} - Open Website`}
+                                            style={{
+                                                color: '#111827',
+                                                textDecoration: 'none',
+                                                display: 'inline-flex',
+                                                alignItems: 'center',
+                                                gap: '0.35rem',
+                                                cursor: 'pointer',
+                                                transition: 'color 0.15s ease',
+                                            }}
+                                            onMouseEnter={e => e.currentTarget.style.color = '#3b82f6'}
+                                            onMouseLeave={e => e.currentTarget.style.color = '#111827'}
+                                        >
+                                            {p.name}
+                                            <ExternalLink size={13} style={{ opacity: 0.5 }} />
+                                        </a>
                                     </h4>
                                     <p style={{
                                         fontSize: '0.85rem',
@@ -414,14 +480,14 @@ const Impact = () => {
 
                     <div style={{ display: 'flex', flexDirection: 'column', gap: '0' }}>
                         {Array.isArray(activities) && activities.map((a, i) => (
-                            <div key={i} style={{
+                            <div key={i} className="imp-timeline-row" style={{
                                 display: 'grid',
                                 gridTemplateColumns: '150px 1px 1fr',
                                 gap: '0 2.5rem',
                                 paddingBottom: '2.5rem',
                             }}>
                                 {/* Date */}
-                                <div style={{ textAlign: 'right', paddingTop: '0.15rem' }}>
+                                <div className="imp-timeline-date" style={{ textAlign: 'right', paddingTop: '0.15rem' }}>
                                     <span style={{
                                         fontSize: '0.82rem',
                                         fontWeight: '700',
@@ -433,7 +499,7 @@ const Impact = () => {
                                 </div>
 
                                 {/* Timeline line + dot */}
-                                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                                <div className="imp-timeline-center" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                                     <div style={{
                                         width: '12px',
                                         height: '12px',

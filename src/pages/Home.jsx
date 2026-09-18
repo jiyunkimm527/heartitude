@@ -13,6 +13,7 @@ const PARTNERS = [
         roleEs: 'Atención Cardíaca Pediátrica',
         logo: '/images/logo-latidos.png',
         height: '46px',
+        url: 'https://www.latidospanama.org',
     },
     {
         name: 'Fundación Gabriel Lewis Galindo',
@@ -20,6 +21,7 @@ const PARTNERS = [
         roleEs: 'Educación en Inglés',
         logo: '/images/logo-gabriel-lewis.webp',
         height: '42px',
+        url: 'https://fglg.org.pa',
     },
     {
         name: 'Universidad de Panamá',
@@ -27,6 +29,7 @@ const PARTNERS = [
         roleEs: 'Co-Desarrollo Académico',
         logo: '/images/logo-universidad-panama.png',
         height: '38px',
+        url: 'https://up.ac.pa',
     },
     {
         name: 'Hospital del Niño',
@@ -34,6 +37,7 @@ const PARTNERS = [
         roleEs: 'Atención Directa e Investigación',
         logo: '/images/logo-hospital-nino.png',
         height: '40px',
+        url: 'https://hn.sld.pa',
     },
     {
         name: 'Balboa Academy',
@@ -41,6 +45,7 @@ const PARTNERS = [
         roleEs: 'Base Institucional',
         logo: '/images/balboa_logo.png',
         height: '42px',
+        url: 'https://www.balboaacademy.edu.pa',
     },
 ];
 
@@ -166,8 +171,12 @@ const Home = () => {
                         alignItems: 'center',
                     }}>
                         {PARTNERS.map((p, idx) => (
-                            <div
+                            <a
                                 key={idx}
+                                href={p.url}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                title={`${p.name} - Official Website`}
                                 style={{
                                     backgroundColor: '#fafbfc',
                                     border: '1px solid #f1f5f9',
@@ -179,6 +188,8 @@ const Home = () => {
                                     justifyContent: 'center',
                                     textAlign: 'center',
                                     minHeight: '120px',
+                                    textDecoration: 'none',
+                                    cursor: 'pointer',
                                     transition: 'all 0.2s ease',
                                 }}
                                 onMouseEnter={e => {
@@ -227,7 +238,7 @@ const Home = () => {
                                 }}>
                                     {isEs ? p.roleEs : p.roleEn}
                                 </span>
-                            </div>
+                            </a>
                         ))}
                     </div>
                 </div>

@@ -155,20 +155,25 @@ const Programs = () => {
 
     return (
         <>
+            <style>{`
+                @media (max-width: 768px) {
+                    .programs-card-grid { grid-template-columns: 1fr !important; }
+                }
+            `}</style>
             <PageHero
                 title={t("programs.heroTitle")}
                 subtitle={t("programs.heroSubtitle")}
                 images={[
-                    "/images/programs/hero/1-1.jpg",
-                    "/images/programs/hero/2-2.jpg",
-                    "/images/programs/hero/3-1.jpg",
+                    "/images/programs/hero/1-1.webp",
+                    "/images/programs/hero/2-2.webp",
+                    "/images/programs/hero/3-1.webp",
                 ]}
                 overlay="center"
             />
 
             <Section style={{ backgroundColor: "#ffffff", padding: "5rem 0 6rem" }}>
                 <div style={{ maxWidth: "1040px", margin: "0 auto" }}>
-                    <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "1.5rem" }}>
+                    <div className="programs-card-grid" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "1.5rem" }}>
                         {PROGRAMS.map((program) => (
                             <ProgramCard key={program.id} program={program} t={t} />
                         ))}

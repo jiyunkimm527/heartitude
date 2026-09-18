@@ -209,12 +209,20 @@ const ThreePillars = () => {
     const { t } = useTranslation();
 
     return (
-        <section style={{
+        <section className="tp-section" style={{
             backgroundColor: '#fafbfc',
             padding: '5.5rem 0',
             borderTop: '1px solid #e2e8f0',
             borderBottom: '1px solid #e2e8f0',
         }}>
+            <style>{`
+                @media (max-width: 768px) {
+                    .tp-section { padding: 3rem 0 !important; }
+                    .tp-learn-grid { grid-template-columns: 1fr !important; }
+                    .tp-bottom-row { grid-template-columns: 1fr !important; gap: 1.25rem !important; }
+                    .tp-inner-grid { grid-template-columns: 1fr !important; }
+                }
+            `}</style>
             <div className="container" style={{ maxWidth: '1100px', margin: '0 auto', padding: '0 1.5rem' }}>
                 {/* Section Header */}
                 <div style={{ textAlign: 'center', maxWidth: '820px', margin: '0 auto 3.5rem auto' }}>
@@ -277,7 +285,7 @@ const ThreePillars = () => {
                                     {group.subtitle}
                                 </span>
                             </div>
-                            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1.25rem' }}>
+                            <div className="tp-learn-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1.25rem' }}>
                                 {group.programs.map((program) => (
                                     <ProgramCard key={program.id} program={program} t={t} pillarColor={group.color} />
                                 ))}
@@ -286,7 +294,7 @@ const ThreePillars = () => {
                     ))}
 
                     {/* Heal & Grow side by side */}
-                    <div style={{ display: 'grid', gridTemplateColumns: '2fr 1fr', gap: '2rem' }}>
+                    <div className="tp-bottom-row" style={{ display: 'grid', gridTemplateColumns: '2fr 1fr', gap: '2rem' }}>
                         {BOTTOM_ROW.map((group) => (
                             <div key={group.key} style={{
                                 border: '1px solid #e2e8f0',
@@ -312,7 +320,7 @@ const ThreePillars = () => {
                                         {group.subtitle}
                                     </span>
                                 </div>
-                                <div style={{
+                                <div className="tp-inner-grid" style={{
                                     display: 'grid',
                                     gridTemplateColumns: group.programs.length > 1 ? 'repeat(2, 1fr)' : '1fr',
                                     gap: '1.25rem',

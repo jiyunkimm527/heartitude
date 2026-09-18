@@ -110,10 +110,10 @@ const About = () => {
                 title={t('about.title')}
                 subtitle={t('about.subtitle')}
                 images={[
-                    "/images/about/1.jpg",
-                    "/images/about/2.jpg",
-                    "/images/about/3.jpg",
-                    "/images/about/4.jpg",
+                    "/images/about/1.webp",
+                    "/images/about/2.webp",
+                    "/images/about/3.webp",
+                    "/images/about/4.webp",
                 ]}
                 scrollImages={false}
                 overlay="center"
