@@ -218,13 +218,13 @@ const GetInvolved = () => {
                 title={t('getInvolved.heroTitle')}
                 subtitle={t('getInvolved.heroSubtitle')}
                 images={[
-                    "/images/get-involved/panorama_3_4_5.webp",
-                    "/images/get-involved/slide_06.webp",
-                    "/images/get-involved/slide_07.webp",
-                    "/images/get-involved/slide_08.webp",
-                    "/images/get-involved/slide_09.webp",
-                    "/images/get-involved/slide_01.webp",
-                    "/images/get-involved/slide_02.webp",
+                    "/images/get-involved/panorama_3_4_5.jpg",
+                    "/images/get-involved/slide_06.jpg",
+                    "/images/get-involved/slide_07.jpg",
+                    "/images/get-involved/slide_08.jpg",
+                    "/images/get-involved/slide_09.jpg",
+                    "/images/get-involved/slide_01.jpg",
+                    "/images/get-involved/slide_02.jpg",
                 ]}
                 overlay="center"
             />

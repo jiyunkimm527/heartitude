@@ -136,16 +136,16 @@ const Impact = () => {
                 title={t('impact.heroTitle')}
                 subtitle={t('impact.heroSubtitle')}
                 images={[
-                    "/images/impact/a1.webp",
-                    "/images/impact/a2.webp",
-                    "/images/impact/a3.webp",
-                    "/images/impact/b1.webp",
-                    "/images/impact/b2.webp",
-                    "/images/impact/b3.webp",
-                    "/images/impact/c1.webp",
-                    "/images/impact/c2.webp",
-                    "/images/impact/c3.webp",
-                    "/images/impact/c4.webp",
+                    "/images/impact/a1.jpg",
+                    "/images/impact/a2.jpeg",
+                    "/images/impact/a3.jpg",
+                    "/images/impact/b1.jpeg",
+                    "/images/impact/b2.jpeg",
+                    "/images/impact/b3.jpeg",
+                    "/images/impact/c1.jpeg",
+                    "/images/impact/c2.jpeg",
+                    "/images/impact/c3.jpeg",
+                    "/images/impact/c4.jpeg",
                 ]}
                 overlay="center"
             />

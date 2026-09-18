@@ -73,22 +73,24 @@ const Home = () => {
                             fontWeight: '700',
                             padding: '0.85rem 1.85rem',
                             borderRadius: '6px',
-                            backgroundColor: '#e11d48',
+                            backgroundColor: '#1c1108',
                             color: '#ffffff',
                             textDecoration: 'none',
                             display: 'inline-flex',
                             alignItems: 'center',
                             gap: '0.45rem',
-                            boxShadow: '0 4px 16px rgba(225, 29, 72, 0.35)',
+                            boxShadow: '0 4px 16px rgba(28, 17, 8, 0.4)',
                             transition: 'all 0.2s ease',
                         }}
                         onMouseEnter={e => {
-                            e.currentTarget.style.backgroundColor = '#be123c';
+                            e.currentTarget.style.backgroundColor = '#2d1e0e';
                             e.currentTarget.style.transform = 'translateY(-2px)';
+                            e.currentTarget.style.boxShadow = '0 6px 20px rgba(28, 17, 8, 0.5)';
                         }}
                         onMouseLeave={e => {
-                            e.currentTarget.style.backgroundColor = '#e11d48';
+                            e.currentTarget.style.backgroundColor = '#1c1108';
                             e.currentTarget.style.transform = 'translateY(0)';
+                            e.currentTarget.style.boxShadow = '0 4px 16px rgba(28, 17, 8, 0.4)';
                         }}
                     >
                         <span>{t('home.heroCtaExplore', 'Explore Our Programs')}</span>
@@ -97,27 +99,29 @@ const Home = () => {
 
                     <Link
                         to="/get-involved"
-                        style={{
+                         style={{
                             fontSize: '0.94rem',
                             fontWeight: '700',
                             padding: '0.85rem 1.85rem',
                             borderRadius: '6px',
-                            backgroundColor: 'rgba(255, 255, 255, 0.15)',
-                            border: '1px solid rgba(255, 255, 255, 0.4)',
+                            backgroundColor: 'transparent',
+                            border: '1.5px solid rgba(255, 255, 255, 0.85)',
                             color: '#ffffff',
                             textDecoration: 'none',
                             display: 'inline-flex',
                             alignItems: 'center',
                             gap: '0.45rem',
-                            backdropFilter: 'blur(6px)',
+                            textShadow: '0 1px 4px rgba(0,0,0,0.5)',
                             transition: 'all 0.2s ease',
                         }}
                         onMouseEnter={e => {
-                            e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.25)';
+                            e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.15)';
+                            e.currentTarget.style.borderColor = '#ffffff';
                             e.currentTarget.style.transform = 'translateY(-2px)';
                         }}
                         onMouseLeave={e => {
-                            e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.15)';
+                            e.currentTarget.style.backgroundColor = 'transparent';
+                            e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.85)';
                             e.currentTarget.style.transform = 'translateY(0)';
                         }}
                     >

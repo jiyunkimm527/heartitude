@@ -63,9 +63,6 @@ const PageHero = ({
                     transform: translateZ(0);
                     animation: heroScrollLeft ${scrollDuration}s linear infinite;
                 }
-                .page-hero-card:hover .page-hero-track-scroll {
-                    animation-play-state: paused;
-                }
                 .page-hero-center-dim {
                     position: absolute;
                     inset: 0;
@@ -202,7 +199,7 @@ const PageHero = ({
                     <div style={{
                         position: 'absolute',
                         inset: 0,
-                        background: 'linear-gradient(to bottom, rgba(15,23,42,0.72) 0%, rgba(15,23,42,0.52) 60%, rgba(15,23,42,0.75) 100%)',
+                        background: 'linear-gradient(to bottom, rgba(0,0,0,0.38) 0%, rgba(0,0,0,0.18) 50%, rgba(0,0,0,0.45) 100%)',
                         zIndex: 1,
                     }} />
                 )}
@@ -218,9 +215,9 @@ const PageHero = ({
                                 fontWeight: '700',
                                 letterSpacing: '0.14em',
                                 textTransform: 'uppercase',
-                                color: isLight ? '#e11d48' : (isCenterDim ? '#e11d48' : '#fb7185'),
+                                color: isLight ? '#e11d48' : (isCenterDim ? '#e11d48' : 'rgba(255,255,255,0.9)'),
                                 marginBottom: '0.45rem',
-                                textShadow: isLight ? 'none' : (isCenterDim ? '0 1px 2px rgba(255,255,255,0.85)' : '0 1px 4px rgba(0,0,0,0.6)'),
+                                textShadow: isLight ? 'none' : (isCenterDim ? '0 1px 2px rgba(255,255,255,0.85)' : '0 1px 6px rgba(0,0,0,0.7), 0 0 12px rgba(0,0,0,0.4)'),
                             }}>
                                 —&ensp;{tagline || tag}
                             </p>
@@ -270,11 +267,11 @@ const PageHero = ({
                                 fontFamily: 'var(--font-display)',
                                 fontStyle: 'italic',
                                 fontWeight: '600',
-                                color: isCenterDim ? '#9a3412' : '#fde047',
+                                color: isCenterDim ? '#374151' : '#ffffff',
                                 letterSpacing: '0.03em',
                                 margin: '0.75rem auto 0 auto',
-                                textShadow: isCenterDim ? '0 1px 2px rgba(255, 255, 255, 0.8)' : '0 1px 6px rgba(0, 0, 0, 0.6)',
-                                opacity: 0.95,
+                                textShadow: isCenterDim ? '0 1px 2px rgba(255, 255, 255, 0.8)' : '0 2px 8px rgba(0,0,0,0.8), 0 0 20px rgba(0,0,0,0.5), 0 0 40px rgba(0,0,0,0.3)',
+                                opacity: 1,
                             }}>
                                 {slogan}
                             </p>

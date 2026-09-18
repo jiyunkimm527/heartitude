@@ -164,9 +164,9 @@ const Programs = () => {
                 title={t("programs.heroTitle")}
                 subtitle={t("programs.heroSubtitle")}
                 images={[
-                    "/images/programs/hero/1-1.webp",
-                    "/images/programs/hero/2-2.webp",
-                    "/images/programs/hero/3-1.webp",
+                    "/images/programs/hero/1-1.jpg",
+                    "/images/programs/hero/2-2.jpg",
+                    "/images/programs/hero/3-1.jpg",
                 ]}
                 overlay="center"
             />
