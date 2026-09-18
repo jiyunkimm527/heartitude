@@ -4,6 +4,7 @@ import Layout from './components/Layout';
 import Home from './pages/Home';
 import About from './pages/About';
 import Programs from './pages/Programs';
+import ProgramDetail from './pages/ProgramDetail';
 import Resources from './pages/Resources';
 import Impact from './pages/Impact';
 import GetInvolved from './pages/GetInvolved';
@@ -29,6 +30,7 @@ function App() {
           <Route index element={<Home />} />
           <Route path="about" element={<About />} />
           <Route path="programs" element={<Programs />} />
+          <Route path="programs/:programId" element={<ProgramDetail />} />
           <Route path="resources" element={<Resources />} />
           <Route path="impact" element={<Impact />} />
           <Route path="get-involved" element={<GetInvolved />} />

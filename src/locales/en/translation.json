@@ -1,140 +1,258 @@
 {
   "nav": {
     "home": "Home",
-    "about": "About",
+    "about": "About Us",
     "programs": "Programs",
     "resources": "Resources",
     "impact": "Impact",
     "getInvolved": "Get Involved",
-    "contact": "Contact"
+    "contact": "Contact",
+    "aboutSub": {
+      "whoWeAre": "Who We Are",
+      "story": "Our Story",
+      "missionVision": "Mission & Vision",
+      "journey": "Our Journey",
+      "numbers": "By the Numbers",
+      "partners": "Community Partners"
+    },
+    "programsSub": {
+      "math": "Math Tutoring",
+      "english": "English Tutoring",
+      "digital": "Digital Math Platform",
+      "patients": "Patient Registry",
+      "hospital": "Community Events & Fundraising",
+      "environment": "BioRhythm Research"
+    },
+    "resourcesSub": {
+      "math": "Mathematics",
+      "english": "English",
+      "heal": "Health & Patient Support",
+      "grow": "BioRhythm Research"
+    }
   },
   "home": {
-    "heroTitle": "Where you learn should not determine how much you learn.",
-    "heroSubtitle": "Heartitude is a student-led service club in Panama. We provide English and math learning support, create our own materials, and research the environments where children learn — so every child has a fair chance to focus and grow.",
-    "volunteerBtn": "Volunteer with Us",
-    "partnerBtn": "Partner Inquiry",
-    "bannerText": "We go where learning is needed — with tutoring, materials, and the belief that every child deserves an equal start.",
-    "pathTitle": "How We Help",
-    "pathSubtitle": "Two service tracks, one goal: equal learning for every child.",
-    "bioRhythmLabel": "BioRhythm (Research Backbone)",
-    "bioRhythmSub": "Measuring what learning needs",
-    "track1Title": "Learning Content Support",
-    "track1Sub": "English online · Math in-person, every week",
-    "track1Steps": {
-      "1": {
-        "title": "English Support",
-        "desc": "Weekday afternoons — online sessions for students."
+    "tagline": "Heartitude — Heart + Attitude",
+    "taglineSub": "Warmth in heart. Consistency in action.",
+    "heroTitle": "Every child deserves the right conditions\nto learn, heal, and grow.",
+    "heroTag": "A Student-Led Initiative in Panama",
+    "heroSubtitle": "Bridging educational gaps, supporting pediatric patients, and researching healthier care environments across Panama.",
+    "heroSlogan": "Heart Inspires. Attitude Leads.",
+    "heroCtaExplore": "Explore Our Programs",
+    "heroCtaVolunteer": "Get Involved",
+    "volunteerBtn": "Get Involved",
+    "storyBtn": "Our Story",
+
+    "partnersLabel": "Institutional Partners & Collaborators",
+    "partnersSubtitle": "Working alongside healthcare, educational, and academic institutions across Panama",
+
+    "pillarsOverline": "Core Focus Areas",
+    "pillarsTitle": "What We Do",
+    "pillarsSubtitle": "Three student-engineered pillars, one unified mission — ensuring every child has the conditions to thrive.",
+    "pillars": {
+      "learn": {
+        "title": "Learn",
+        "subtitle": "Education & EdTech",
+        "desc": "Weekly 1:1 math tutoring for pediatric cardiac patients, English conversation classes for public school students, and curriculum-aligned digital math resources reached to 20+ schools.",
+        "stat": "25+ Students · 32 Teachers · 20 Schools",
+        "link": "Explore Learn"
       },
-      "2": {
-        "title": "Math Support",
-        "desc": "Every Saturday — in-person school visits."
+      "heal": {
+        "title": "Heal",
+        "subtitle": "Patient Support & Data",
+        "desc": "Bedside hospital visits, emotional companionship, patient records digitized for 717+ children, and active medical supply fundraising for pediatric cardiac care.",
+        "stat": "717+ Records Digitized · Active Fundraising",
+        "link": "Explore Heal"
       },
-      "3": {
-        "title": "Learning Materials",
-        "desc": "Custom worksheets and study materials, made by us."
-      },
-      "4": {
-        "title": "Emotional Support",
-        "desc": "Present with warmth and encouragement, beyond academics."
+      "grow": {
+        "title": "Grow",
+        "subtitle": "Environmental Science",
+        "desc": "Investigating noise (dB), lighting (Lux), and micro-climate conditions across pediatric wards at Hospital del Niño and Casita de Mausi to study how environments affect recovery.",
+        "stat": "Hospital del Niño · Multi-parameter Survey",
+        "link": "Explore Grow"
       }
     },
-    "track2Title": "Learning Environment Support",
-    "track2Sub": "BioRhythm research — studying where children learn",
-    "track2Disclaimer": "Educational support only—no medical advice.",
-    "track2Steps": {
-      "1": {
-        "title": "Identify",
-        "desc": "Observe the spaces where children study."
-      },
-      "2": {
-        "title": "Measure",
-        "desc": "Record noise, lighting, temperature, and humidity."
-      },
-      "3": {
-        "title": "Analyze",
-        "desc": "Understand how the environment affects focus and anxiety."
-      },
-      "4": {
-        "title": "Improve",
-        "desc": "Recommend practical, low-cost changes."
-      }
+
+    "impactOverline": "Verified Progress",
+    "impactTitle": "Impact in Numbers",
+    "impactSubtitle": "Concrete, verifiable results delivered through student initiative and consistent weekly action.",
+    "impactNumbers": {
+      "patients": { "value": "717", "suffix": "+", "label": "Patient Records Digitized", "sub": "For Fundación Latidos" },
+
+      "students": { "value": "25", "suffix": "", "label": "Students Tutored in English", "sub": "12-session program with FGLG" },
+      "teachers": { "value": "32", "suffix": "", "label": "Teachers Equipped", "sub": "Pre-K to 6th digital math tools" },
+      "schools": { "value": "20", "suffix": "+", "label": "Schools & 23 NGOs Reached", "sub": "Across multiple provinces in Panama" }
     },
-    "valuesEyebrow": "Our Name, Our Promise",
-    "valuesHeading": "Our name says it all.",
-    "valuesSubtitle": "Heartitude — a blend of Heart and Attitude.",
-    "heart": {
-      "num": "01",
-      "title": "Heart",
-      "sub": "Empathy in Action",
-      "desc": "We show up with warmth and genuine care for every child we support — not just as tutors, but as people who believe in them."
-    },
-    "attitude": {
-      "num": "02",
-      "title": "Attitude",
-      "sub": "Consistent & Practical",
-      "desc": "Real change comes from showing up consistently and solving problems with practical, low-cost approaches — week after week."
-    },
-    "altitude": {
-      "num": "03",
-      "title": "Altitude",
-      "sub": "Elevating Potential",
-      "desc": "We aim to lift every student higher — raising the bar on what accessible learning can look like."
-    },
-    "missionTileTitle": "Our Mission",
-    "missionTileDesc": "A student-led service club supporting learning and care.",
-    "missionTileLink": "Read More →",
-    "involvedTileTitle": "Get Involved",
-    "involvedTileDesc": "Volunteer with us or partner to bring packs to your community.",
-    "involvedTileLink": "Join Us →",
-    "partnersLabel": "Community Partners",
-    "partnersSubtitle": "Organizations we proudly serve alongside in Panama City"
+
+    "storyTeaserOverline": "Who We Are",
+    "storyTeaserTitle": "Why We Started Heartitude",
+    "storyTeaserQuote": "We didn't start with a plan. We started at a hospital bedside with a question — why do some children stand at a completely different starting line?",
+    "storyTeaserText": "Founded by high school students at Balboa Academy, Heartitude is driven by a simple belief: genuine empathy must be backed by consistent, weekly action. From patient databases to interactive math software, we build the tools our community needs.",
+    "storyTeaserLink": "Read Our Story & Mission →",
+
+    "galleryTitle": "See Us in Action",
+    "gallerySubtitle": "Our work in the field.",
+    "galleryFollow": "Follow @heartitude_ba →",
+
+    "ctaOverline": "Join Our Mission",
+    "ctaTitle": "Be Part of the Impact",
+    "ctaSub": "Whether you're a student ready to make a difference, a mentor who wants to help, or simply someone who believes in our mission — you belong here.",
+    "ctaStudentTitle": "Student Volunteers",
+    "ctaStudentDesc": "Tutor pediatric patients, assist at community events, or help build digital educational platforms.",
+    "ctaStudentBtn": "Join as Volunteer →",
+    "ctaContactBtn": "Get in Touch"
   },
   "about": {
-    "heroTitle": "About Heartitude",
-    "heroSubtitle": "A student-led service club supporting learning and care.",
-    "missionTitle": "Our Mission",
-    "missionText1": "Heartitude — a blend of 'Heart' and 'Attitude.' A commitment to showing up with warmth, consistency, and purpose. That is what this name stands for.",
-    "missionText2": "Education should not depend on where you learn. Heartitude is a student-led service club for preschool and elementary students who are falling behind — not because of their ability, but because of their circumstances: children in environments that need more support, children kept from school by illness, or children without the space and conditions to study. For those who are sick, we offer more than academic support — we offer warmth, companionship, and emotional encouragement.",
-    "missionText3a": "We help in two ways. First, we create and share quality learning materials, and study math and English together — online or in person. Being present for a child is part of what we do.",
-    "missionText3b": "Second, we study the environments where children learn. We measure how noise, lighting, temperature, and humidity affect learning — and find practical, low-cost improvements, with the goal of giving every child a better chance to focus.",
-    "whyTitle": "Why We Started",
-    "whyText": "We saw children with equal potential standing at very different starting lines. Some had no access to lessons at all — no tutoring, no materials, studying alone. Others had lessons, but learned in hospital waiting rooms, noisy care spaces, or environments where focus was nearly impossible. Heartitude was born from that observation: no child should fall behind simply because of the circumstances they were born into. We exist to close that gap.",
-    "valuesTitle": "Our Values",
-    "values": {
-      "accessibility": {
-        "title": "Accessibility",
-        "desc": "Reaching every child, wherever they are."
-      },
-      "consistency": {
-        "title": "Consistency",
-        "desc": "Showing up, online or in person, steadily and reliably."
-      },
-      "empathy": {
-        "title": "Empathy",
-        "desc": "Understanding each child and meeting them where they are."
-      }
-    }
+    "title": "About Us",
+    "subtitle": "Learn · Heal · Grow — a student-founded initiative creating real conditions for every child to thrive.",
+    "whoWeAreTitle": "Who We Are",
+    "whoWeAreSub": "Student-Led Initiative",
+    "whoWeAreSubtitle": "Officially established as a student club at Balboa Academy in Panama.",
+    "p1": "Heartitude is a student-founded initiative, officially established as a club at Balboa Academy in Panama. We work to ensure every child has the conditions to learn, heal, and grow — regardless of health status or socioeconomic background.",
+    "p2": "What started as hands-on volunteering with pediatric cardiac patients at Fundación Latidos grew into a structured initiative spanning education, patient support, and environmental research — built and run entirely by students.",
+
+    "storyTitle": "Our Story",
+    "founderTitle": "How It Started",
+    "storySubtitle": "From bedside volunteering in hospital wards to student-engineered tools and community support.",
+    "founderP1": "In late 2024, I started volunteering with Fundación Latidos, an organization supporting pediatric cardiac patients in Panama.",
+    "founderP2": "What I found wasn't a grand social cause — it was very specific, everyday problems. Children spending weeks in hospital wards were falling behind on basic schoolwork. Teachers in local schools lacked Spanish-language digital math resources. And at Latidos, medical and social records for hundreds of young patients were still tracked in paper binders.",
+    "founderP3": "I realized that simply showing up for scheduled volunteer hours wasn't solving these gaps. Along with fellow students at Balboa Academy, we decided to build practical tools ourselves: weekly math and English tutoring sessions, a digitized patient registry for Latidos, and an open digital learning platform.",
+    "founderP4": "That effort officially became Heartitude. We are not an NGO or medical professionals — we are high school students using our time, technical skills, and consistency to support children who need a fair chance to learn, heal, and grow.",
+
+    "missionTitle": "Mission",
+    "missionDesc": "Creating the educational, health, and environmental conditions every child in Panama needs to learn, heal, and grow.",
+    "visionTitle": "Vision",
+    "visionDesc": "A society where illness or socioeconomic barriers never dictate a child's starting line.",
+    "mvTitle": "Mission & Vision",
+    "mvSub": "Purpose & Direction",
+    "mvSubtitle": "What drives our daily commitment and the long-term future we are actively building.",
+
+    "journeyTitle": "Our Journey",
+    "journeySubtitle": "From a single question to a working organization — in one year.",
+
+    "numbersTitle": "By the Numbers",
+    "numbersSubtitle": "Measurable impact, built week by week.",
+
+    "partnersTitle": "Community Partners",
+    "partnersSubtitle": "Organizations we work alongside — not for, but with.",
+    "partnerLatidosName": "Fundación Latidos",
+    "partnerLatidosDesc": "A cardiac care foundation supporting pediatric heart patients in Panama. Heartitude provides weekly bedside tutoring, developed their digital patient management platform (717+ records), and raises funds for medical supplies.",
+    "partnerFGLGName": "Fundación Gabriel Lewis Galindo",
+    "partnerFGLGDesc": "A foundation dedicated to education and community development. Heartitude partnered with FGLG to deliver a 4-week English tutoring program serving 25 public school students across 12 structured modules.",
+    "partnerBalboaName": "Balboa Academy",
+    "partnerBalboaDesc": "The school where Heartitude was founded as a student club, providing the institutional base and student volunteer network that powers our programs."
   },
   "programs": {
     "heroTitle": "Our Programs",
-    "heroSubtitle": "We go where learning is needed.",
-    "track1Title": "Learning Content Support",
-    "track1English": "English",
-    "track1EnglishSchedule": "Weekday afternoons, online",
-    "track1Math": "Math",
-    "track1MathSchedule": "Every Saturday, in-person school visits",
-    "track1Materials": "We create and provide our own learning materials and worksheets. Beyond academics, we show up with warmth and emotional encouragement.",
-    "track1HealthTitle": "Health Record Booklet",
-    "track1HealthBadge": "Coming Soon",
-    "track1HealthDesc": "A practical tool to help children track vaccinations, medications, and health routines.",
-    "track2Title": "Learning Environment Support",
-    "track2Badge": "BioRhythm · Research Backbone",
-    "track2Premise": "Reducing anxiety is the first condition for learning.",
-    "track2Desc": "We measure how noise, lighting, temperature, and humidity in hospitals and care spaces affect a child's sense of calm and ability to focus. We then research practical, low-cost improvements — such as lighting placement and quiet corner setup — to create better learning conditions."
+    "heroSubtitle": "Learn · Heal · Grow — three interconnected pillars\ncreating real conditions for every child to thrive.",
+    "filterAll": "All Programs",
+    "cards": {
+      "math": "Every Saturday, Heartitude volunteers provide 1:1 math tutoring to 6 pediatric cardiac children.",
+      "english": "Free virtual conversational English tutoring for public school students across Panama in partnership with FGLG.",
+      "digital": "Interactive online elementary math platform and printed workbook distribution for schools nationwide.",
+      "patients": "Digital health database tracking 700+ pediatric cardiac patient records to safeguard continuity of care.",
+      "hospital": "Weekly hospital bedside visits with emotional support, face painting, and essential medical fundraising.",
+      "environment": "Investigating noise, light, and climate in healing and learning spaces to propose actionable guidelines."
+    },
+    "introTitle": "Three Pillars, One Commitment",
+    "introDesc": "We believe education cannot be separated from well-being and environment. Our three programs work in harmony to address the root obstacles holding children back.",
+    "pillars": {
+      "learn": {
+        "num": "01",
+        "tag": "Learning Support",
+        "title": "Learn: Bridging Educational Disparities",
+        "subtitle": "Accessible math & English tutoring, national curriculum alignment, and interactive learning tools.",
+        "desc": "Many children miss critical school milestones due to financial hardship or long-term hospital stays. We deliver steady academic support that builds confidence and mastery.",
+        "features": [
+          {
+            "badge": "Every Saturday · In-Person",
+            "title": "Math Tutoring at Fundación Latidos",
+            "desc": "Weekly 1:1 math tutoring visits for pediatric cardiac patients in Panama City. We bring tailored worksheets, manipulatives, and warm encouragement."
+          },
+          {
+            "badge": "Weekday Afternoons · Online",
+            "title": "English Tutoring with Fundación Gabriel Lewis Galindo",
+            "desc": "A 4-week intensive English conversation program serving 25 public school students, covering 12 practical modules from daily routines to future aspirations."
+          },
+          {
+            "badge": "Pre-K to Grade 6 · Free & Open",
+            "title": "Panama National Curriculum Math Platform",
+            "desc": "An interactive digital math system with 35 standardized units and printable workbooks, distributed to 30+ teachers, 20+ schools, and 20+ NGOs nationwide."
+          }
+        ],
+        "metrics": [
+          { "value": "25", "label": "Students Tutored" },
+          { "value": "30+", "label": "Teachers Reached" },
+          { "value": "35", "label": "Curriculum Units" }
+        ],
+        "linkText": "Explore Learning Resources →",
+        "linkUrl": "/resources"
+      },
+      "heal": {
+        "num": "02",
+        "tag": "Health & Patient Support",
+        "title": "Heal: Standing Beside Children in Hospitals",
+        "subtitle": "Bedside emotional care, patient management technology, and community fundraising for pediatric cardiac care.",
+        "desc": "Children facing severe cardiac conditions require more than medical treatment — they need emotional warmth, human connection, and systems that protect their continuity of care. We partner with Fundación Latidos to deliver all three.",
+        "features": [
+          {
+            "badge": "Bedside Care & Activities",
+            "title": "Hospital Companionship & Face Painting",
+            "desc": "Regular volunteer sessions at hospital wards and care spaces, bringing face painting, crafts, story-reading, and cheerful comfort during difficult treatments."
+          },
+          {
+            "badge": "Assembly Official Launch · Sept 2026",
+            "title": "Latidos Patient Management Platform",
+            "desc": "Developed a full digital patient tracking database for Fundación Latidos. Modernized 717+ patient records, tracking 573 living beneficiaries and 268 patients on surgery waiting lists."
+          },
+          {
+            "badge": "Community Outreach",
+            "title": "Pediatric Medical Supply Fundraising",
+            "desc": "Raising funds for essential diagnostic tools, medicines, and surgical preparation items for pediatric cardiac patients — with an active online campaign underway."
+          }
+        ],
+        "metrics": [
+          { "value": "717+", "label": "Records Digitized" },
+          { "value": "268", "label": "Surgery Waitlist Tracked" }
+        ],
+        "linkText": "See Our Impact Journey →",
+        "linkUrl": "/impact"
+      },
+      "grow": {
+        "num": "03",
+        "tag": "Healthy Spaces",
+        "title": "Grow: Optimizing Spaces Where Children Heal & Learn",
+        "subtitle": "BioRhythm environmental research investigating noise, illumination, and micro-climates in healing spaces.",
+        "desc": "Where a child learns or recovers deeply shapes their ability to focus and heal. We research physical environmental parameters and propose practical, low-cost interventions.",
+        "features": [
+          {
+            "badge": "Acoustic Noise Analysis",
+            "title": "Sound Level Monitoring (dB)",
+            "desc": "Measuring ambient noise levels in high-traffic hospital corridors and classrooms to design sound-dampening layouts and quiet corners."
+          },
+          {
+            "badge": "Illuminance & Circadian Care",
+            "title": "Lighting & Glare Assessment (Lux)",
+            "desc": "Studying natural and artificial light exposure to prevent visual fatigue, support sleep-wake cycles, and optimize concentration."
+          },
+          {
+            "badge": "Low-Cost Implementation",
+            "title": "Practical Environmental Guidelines",
+            "desc": "Actionable guidelines and checklists for schools and care centers to optimize desk placement, airflow, and quiet zones on minimal budgets."
+          }
+        ],
+        "metrics": [
+          { "value": "4", "label": "Key Factors Analyzed" },
+          { "value": "100%", "label": "Low-Cost Focus" },
+          { "value": "Ongoing", "label": "Field Research" }
+        ],
+        "linkText": "Download Environmental Guides →",
+        "linkUrl": "/resources"
+      }
+    }
   },
   "resources": {
     "heroTitle": "Resources",
-    "heroSubtitle": "Free materials for students, families, and schools.",
+    "heroSubtitle": "Math learning platforms, an English conversation curriculum, and the Latidos patient management system\n— tools built and maintained by Heartitude for our programs in Panama.",
     "tabLearning": "Learning Materials",
     "tabBridgeline": "School Start Guide",
     "filterAll": "All",
@@ -145,88 +263,255 @@
     "downloadBtn": "Open Resource"
   },
   "impact": {
-    "heroTitle": "Our Impact",
-    "heroSubtitle": "Small actions. Real change. One child at a time.",
+    "heroTitle": "Measurable, Systemic & Sustained Impact",
+    "heroSubtitle": "Beyond good intentions — engineering lasting solutions in education, pediatric healthcare, and healing environments across Panama.",
+    "metricsOverline": "Our Reach",
+    "metricsTitle": "Impact by the Numbers",
+    "metricsSubtitle": "Meaningful change driven by consistent student dedication and community partnerships.",
+    "pillars": [
+      {
+        "num": "01",
+        "label": "Learn",
+        "subtitle": "Education & Tutoring",
+        "color": "#b45309",
+        "cols": 3,
+        "cards": [
+          {
+            "statNum": 5,
+            "statLabel": "Children",
+            "title": "Math Tutoring",
+            "desc": "Weekly in-person 1:1 math support for pediatric cardiac children at Fundación Latidos. Every Saturday, covering core math topics with reference to Panama's national curriculum.",
+            "tags": "Every Saturday · 1:1 In-person · Fundación Latidos · Active"
+          },
+          {
+            "statNum": 25,
+            "statLabel": "Students Mentored",
+            "title": "Online English Tutoring",
+            "desc": "12 conversational English sessions delivered to 25 public school students by 5 Heartitude members. We created a custom 10-topic curriculum and were awarded official certificates of recognition by FGLG.",
+            "tags": "12 Online Sessions · FGLG Partnership · Awarded by FGLG"
+          },
+          {
+            "statNum": 75,
+            "statLabel": "Recipients Reached",
+            "title": "Digital Math Platform & Resource Distribution",
+            "desc": "Distributed Heartitude's digital learning platform and curriculum materials to 32 teachers, 20 elementary schools, and 23 organizations (including NGOs and the University of Panama) — expanding educational resource access for underserved students.",
+            "tags": "32 Teachers · 20 Elementary Schools · 23 Organizations · Open Access"
+          }
+        ]
+      },
+      {
+        "num": "02",
+        "label": "Heal",
+        "subtitle": "Health & Patient Support",
+        "color": "#e11d48",
+        "cols": 2,
+        "cards": [
+          {
+            "statNum": 717,
+            "suffix": "+",
+            "statLabel": "Records · 268 Waitlist",
+            "title": "Patient Registry Support",
+            "desc": "Digital patient management platform built for Fundación Latidos. Digitized 717+ paper records into a unified system for clinical records, surgical waitlists, supply inventory, and donor management.",
+            "tags": "Launched Sep 12, 2026 · Hotel RIU Assembly · Fundación Latidos · 573 Beneficiaries · Ongoing"
+          },
+          {
+            "statNum": 2000,
+            "prefix": "$",
+            "statLabel": "Fundraising Goal (In Progress)",
+            "title": "Community Events & Fundraising",
+            "desc": "Direct fundraising campaigns to provide holistic care for pediatric heart surgery families—funding essential financial support, nutritional meals for surgery prep, medical supplies, and emotional accompaniment during recovery.",
+            "tags": "Direct Medical Aid · Surgery Supplies · Patient Families · Active"
+          }
+        ]
+      },
+      {
+        "num": "03",
+        "label": "Grow",
+        "subtitle": "Healthy Spaces",
+        "color": "#059669",
+        "cols": 1,
+        "cards": [
+          {
+            "title": "BioRhythm Field Research",
+            "desc": "Investigating physical recovery and learning environments in Panama healthcare and educational facilities through a systematic two-step methodology.",
+            "steps": [
+              { "num": "①", "label": "Clinical Acoustic Survey", "detail": "Sound level (dB) measurements in ICU and recovery wards to quantify stress and sleep disruption (Hospital del Niño)." },
+              { "num": "②", "label": "Illuminance & Microclimate", "detail": "Measuring light levels (Lux), temperature, and humidity to develop low-cost spatial improvement checklists." }
+            ],
+            "tags": "Hospital del Niño & Casita de Mausi · dB & Lux Field Data · Active Research"
+          }
+        ]
+      }
+    ],
+    "systemsOverline": "Beyond Traditional Volunteering",
+    "systemsTitle": "Three Structural Solutions",
+    "systemsSubtitle": "How we shifted from individual volunteer hours to building permanent systems adopted by established Panamanian institutions.",
+    "systems": [
+      {
+        "pillar": "Heal",
+        "tag": "Healthcare IT & Continuity",
+        "badge": "Institutional Adoption",
+        "title": "Latidos Patient Management Platform",
+        "problem": "700+ pediatric heart patient records were kept in paper binders with no automated search, risking delayed surgery follow-ups.",
+        "solution": "Architected a full digital registry tracking 573 living beneficiaries, 268 surgery waitlists, donations, and volunteer operations.",
+        "validation": "Officially presented and adopted at the Fundación Latidos Assembly (Sept 2026, Hotel RIU)."
+      },
+      {
+        "pillar": "Learn",
+        "tag": "Educational Equity",
+        "badge": "Curriculum & Language",
+        "title": "National Math Platform & FGLG English Academy",
+        "problem": "Public school youth faced gaps in digital Spanish math tools and lacked conversational English practice for future opportunities.",
+        "solution": "Built a 35-unit gamified math curriculum (Pre-K to Grade 6) and distributed digital platforms and materials to 32 teachers, 20 elementary schools, and 23 NGO partners (including Fundación Latidos) to expand learning access for underserved students.",
+        "validation": "Official Certificates of Recognition awarded to all 5 Heartitude tutors by Fundación Gabriel Lewis Galindo."
+      },
+      {
+        "pillar": "Grow",
+        "tag": "Environmental Science",
+        "badge": "Academic Field Research",
+        "title": "BioRhythm Environmental Studies",
+        "problem": "Excessive noise and harsh lighting in pediatric care rooms and classrooms elevate stress and slow recovery.",
+        "solution": "Field-deployed environmental measurement tools capturing noise (dB), lux, and climate to develop low-cost spatial improvement checklists.",
+        "validation": "Active research at Hospital del Niño and partner pediatric care centers."
+      }
+    ],
+    "partnersOverline": "Institutional Credibility",
+    "partnersTitle": "Validated by Respected Institutions",
+    "partnersSubtitle": "We work not in isolation, but alongside established Panamanian foundations, universities, hospitals, and schools.",
     "principlesTitle": "What We Stand For",
-    "principlesIntro": "Everything Heartitude does is rooted in values shared by educators and organizations around the world.",
+    "principlesIntro": "Everything Heartitude does is rooted in values shared by educators and global frameworks (UN SDG 3 & 4).",
     "principles": [
       {
         "quote": "Every child deserves an equal opportunity to learn — regardless of where they are born or the circumstances they face.",
-        "source": "SDG 4 · UNESCO",
+        "source": "SDG 4 · UNESCO Quality Education",
         "note": "We exist to close the gap between potential and opportunity."
       },
       {
         "quote": "Opening the door to education is not enough. The conditions inside must also be right.",
-        "source": "UNESCO Education Framework",
-        "note": "We research the environments where children learn — and work to improve them."
+        "source": "UNESCO Learning Environment Framework",
+        "note": "Through our BioRhythm research, we study and improve the physical conditions where children learn and heal."
       },
       {
         "quote": "No child should be left behind because of illness, poverty, or circumstance.",
-        "source": "Leave No One Behind · UN 2030",
-        "note": "We show up for children who have no other support — in person, online, and beyond."
+        "source": "Leave No One Behind · UN 2030 Agenda",
+        "note": "We show up consistently for children who need care and academic support the most."
       }
     ],
-    "activitiesTitle": "What We Have Done",
+    "activitiesOverline": "Timeline of Commitment",
+    "activitiesTitle": "The Journey of Sustained Impact",
+    "activitiesSubtitle": "How independent study, direct engagement, and student-built systems grew into institutional partnerships and field research.",
     "activities": [
       {
+        "date": "2025",
+        "title": "Early Engagement with FGLG & Fundación Latidos",
+        "desc": "The relationships that would define Heartitude began here. Our team proactively approached Fundación Gabriel Lewis Galindo to address the lack of conversational English access for public school students — leading to site visits, Zoom sessions, and months of collaborative curriculum design. Separately, our founder independently studied Fundación Latidos, mapping their pediatric cardiac care model and identifying where student-led support could create lasting value. These weren't assigned partnerships — they were connections we sought out and built from scratch.",
+        "status": "active"
+      },
+      {
         "date": "January 2026",
-        "title": "Latidos Partnership Begins",
-        "desc": "Attended Fundación Latidos’ emotional support sessions, initiated math curriculum planning, and began development of an educational tutoring app.",
+        "title": "Designing Math Tutoring with Fundación Latidos",
+        "desc": "Following months of independent research, we began formal discussions with Fundación Latidos to develop a structured math tutoring program for pediatric cardiac patients — children whose extended hospital stays had left them falling behind academically.",
         "status": "active"
       },
       {
         "date": "February 2026",
-        "title": "English Conversation Materials",
-        "desc": "Developed original English conversation guides and practice sheets used in weekly online sessions — covering greetings, daily vocabulary, and basic dialogue.",
+        "title": "Finalizing the FGLG English Program",
+        "desc": "Confirmed the online English conversation program structure with Fundación Gabriel Lewis Galindo — defining session formats, selecting 25 participating public school students, and assigning 5 Heartitude tutors across a 12-module curriculum.",
         "status": "active"
       },
       {
         "date": "March 2026",
-        "title": "English Online Support",
-        "desc": "Launched weekday afternoon online English tutoring sessions for students at Fundación Gabriel Lewis Galindo in Panama City.",
+        "title": "FGLG English Tutoring: 12 Sessions Delivered",
+        "desc": "Completed the full 12-session English conversation program with FGLG for 25 public school students — covering practical topics from daily routines and self-introduction to future aspirations. FGLG awarded certificates of recognition to all 5 Heartitude tutors.",
         "status": "active"
       },
       {
         "date": "April 2026",
-        "title": "Math In-Person Visits",
-        "desc": "Started weekly Saturday in-person math tutoring visits to students at Fundación Latidos in Panama City.",
+        "title": "Math Learning Platform: Development Begins",
+        "desc": "Launched development of an interactive digital math platform aligned to Panama's national curriculum (Pre-K to Grade 6) — designed to fill the gap in Spanish-language educational technology for public school classrooms.",
         "status": "active"
       },
       {
-        "date": "Ongoing",
-        "title": "Learning Materials",
-        "desc": "Creating and distributing custom worksheets and study materials for math and English.",
+        "date": "May 2026",
+        "title": "Hospital Visits & Environmental Field Research",
+        "desc": "Began volunteer counseling sessions with pediatric cardiac patients at Hospital del Niño, while simultaneously launching BioRhythm — our environmental research initiative measuring noise (dB), illuminance (Lux), and micro-climate conditions in pediatric care spaces.",
         "status": "active"
       },
       {
-        "date": "In Preparation",
-        "title": "BioRhythm Research",
-        "desc": "Preparing to measure and study learning environment factors — noise, lighting, temperature, and humidity.",
-        "status": "pending"
+        "date": "June 2026",
+        "title": "Patient Records & Management Platform Development",
+        "desc": "Started organizing and digitizing years of accumulated patient records at Fundación Latidos — paper files tracking hundreds of pediatric cardiac cases. This process revealed the need for a comprehensive management platform, and development began immediately.",
+        "status": "active"
+      },
+      {
+        "date": "July 2026",
+        "title": "Math Platform Complete: National Distribution",
+        "desc": "Completed the interactive math platform and began nationwide distribution — reaching 32 teachers, 20 elementary schools, and 23 NGOs across multiple provinces in Panama with free digital resources and printed curriculum materials.",
+        "status": "active"
+      },
+      {
+        "date": "August 2026",
+        "title": "Latidos Patient Management Platform: Draft Complete",
+        "desc": "Completed the initial build of the Latidos Patient Management Platform with advisory input from Fundación Latidos and a pediatric physician at Hospital del Niño — a unified digital system tracking 717+ patient records, 573 living beneficiaries, 268 surgery waiting list entries, donation management, and volunteer coordination.",
+        "status": "active"
+      },
+      {
+        "date": "September 2026",
+        "title": "Latidos Patient Platform: Institutional Adoption",
+        "desc": "Presented the completed patient registry at the Fundación Latidos Annual Assembly (Hotel RIU). The student-built system digitized 717+ paper records, now tracking 573 active beneficiaries and 268 children on surgical waiting lists. The platform was formally adopted by the foundation.",
+        "status": "active"
+      },
+      {
+        "date": "September 2026 — Present",
+        "title": "Universidad de Panamá: Academic Co-Development",
+        "desc": "After reviewing our math platform, the Faculty of Educational Sciences (GIEM) at Universidad de Panamá initiated a co-development partnership — inviting our team into university classrooms to lead workshops alongside professors and pre-service teachers, co-designing instructional content and next-generation platform features.",
+        "status": "active"
       }
     ]
   },
   "getInvolved": {
     "heroTitle": "Get Involved",
-    "heroSubtitle": "Join us in making a difference. Whether you want to volunteer or partner with us, we need your help.",
-    "volunteerTitle": "Volunteer",
-    "volunteerDesc": "We're looking for passionate individuals to help with tutoring and content creation.",
-    "openRolesTitle": "Open Roles:",
-    "openRoles": [
-      "Tutors (Math / English)",
-      "Content Helpers (Guides, Checklists)",
-      "Partner Coordinators"
+    "heroSubtitle": "Join us in making a difference. Whether you're a student, an educator, or a supporter — there's a place for you.",
+
+    "tutorTitle": "Become a Tutor",
+    "tutorDesc": "Join fellow Balboa Academy students in tutoring math and English to children across Panama — both in person and online.",
+    "tutorRolesLabel": "Open Roles:",
+    "tutorRoles": [
+      "Math Tutor (Pre-K – Grade 6)",
+      "English Conversation Tutor",
+      "Content Creator (Guides & Worksheets)"
     ],
-    "volunteerBtn": "Apply to Volunteer",
-    "partnerTitle": "Partner",
-    "partnerDesc": "Schools, NGOs, and care centers can request School Start Guide & Care-Space packs and implementation guides.",
-    "servicesTitle": "Services:",
-    "services": [
-      "School Start Guide Pack Implementation",
-      "Tutoring Program Setup",
-      "Environment Optimization"
+    "tutorBtn": "Apply as Tutor",
+
+    "materialsTitle": "Request Materials",
+    "materialsDesc": "Teachers and schools can access the learning resources we've built — our digital math platform, printed guides, and tutoring kits — completely free.",
+    "materialsLabel": "Available Resources:",
+    "materialsItems": [
+      "Pre-K to Grade 6 Math Platform",
+      "Printable Workbooks & Teacher Guides",
+      "English Conversation Modules"
     ],
-    "partnerBtn": "Partner Inquiry"
+    "materialsBtn": "Request Free Kit",
+
+    "supportTitle": "Support the Mission",
+    "supportDesc": "Not a tutor? You can still make a difference — through fundraising, supply donations, or simply spreading the word.",
+    "supportLabel": "Ways to Help:",
+    "supportItems": [
+      "Purchase a Heartitude Bracelet",
+      "Donate Books or School Supplies",
+      "Share Our Work on Social Media"
+    ],
+    "supportBtn": "Support Us",
+
+    "howOverline": "How It Works",
+    "howTitle": "Three Simple Steps",
+    "howSubtitle": "Getting involved with Heartitude is easy. Here's what to expect.",
+    "step1Title": "1. Reach Out",
+    "step1Desc": "Fill out our contact form or message us on Instagram. Tell us how you'd like to help.",
+    "step2Title": "2. Get Matched",
+    "step2Desc": "We'll connect you with the right program — tutoring, materials, or community support.",
+    "step3Title": "3. Make an Impact",
+    "step3Desc": "Start contributing weekly. Every hour you give helps a child learn, heal, or grow."
   },
   "contact": {
     "heroTitle": "Contact Us",
@@ -244,7 +529,7 @@
     "infoResponse": "We respond within 2 business days."
   },
   "footer": {
-    "tagline": "Connecting learning and care—where students need it most. Supporting learners in under-resourced schools and pediatric care settings.",
+    "tagline": "Heart Inspires. Attitude Leads.",
     "quickLinks": "Quick Links",
     "linkAbout": "About Us",
     "linkPrograms": "Our Programs",
@@ -254,7 +539,7 @@
     "linkContact": "Contact",
     "linkVolunteer": "Volunteer",
     "contactTitle": "Contact Us",
-    "copyright": "© 2026 Heartitude Club. All rights reserved."
+    "copyright": "© 2026 Heartitude. All rights reserved."
   },
   "storyMap": {
     "title": "Where We Operate",

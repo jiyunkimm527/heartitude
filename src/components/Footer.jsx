@@ -7,16 +7,21 @@ const Footer = () => {
     const { t } = useTranslation();
 
     return (
-        <footer style={{ backgroundColor: '#0f1923', color: 'white', paddingTop: '1.5rem', paddingBottom: '1rem', borderTop: '3px solid var(--color-amber)' }}>
+        <footer style={{
+            backgroundColor: '#381e11',
+            color: '#ffffff',
+            paddingTop: '3.5rem',
+            paddingBottom: '2rem',
+            borderTop: '1px solid rgba(255, 255, 255, 0.1)',
+        }}>
             <style>{`
                 .footer-link {
-                    color: #9ca3af;
+                    color: #d9cbbe;
                     text-decoration: none;
-                    font-size: 0.875rem;
-                    font-weight: 300;
+                    font-size: 0.88rem;
+                    font-weight: 500;
                     transition: color 0.2s;
                     display: inline-block;
-                    letter-spacing: 0.01em;
                 }
                 .footer-link:hover {
                     color: #fbbf24;
@@ -25,40 +30,39 @@ const Footer = () => {
                     display: flex;
                     align-items: center;
                     gap: 0.75rem;
-                    color: #9ca3af;
+                    color: #d9cbbe;
                     text-decoration: none;
-                    font-size: 0.875rem;
-                    font-weight: 300;
+                    font-size: 0.88rem;
+                    font-weight: 500;
                     transition: color 0.2s;
-                    letter-spacing: 0.01em;
                 }
                 .footer-contact-link:hover {
                     color: #fbbf24;
                 }
             `}</style>
-            <div className="container">
+            <div className="container" style={{ maxWidth: '1120px', margin: '0 auto', padding: '0 1.5rem' }}>
                 <div className="footer-grid" style={{
                     display: 'grid',
-                    gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
-                    gap: '1.5rem',
-                    marginBottom: '1.25rem'
+                    gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
+                    gap: '2.5rem',
+                    marginBottom: '2.5rem'
                 }}>
                     {/* Brand */}
                     <div>
-                        <div style={{ marginBottom: '1rem' }}>
-                            <img src="/images/logo.png" alt="Heartitude Logo" style={{ height: '66px', width: 'auto', display: 'block' }} />
+                        <div style={{ marginBottom: '1.25rem' }}>
+                            <img src="/images/logo.png" alt="Heartitude Logo" style={{ height: '56px', width: 'auto', display: 'block' }} />
                         </div>
-                        <p style={{ color: '#6b7280', lineHeight: '1.6', marginBottom: '1.5rem', fontSize: '0.875rem' }}>
-                            {t('footer.tagline')}
+                        <p style={{ fontSize: '0.85rem', color: '#c4b3a3', lineHeight: 1.6, maxWidth: '280px', margin: 0 }}>
+                            {t('home.taglineSub', 'Warmth in heart. Consistency in action.')}
                         </p>
                     </div>
 
                     {/* Quick Links */}
                     <div>
-                        <h4 style={{ fontSize: '0.75rem', fontWeight: '700', marginBottom: '1.25rem', letterSpacing: '0.12em', textTransform: 'uppercase', color: '#6b7280' }}>
-                            {t('footer.quickLinks')}
-                        </h4>
-                        <ul style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.45rem 2rem' }}>
+                        <p style={{ fontSize: '0.72rem', fontWeight: '700', letterSpacing: '0.12em', textTransform: 'uppercase', color: '#fcd34d', marginBottom: '1rem' }}>
+                            Navigation
+                        </p>
+                        <ul style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.65rem 1.5rem' }}>
                             <li><Link to="/about" className="footer-link">{t('footer.linkAbout')}</Link></li>
                             <li><Link to="/impact" className="footer-link">{t('footer.linkImpact')}</Link></li>
                             <li><Link to="/programs" className="footer-link">{t('footer.linkPrograms')}</Link></li>
@@ -70,19 +74,19 @@ const Footer = () => {
 
                     {/* Contact */}
                     <div>
-                        <h4 style={{ fontSize: '0.75rem', fontWeight: '700', marginBottom: '1.25rem', letterSpacing: '0.12em', textTransform: 'uppercase', color: '#6b7280' }}>
-                            {t('footer.contactTitle')}
-                        </h4>
-                        <ul style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+                        <p style={{ fontSize: '0.72rem', fontWeight: '700', letterSpacing: '0.12em', textTransform: 'uppercase', color: '#fcd34d', marginBottom: '1rem' }}>
+                            Contact
+                        </p>
+                        <ul style={{ display: 'flex', flexDirection: 'column', gap: '0.85rem' }}>
                             <li>
                                 <a href="mailto:jiyunkimm0503@gmail.com" className="footer-contact-link">
-                                    <Mail size={16} />
+                                    <Mail size={15} color="#fcd34d" />
                                     <span>jiyunkimm0503@gmail.com</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="https://instagram.com/heartitude_ba" target="_blank" rel="noopener noreferrer" className="footer-contact-link">
-                                    <Instagram size={16} />
+                                    <Instagram size={15} color="#fcd34d" />
                                     <span>instagram.com/heartitude_ba</span>
                                 </a>
                             </li>
@@ -90,8 +94,8 @@ const Footer = () => {
                     </div>
                 </div>
 
-                <div style={{ borderTop: '1px solid #1f2937', paddingTop: '1rem', textAlign: 'center', color: '#4b5563', fontSize: '0.82rem' }}>
-                    <p>{t('footer.copyright')}</p>
+                <div style={{ borderTop: '1px solid rgba(255, 255, 255, 0.1)', paddingTop: '1.5rem', textAlign: 'center', color: '#b09f90', fontSize: '0.82rem' }}>
+                    <p style={{ margin: 0 }}>{t('footer.copyright')}</p>
                 </div>
             </div>
         </footer>
@@ -99,4 +103,3 @@ const Footer = () => {
 };
 
 export default Footer;
-

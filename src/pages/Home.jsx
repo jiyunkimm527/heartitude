@@ -1,265 +1,239 @@
 import React from 'react';
-import Section from '../components/Section';
-import Button from '../components/Button';
-import { Link } from 'react-router-dom';
-import PageHero from '../components/PageHero';
 import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
+import { ArrowRight } from 'lucide-react';
+import PageHero from '../components/PageHero';
+import ThreePillars from '../components/ThreePillars';
+import OurStory from '../components/OurStory';
 
-const TRACK_CONFIG = [
+const PARTNERS = [
     {
-        num: 2,
-        color: '#e11d48',
-        bgLight: '#fff1f2',
-        titleKey: 'home.track1Title',
-        subKey: 'home.track1Sub',
-        stepsKey: 'home.track1Steps',
-        label: 'Track 01',
+        name: 'Fundación Latidos',
+        roleEn: 'Pediatric Cardiac Care',
+        roleEs: 'Atención Cardíaca Pediátrica',
+        logo: '/images/logo-latidos.png',
+        height: '46px',
     },
     {
-        num: 2,
-        color: '#4f46e5',
-        bgLight: '#eef2ff',
-        titleKey: 'home.track2Title',
-        subKey: 'home.track2Sub',
-        stepsKey: 'home.track2Steps',
-        label: 'Track 02',
+        name: 'Fundación Gabriel Lewis Galindo',
+        roleEn: 'English Education',
+        roleEs: 'Educación en Inglés',
+        logo: '/images/logo-gabriel-lewis.webp',
+        height: '42px',
+    },
+    {
+        name: 'Universidad de Panamá',
+        roleEn: 'Academic Co-Development',
+        roleEs: 'Co-Desarrollo Académico',
+        logo: '/images/logo-universidad-panama.png',
+        height: '38px',
+    },
+    {
+        name: 'Hospital del Niño',
+        roleEn: 'Direct Care & Field Research',
+        roleEs: 'Atención Directa e Investigación',
+        logo: '/images/logo-hospital-nino.png',
+        height: '40px',
+    },
+    {
+        name: 'Balboa Academy',
+        roleEn: 'Institutional Home',
+        roleEs: 'Base Institucional',
+        logo: '/images/balboa_logo.png',
+        height: '42px',
     },
 ];
 
 const Home = () => {
-    const { t } = useTranslation();
+    const { t, i18n } = useTranslation();
+    const isEs = i18n.language?.startsWith('es');
 
     return (
         <>
-            {/* Hero Section */}
+            {/* ── 1. Hero Section ── */}
             <PageHero
+                isHome={true}
+                tag={t('home.heroTag')}
                 title={t('home.heroTitle')}
                 subtitle={t('home.heroSubtitle')}
+                slogan={t('home.heroSlogan')}
                 imageSrc="/images/WebP_Image.webp"
-                height="540px"
+                height="580px"
             >
-                <Button to="/get-involved" className="btn-primary" style={{ fontSize: '1rem', padding: '0.85rem 2rem', borderRadius: '8px' }}>
-                    {t('home.volunteerBtn')}
-                </Button>
-                <Button to="/contact" className="btn-outline" style={{ fontSize: '1rem', padding: '0.85rem 2rem', borderRadius: '8px' }}>
-                    {t('home.partnerBtn')}
-                </Button>
+                <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap', marginTop: '0.5rem' }}>
+                    <Link
+                        to="/programs"
+                        style={{
+                            fontSize: '0.94rem',
+                            fontWeight: '700',
+                            padding: '0.85rem 1.85rem',
+                            borderRadius: '6px',
+                            backgroundColor: '#e11d48',
+                            color: '#ffffff',
+                            textDecoration: 'none',
+                            display: 'inline-flex',
+                            alignItems: 'center',
+                            gap: '0.45rem',
+                            boxShadow: '0 4px 16px rgba(225, 29, 72, 0.35)',
+                            transition: 'all 0.2s ease',
+                        }}
+                        onMouseEnter={e => {
+                            e.currentTarget.style.backgroundColor = '#be123c';
+                            e.currentTarget.style.transform = 'translateY(-2px)';
+                        }}
+                        onMouseLeave={e => {
+                            e.currentTarget.style.backgroundColor = '#e11d48';
+                            e.currentTarget.style.transform = 'translateY(0)';
+                        }}
+                    >
+                        <span>{t('home.heroCtaExplore', 'Explore Our Programs')}</span>
+                        <ArrowRight size={15} strokeWidth={2.5} />
+                    </Link>
+
+                    <Link
+                        to="/get-involved"
+                        style={{
+                            fontSize: '0.94rem',
+                            fontWeight: '700',
+                            padding: '0.85rem 1.85rem',
+                            borderRadius: '6px',
+                            backgroundColor: 'rgba(255, 255, 255, 0.15)',
+                            border: '1px solid rgba(255, 255, 255, 0.4)',
+                            color: '#ffffff',
+                            textDecoration: 'none',
+                            display: 'inline-flex',
+                            alignItems: 'center',
+                            gap: '0.45rem',
+                            backdropFilter: 'blur(6px)',
+                            transition: 'all 0.2s ease',
+                        }}
+                        onMouseEnter={e => {
+                            e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.25)';
+                            e.currentTarget.style.transform = 'translateY(-2px)';
+                        }}
+                        onMouseLeave={e => {
+                            e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.15)';
+                            e.currentTarget.style.transform = 'translateY(0)';
+                        }}
+                    >
+                        <span>{t('home.heroCtaVolunteer', 'Get Involved')}</span>
+                    </Link>
+                </div>
             </PageHero>
 
-            {/* Statement Banner */}
-            <div style={{
-                background: '#2d1b0e',
-                padding: '2.5rem 0',
-                textAlign: 'center',
+            {/* ── 2. Who We Are — Emotional Connection First ── */}
+            <OurStory />
+
+            {/* ── 3. Three Pillars (Learn · Heal · Grow) ── */}
+            <ThreePillars />
+
+
+            {/* ── 5. Institutional Collaborators Bar ── */}
+            <section style={{
+                backgroundColor: '#ffffff',
+                borderBottom: '1px solid #e2e8f0',
+                padding: '3.5rem 0',
             }}>
-                <div className="container">
-                    <p style={{
-                        fontSize: '1.15rem',
-                        fontWeight: '500',
-                        color: 'rgba(255,255,255,0.88)',
-                        letterSpacing: '0.01em',
-                        lineHeight: 1.7,
-                        maxWidth: '720px',
-                        margin: '0 auto',
+                <div className="container" style={{ maxWidth: '1180px', margin: '0 auto', padding: '0 1.5rem' }}>
+                    <div style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
+                        <span style={{
+                            display: 'inline-block',
+                            fontSize: '0.72rem',
+                            fontWeight: '700',
+                            letterSpacing: '0.14em',
+                            textTransform: 'uppercase',
+                            color: '#64748b',
+                            marginBottom: '0.35rem',
+                        }}>
+                            {t('home.partnersLabel', 'Institutional Partners & Collaborators')}
+                        </span>
+                        <p style={{
+                            fontSize: '0.92rem',
+                            color: '#64748b',
+                            margin: 0,
+                            maxWidth: '650px',
+                            marginLeft: 'auto',
+                            marginRight: 'auto',
+                        }}>
+                            {t('home.partnersSubtitle', 'Working alongside healthcare, educational, and academic institutions across Panama')}
+                        </p>
+                    </div>
+
+                    <div style={{
+                        display: 'grid',
+                        gridTemplateColumns: 'repeat(auto-fit, minmax(190px, 1fr))',
+                        gap: '1.5rem',
+                        alignItems: 'center',
                     }}>
-                        {t('home.bannerText')}
-                    </p>
-                </div>
-            </div>
-
-            {/* A Path Forward */}
-            <Section style={{ backgroundColor: '#f8fafc', padding: '6rem 0' }}>
-                {/* Section Header */}
-                <div style={{ textAlign: 'center', marginBottom: '5rem' }}>
-                    <span style={{
-                        display: 'inline-block',
-                        fontSize: '0.72rem', fontWeight: '700',
-                        letterSpacing: '0.14em', textTransform: 'uppercase',
-                        color: '#4f46e5', marginBottom: '0.85rem',
-                        padding: '0.3rem 1rem',
-                        background: '#eef2ff',
-                        borderRadius: '999px',
-                    }}>Framework</span>
-                    <h2 className="section-title">{t('home.pathTitle')}</h2>
-                    <p className="section-subtitle">{t('home.pathSubtitle')}</p>
-                </div>
-
-                <div style={{ maxWidth: '1100px', margin: '0 auto', padding: '0 1.5rem' }}>
-
-
-
-                    {/* Track 1 */}
-                    <div style={{ marginBottom: '5rem' }}>
-                        <div style={{
-                            display: 'flex', alignItems: 'center', gap: '1rem',
-                            marginBottom: '2rem', paddingBottom: '1.25rem',
-                            borderBottom: '1px solid var(--color-amber)',
-                        }}>
-                            <span style={{
-                                backgroundColor: '#1c1108', color: 'white',
-                                borderRadius: '6px', padding: '0.2rem 0.7rem',
-                                fontSize: '0.68rem', fontWeight: '800', letterSpacing: '0.1em',
-                                textTransform: 'uppercase',
-                            }}>Track 01</span>
-                            <div>
-                                <h3 style={{ fontSize: '1.4rem', fontWeight: '700', color: '#1c1108', lineHeight: 1.2, letterSpacing: '-0.02em' }}>
-                                    {t('home.track1Title')}
-                                </h3>
-                                <p style={{ fontSize: '0.875rem', color: 'var(--color-text-light)', marginTop: '0.2rem' }}>
-                                    {t('home.track1Sub')}
-                                </p>
-                            </div>
-                        </div>
-
-                        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '1.25rem' }}>
-                            {[1, 2, 3, 4].map((num) => (
-                                <div key={num} style={{
-                                    backgroundColor: 'white',
-                                    borderRadius: '12px',
-                                    padding: '1.6rem 1.5rem',
-                                    borderLeft: '3px solid var(--color-amber)',
-                                    boxShadow: '0 1px 6px rgba(0,0,0,0.05)',
-                                    transition: 'box-shadow 0.2s, transform 0.2s',
+                        {PARTNERS.map((p, idx) => (
+                            <div
+                                key={idx}
+                                style={{
+                                    backgroundColor: '#fafbfc',
+                                    border: '1px solid #f1f5f9',
+                                    borderRadius: '10px',
+                                    padding: '1.25rem 1rem',
+                                    display: 'flex',
+                                    flexDirection: 'column',
+                                    alignItems: 'center',
+                                    justifyContent: 'center',
+                                    textAlign: 'center',
+                                    minHeight: '120px',
+                                    transition: 'all 0.2s ease',
                                 }}
-                                    onMouseEnter={e => { e.currentTarget.style.boxShadow = '0 6px 24px rgba(180,83,9,0.1)'; e.currentTarget.style.transform = 'translateY(-2px)'; }}
-                                    onMouseLeave={e => { e.currentTarget.style.boxShadow = '0 1px 6px rgba(0,0,0,0.05)'; e.currentTarget.style.transform = 'translateY(0)'; }}
-                                >
-                                    <div className="step-circle" style={{ marginBottom: '0.9rem' }}>{num}</div>
-                                    <h4 style={{ fontSize: 'var(--size-h4)', fontWeight: '700', marginBottom: '0.45rem', color: 'var(--color-text-dark)', lineHeight: 1.3 }}>
-                                        {t(`home.track1Steps.${num}.title`)}
-                                    </h4>
-                                    <p style={{ color: 'var(--color-text-muted)', fontSize: 'var(--size-body-sm)', lineHeight: '1.65' }}>
-                                        {t(`home.track1Steps.${num}.desc`)}
-                                    </p>
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-
-                    {/* Track 2 */}
-                    <div>
-                        <div style={{
-                            display: 'flex', alignItems: 'center', gap: '1rem',
-                            marginBottom: '2rem', paddingBottom: '1.25rem',
-                            borderBottom: '1px solid var(--color-amber)',
-                        }}>
-                            <span style={{
-                                backgroundColor: 'var(--color-amber-deep)', color: 'white',
-                                borderRadius: '6px', padding: '0.2rem 0.7rem',
-                                fontSize: '0.68rem', fontWeight: '800', letterSpacing: '0.1em',
-                                textTransform: 'uppercase',
-                            }}>Track 02</span>
-                            <div>
-                                <h3 style={{ fontSize: '1.4rem', fontWeight: '700', color: '#1c1108', lineHeight: 1.2, letterSpacing: '-0.02em' }}>
-                                    {t('home.track2Title')}
-                                </h3>
-                                <p style={{ fontSize: '0.875rem', color: 'var(--color-text-light)', marginTop: '0.2rem' }}>
-                                    {t('home.track2Sub')}
-                                </p>
-                            </div>
-                        </div>
-
-                        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '1.25rem' }}>
-                            {[1, 2, 3, 4].map((num) => (
-                                <div key={num} style={{
-                                    backgroundColor: 'white',
-                                    borderRadius: '12px',
-                                    padding: '1.6rem 1.5rem',
-                                    borderLeft: '3px solid var(--color-amber)',
-                                    boxShadow: '0 1px 6px rgba(0,0,0,0.05)',
-                                    transition: 'box-shadow 0.2s, transform 0.2s',
+                                onMouseEnter={e => {
+                                    e.currentTarget.style.backgroundColor = '#ffffff';
+                                    e.currentTarget.style.borderColor = '#cbd5e1';
+                                    e.currentTarget.style.boxShadow = '0 6px 16px rgba(15, 23, 42, 0.06)';
+                                    e.currentTarget.style.transform = 'translateY(-2px)';
                                 }}
-                                    onMouseEnter={e => { e.currentTarget.style.boxShadow = '0 6px 24px rgba(180,83,9,0.1)'; e.currentTarget.style.transform = 'translateY(-2px)'; }}
-                                    onMouseLeave={e => { e.currentTarget.style.boxShadow = '0 1px 6px rgba(0,0,0,0.05)'; e.currentTarget.style.transform = 'translateY(0)'; }}
-                                >
-                                    <div className="step-circle" style={{ marginBottom: '0.9rem' }}>{num}</div>
-                                    <h4 style={{ fontSize: 'var(--size-h4)', fontWeight: '700', marginBottom: '0.45rem', color: 'var(--color-text-dark)', lineHeight: 1.3 }}>
-                                        {t(`home.track2Steps.${num}.title`)}
-                                    </h4>
-                                    <p style={{ color: 'var(--color-text-muted)', fontSize: 'var(--size-body-sm)', lineHeight: '1.65' }}>
-                                        {t(`home.track2Steps.${num}.desc`)}
-                                    </p>
+                                onMouseLeave={e => {
+                                    e.currentTarget.style.backgroundColor = '#fafbfc';
+                                    e.currentTarget.style.borderColor = '#f1f5f9';
+                                    e.currentTarget.style.boxShadow = 'none';
+                                    e.currentTarget.style.transform = 'translateY(0)';
+                                }}
+                            >
+                                <div style={{ height: '48px', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '0.75rem' }}>
+                                    <img
+                                        src={p.logo}
+                                        alt={p.name}
+                                        style={{
+                                            maxHeight: p.height,
+                                            maxWidth: '140px',
+                                            width: 'auto',
+                                            objectFit: 'contain',
+                                            filter: 'grayscale(20%)',
+                                            opacity: 0.95,
+                                            transition: 'filter 0.2s ease, opacity 0.2s ease',
+                                        }}
+                                    />
                                 </div>
-                            ))}
-                        </div>
-                    </div>
-
-                </div>
-            </Section>
-
-            {/* Image Tiles: Mission & Get Involved */}
-            <Section style={{ paddingTop: 0 }}>
-                <div style={{
-                    display: 'grid',
-                    gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))',
-                    gap: '1.5rem'
-                }}>
-                    {/* Mission Tile */}
-                    <Link to="/about" style={{ display: 'block', position: 'relative', borderRadius: 'var(--radius-xl)', overflow: 'hidden', color: 'white', backgroundColor: '#1e3a5f' }}>
-                        <div style={{ padding: '2rem 2.5rem' }}>
-                            <p style={{ fontSize: '0.7rem', fontWeight: '700', letterSpacing: '0.12em', textTransform: 'uppercase', color: 'rgba(165,180,252,0.9)', marginBottom: '0.5rem' }}>Mission</p>
-                            <h2 style={{ fontSize: '1.5rem', fontWeight: '800', marginBottom: '0.4rem', letterSpacing: '-0.02em', lineHeight: 1.2 }}>
-                                {t('home.missionTileTitle')}
-                            </h2>
-                            <p style={{ fontSize: '0.9rem', marginBottom: '1rem', opacity: 0.75, lineHeight: 1.5 }}>
-                                {t('home.missionTileDesc')}
-                            </p>
-                            <span style={{ fontSize: '0.85rem', fontWeight: '600', color: 'rgba(165,180,252,1)' }}>{t('home.missionTileLink')}</span>
-                        </div>
-                    </Link>
-
-                    {/* Get Involved Tile */}
-                    <Link to="/get-involved" style={{ display: 'block', position: 'relative', borderRadius: 'var(--radius-xl)', overflow: 'hidden', color: 'white', backgroundColor: '#1e293b' }}>
-                        <div style={{ padding: '2rem 2.5rem' }}>
-                            <p style={{ fontSize: '0.7rem', fontWeight: '700', letterSpacing: '0.12em', textTransform: 'uppercase', color: 'rgba(252,211,77,0.9)', marginBottom: '0.5rem' }}>Join Us</p>
-                            <h2 style={{ fontSize: '1.5rem', fontWeight: '800', marginBottom: '0.4rem', letterSpacing: '-0.02em', lineHeight: 1.2 }}>
-                                {t('home.involvedTileTitle')}
-                            </h2>
-                            <p style={{ fontSize: '0.9rem', marginBottom: '1rem', opacity: 0.75, lineHeight: 1.5 }}>
-                                {t('home.involvedTileDesc')}
-                            </p>
-                            <span style={{ fontSize: '0.85rem', fontWeight: '600', color: 'rgba(252,211,77,1)' }}>{t('home.involvedTileLink')}</span>
-                        </div>
-                    </Link>
-                </div>
-            </Section>
-
-            {/* ── Community Partners ── */}
-            <Section style={{ backgroundColor: '#f9fafb', paddingTop: '2.5rem', paddingBottom: '2.5rem' }}>
-                <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
-                    <p style={{
-                        fontSize: 'var(--size-overline)',
-                        fontWeight: '700',
-                        letterSpacing: '0.14em',
-                        textTransform: 'uppercase',
-                        color: 'var(--color-text-subtle)',
-                        marginBottom: '0.5rem',
-                    }}>{t('home.partnersLabel')}</p>
-                    <p style={{ fontSize: '0.95rem', color: 'var(--color-text-muted)' }}>{t('home.partnersSubtitle')}</p>
-                </div>
-                <div style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    gap: '4rem',
-                    flexWrap: 'wrap',
-                }}>
-                    <div style={{ textAlign: 'center' }}>
-                        <img
-                            src="/images/logo-latidos.png"
-                            alt="Fundación Latidos"
-                            style={{ height: '56px', width: 'auto', objectFit: 'contain', filter: 'grayscale(20%)', opacity: 0.85 }}
-                        />
-                    </div>
-                    <div style={{ textAlign: 'center' }}>
-                        <img
-                            src="/images/logo-gabriel-lewis.webp"
-                            alt="Fundación Gabriel Lewis Galindo"
-                            style={{ height: '52px', width: 'auto', objectFit: 'contain', filter: 'grayscale(20%)', opacity: 0.85 }}
-                        />
+                                <span style={{
+                                    fontSize: '0.78rem',
+                                    fontWeight: '700',
+                                    color: '#0f172a',
+                                    lineHeight: 1.3,
+                                    display: 'block',
+                                    marginBottom: '0.2rem',
+                                }}>
+                                    {p.name}
+                                </span>
+                                <span style={{
+                                    fontSize: '0.68rem',
+                                    color: '#64748b',
+                                    fontWeight: '600',
+                                    lineHeight: 1.25,
+                                }}>
+                                    {isEs ? p.roleEs : p.roleEn}
+                                </span>
+                            </div>
+                        ))}
                     </div>
                 </div>
-            </Section>
+            </section>
+
+
         </>
     );
 };

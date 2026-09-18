@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Heartitude · Environmental Survey Checklist</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Georgia', serif;
+      font-size: 12px;
+      color: #000;
+      background: #fff;
+      padding: 32px 40px;
+      max-width: 780px;
+      margin: 0 auto;
+    }
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      border-bottom: 2px solid #000;
+      padding-bottom: 14px;
+      margin-bottom: 20px;
+    }
+    .header-left h1 { font-size: 20px; font-weight: 800; letter-spacing: -0.5px; color: #000; }
+    .header-left p { font-size: 9px; letter-spacing: 1.8px; text-transform: uppercase; color: #555; margin-top: 3px; }
+    .header-right { text-align: right; font-size: 10px; color: #555; line-height: 1.6; }
+    .badge { display: inline-block; background: #f0f0f0; color: #000; font-size: 9px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; padding: 3px 8px; border-radius: 2px; margin-bottom: 4px; border: 1px solid #ccc; }
+    .intro { background: #f5f5f5; border-left: 3px solid #000; padding: 10px 14px; margin-bottom: 18px; font-size: 11px; color: #000; line-height: 1.65; }
+    .intro strong { color: #000; }
+    .app-note { background: #f5f5f5; border: 1px solid #ccc; border-radius: 0; padding: 9px 13px; margin-bottom: 20px; font-size: 10.5px; color: #000; }
+    .app-note strong { color: #000; }
+    .section { margin-bottom: 20px; }
+    .section-title { font-size: 9px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #000; border-bottom: 1px solid #000; padding-bottom: 5px; margin-bottom: 12px; }
+    .section-title span { color: #000; margin-right: 5px; }
+    .field-grid { display: grid; gap: 8px; }
+    .field-grid.cols-2 { grid-template-columns: 1fr 1fr; }
+    .field-grid.cols-3 { grid-template-columns: 1fr 1fr 1fr; }
+    .field label { display: block; font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; color: #555; margin-bottom: 3px; }
+    .field .line { border-bottom: 1px solid #000; height: 22px; width: 100%; }
+    table { width: 100%; border-collapse: collapse; font-size: 11px; margin-top: 4px; }
+    thead tr { background: #e8e8e8; }
+    thead th { padding: 7px 10px; font-size: 9px; font-weight: 700; letter-spacing: 0.8px; text-transform: uppercase; color: #000; text-align: left; border: 1px solid #000; }
+    tbody tr { border: 1px solid #000; }
+    tbody td { padding: 8px 10px; border: 1px solid #000; color: #000; }
+    tbody td.write { background: #fafafa; }
+    tbody tr:nth-child(even) { background: #f0f0f0; }
+    .check-list { list-style: none; display: flex; flex-direction: column; gap: 6px; }
+    .check-list li { display: flex; align-items: flex-start; gap: 8px; font-size: 11px; color: #000; }
+    .check-box { width: 13px; height: 13px; border: 1px solid #000; border-radius: 0; flex-shrink: 0; margin-top: 1px; }
+    .rating-row { display: flex; align-items: center; gap: 6px; font-size: 11px; margin-bottom: 7px; }
+    .rating-row label { width: 160px; color: #000; flex-shrink: 0; }
+    .rating-boxes { display: flex; gap: 4px; }
+    .rating-box { width: 28px; height: 20px; border: 1px solid #000; border-radius: 0; display: flex; align-items: center; justify-content: center; font-size: 9px; color: #000; }
+    .rating-label { font-size: 9px; color: #555; margin-left: 3px; }
+    .write-area { border: 1px solid #000; border-radius: 0; width: 100%; height: 52px; background: #fff; margin-top: 4px; }
+    .footer { margin-top: 28px; padding-top: 12px; border-top: 1px solid #000; text-align: center; font-size: 9px; color: #555; line-height: 1.7; }
+    .print-btn { display: block; margin: 0 auto 28px; padding: 8px 22px; background: #000; color: #fff; border: none; border-radius: 4px; font-size: 12px; font-weight: 700; cursor: pointer; font-family: inherit; }
+    @media print { .print-btn { display: none; } body { padding: 20px 28px; } }
+  </style>
+</head>
+<body>
+
+  <button class="print-btn" onclick="window.print()">Print / Save as PDF</button>
+
+  <div class="header">
+    <div class="header-left">
+      <h1>Heartitude</h1>
+      <p>BioRhythm Research · Environmental Survey Checklist</p>
+    </div>
+    <div class="header-right">
+      <div class="badge">Grow — Field Research</div><br/>
+      Version 1.0 · 2026<br/>
+      heartitude.org
+    </div>
+  </div>
+
+  <div class="intro">
+    <strong>Purpose:</strong> This checklist helps volunteers systematically assess the physical environment of schools and hospital spaces in Panama.
+    Data collected feeds directly into Heartitude's ongoing <strong>BioRhythm Research</strong> — identifying practical, low-cost improvements that help children focus better and recover faster.<br/><br/>
+    <strong>No special equipment needed.</strong> All measurements can be taken using free smartphone apps (see note below). Complete one checklist per room or space assessed.
+  </div>
+
+  <div class="app-note">
+    <strong>Recommended Apps:</strong>
+    &nbsp;·&nbsp; <strong>Noise:</strong> NIOSH SLM (iOS/Android) or Decibel X
+    &nbsp;·&nbsp; <strong>Light:</strong> Lux Light Meter (iOS/Android)
+    &nbsp;·&nbsp; <strong>Temperature:</strong> Record from any available thermometer on site
+  </div>
+
+  <!-- SECTION 1 -->
+  <div class="section">
+    <div class="section-title"><span>01</span> Survey Information</div>
+    <div class="field-grid cols-2">
+      <div class="field"><label>Volunteer Name</label><div class="line"></div></div>
+      <div class="field"><label>Date</label><div class="line"></div></div>
+      <div class="field"><label>Facility Name</label><div class="line"></div></div>
+      <div class="field"><label>Room / Space Assessed</label><div class="line"></div></div>
+    </div>
+    <div style="margin-top:10px;">
+      <p style="font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:0.8px; color:#9ca3af; margin-bottom:6px;">Facility Type (check one)</p>
+      <ul class="check-list" style="flex-direction:row; gap:16px; flex-wrap:wrap;">
+        <li><div class="check-box"></div> Public School – Classroom</li>
+        <li><div class="check-box"></div> Public School – Corridor</li>
+        <li><div class="check-box"></div> Hospital Ward</li>
+        <li><div class="check-box"></div> Hospital Corridor</li>
+        <li><div class="check-box"></div> Other: ___________</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- SECTION 2: Noise -->
+  <div class="section">
+    <div class="section-title"><span>02</span> Noise Assessment (dB)</div>
+    <table>
+      <thead>
+        <tr>
+          <th>Measurement Point</th>
+          <th>Time</th>
+          <th>Activity Level</th>
+          <th>Reading (dB)</th>
+          <th>Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Center of Room</td><td class="write"></td><td class="write">Quiet / Active</td><td class="write"></td><td class="write"></td></tr>
+        <tr><td>Near Window / Door</td><td class="write"></td><td class="write">Quiet / Active</td><td class="write"></td><td class="write"></td></tr>
+        <tr><td>Peak Noise Moment</td><td class="write"></td><td class="write">Quiet / Active</td><td class="write"></td><td class="write"></td></tr>
+      </tbody>
+    </table>
+    <div style="margin-top:10px;">
+      <p style="font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:0.8px; color:#9ca3af; margin-bottom:6px;">Primary Noise Sources</p>
+      <ul class="check-list" style="flex-direction:row; gap:14px; flex-wrap:wrap;">
+        <li><div class="check-box"></div> Traffic / Street</li>
+        <li><div class="check-box"></div> HVAC / AC Unit</li>
+        <li><div class="check-box"></div> Adjacent Rooms</li>
+        <li><div class="check-box"></div> Student Activity</li>
+        <li><div class="check-box"></div> Construction</li>
+        <li><div class="check-box"></div> Other: ___________</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- SECTION 3: Lighting -->
+  <div class="section">
+    <div class="section-title"><span>03</span> Lighting Assessment (Lux)</div>
+    <table>
+      <thead>
+        <tr>
+          <th>Measurement Point</th>
+          <th>Natural Light</th>
+          <th>Artificial Light</th>
+          <th>Reading (Lux)</th>
+          <th>Glare?</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Near Window</td><td class="write">Yes / No</td><td class="write">On / Off</td><td class="write"></td><td class="write">Yes / No</td></tr>
+        <tr><td>Center of Room</td><td class="write">Yes / No</td><td class="write">On / Off</td><td class="write"></td><td class="write">Yes / No</td></tr>
+        <tr><td>Farthest from Window</td><td class="write">Yes / No</td><td class="write">On / Off</td><td class="write"></td><td class="write">Yes / No</td></tr>
+      </tbody>
+    </table>
+    <div style="margin-top:10px;">
+      <p style="font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:0.8px; color:#9ca3af; margin-bottom:6px;">Lighting Type</p>
+      <ul class="check-list" style="flex-direction:row; gap:14px; flex-wrap:wrap;">
+        <li><div class="check-box"></div> Fluorescent</li>
+        <li><div class="check-box"></div> LED</li>
+        <li><div class="check-box"></div> Incandescent</li>
+        <li><div class="check-box"></div> Natural Only</li>
+        <li><div class="check-box"></div> No Artificial Light</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- SECTION 4: Temperature -->
+  <div class="section">
+    <div class="section-title"><span>04</span> Temperature &amp; Ventilation</div>
+    <div class="field-grid cols-3" style="margin-bottom:12px;">
+      <div class="field"><label>Temperature (°C)</label><div class="line"></div></div>
+      <div class="field"><label>Time of Reading</label><div class="line"></div></div>
+      <div class="field"><label>Humidity (% if known)</label><div class="line"></div></div>
+    </div>
+    <p style="font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:0.8px; color:#9ca3af; margin-bottom:8px;">Ventilation Type</p>
+    <ul class="check-list" style="flex-direction:row; gap:14px; flex-wrap:wrap; margin-bottom:12px;">
+      <li><div class="check-box"></div> Air Conditioning</li>
+      <li><div class="check-box"></div> Ceiling / Stand Fan</li>
+      <li><div class="check-box"></div> Natural (Windows Open)</li>
+      <li><div class="check-box"></div> None</li>
+    </ul>
+    <p style="font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:0.8px; color:#9ca3af; margin-bottom:8px;">Perceived Comfort (circle: 1 = Poor, 5 = Excellent)</p>
+    <div class="rating-row">
+      <label>Thermal Comfort</label>
+      <div class="rating-boxes">
+        <div class="rating-box">1</div><div class="rating-box">2</div><div class="rating-box">3</div><div class="rating-box">4</div><div class="rating-box">5</div>
+      </div>
+    </div>
+    <div class="rating-row">
+      <label>Air Freshness</label>
+      <div class="rating-boxes">
+        <div class="rating-box">1</div><div class="rating-box">2</div><div class="rating-box">3</div><div class="rating-box">4</div><div class="rating-box">5</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 5: Observations -->
+  <div class="section">
+    <div class="section-title"><span>05</span> General Observations</div>
+    <div class="field-grid cols-2" style="margin-bottom:10px;">
+      <div class="field"><label>Approx. No. of Occupants</label><div class="line"></div></div>
+      <div class="field"><label>Photos Taken? &nbsp; Yes / No</label><div class="line"></div></div>
+    </div>
+    <p style="font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:0.8px; color:#9ca3af; margin-bottom:5px;">Key Issues Observed</p>
+    <div class="write-area"></div>
+    <p style="font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:0.8px; color:#9ca3af; margin-top:10px; margin-bottom:5px;">Suggested Improvements</p>
+    <div class="write-area"></div>
+    <p style="font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:0.8px; color:#9ca3af; margin-top:10px; margin-bottom:5px;">Additional Notes</p>
+    <div class="write-area" style="height:38px;"></div>
+  </div>
+
+  <div class="footer">
+    Heartitude · BioRhythm Environmental Research · Balboa Academy, Panama<br/>
+    Return completed forms to: <strong>heartitude@email.com</strong> &nbsp;·&nbsp; heartitude.org<br/>
+    <em>Thank you for contributing to healthier learning and healing environments for children in Panama.</em>
+  </div>
+
+</body>
+</html>

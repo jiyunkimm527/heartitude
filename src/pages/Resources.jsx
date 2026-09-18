@@ -1,446 +1,971 @@
-import React, { useState } from 'react';
-import PageHero from '../components/PageHero';
-import Section from '../components/Section';
-import { resources, featuredApps } from '../data/resources';
+import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
+import { useLocation } from 'react-router-dom';
+import {
+    ExternalLink,
+    Download,
+    Eye,
+    X,
+} from 'lucide-react';
+import PageHero from '../components/PageHero';
+import {
+    englishResources,
+    healResources,
+    growResources,
+    preKGrades,
+    mathGrades,
+} from '../data/resources';
 
-const CATEGORIES = [
-    { key: 'Math',      icon: '📐', color: '#0891b2', bg: '#ecfeff', light: '#a5f3fc' },
-    { key: 'English',   icon: '📖', color: '#f9a8d4', bg: '#fdf2f8', light: '#fbcfe8' },
-    { key: 'BioRhythm', icon: '💚', color: '#059669', bg: '#ecfdf5', light: '#6ee7b7' },
-];
-
-const CategoryTab = ({ cat, active, onClick }) => (
-    <button
-        onClick={onClick}
-        style={{
-            display: 'flex',
-            alignItems: 'center',
-            gap: '0.45rem',
-            padding: '0.6rem 1.4rem',
-            borderRadius: '999px',
-            border: active ? 'none' : '1.5px solid #e5e7eb',
-            backgroundColor: active ? cat.color : 'transparent',
-            color: active ? '#ffffff' : '#6b7280',
-            fontWeight: '600',
-            fontSize: '0.875rem',
-            cursor: 'pointer',
-            transition: 'all 0.2s ease',
-            boxShadow: active ? `0 4px 14px -2px ${cat.color}55` : 'none',
-            letterSpacing: '0.01em',
-        }}
-        onMouseEnter={e => {
-            if (!active) {
-                e.currentTarget.style.borderColor = cat.color;
-                e.currentTarget.style.color = cat.color;
-                e.currentTarget.style.backgroundColor = cat.bg;
-            }
-        }}
-        onMouseLeave={e => {
-            if (!active) {
-                e.currentTarget.style.borderColor = '#e5e7eb';
-                e.currentTarget.style.color = '#6b7280';
-                e.currentTarget.style.backgroundColor = 'transparent';
-            }
-        }}
-    >
-        <span>{cat.icon}</span>
-        {cat.key}
-    </button>
-);
-
-const ResourceCard = ({ resource, accentColor, accentBg }) => {
-    const hasLink = resource.url && resource.url !== '#';
-    const [hovered, setHovered] = useState(false);
-
-    return (
-        <div
-            onMouseEnter={() => setHovered(true)}
-            onMouseLeave={() => setHovered(false)}
-            style={{
-                backgroundColor: '#ffffff',
-                border: '1px solid #e5e7eb',
-                borderRadius: '12px',
-                display: 'flex',
-                flexDirection: 'column',
-                overflow: 'hidden',
-                transition: 'transform 0.22s ease, box-shadow 0.22s ease',
-                transform: hovered ? 'translateY(-4px)' : 'translateY(0)',
-                boxShadow: hovered
-                    ? `0 12px 28px -4px ${accentColor}22, 0 4px 8px -2px rgba(0,0,0,0.08)`
-                    : '0 1px 4px rgba(0,0,0,0.06)',
-            }}
-        >
-            {/* Accent top bar */}
-            <div style={{ height: '4px', backgroundColor: accentColor, flexShrink: 0 }} />
-
-            <div style={{ padding: '1.4rem', display: 'flex', flexDirection: 'column', gap: '0.75rem', flex: 1 }}>
-                {/* Badge row */}
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                    <span style={{
-                        fontSize: '0.68rem',
-                        fontWeight: '700',
-                        textTransform: 'uppercase',
-                        letterSpacing: '0.08em',
-                        color: accentColor,
-                        backgroundColor: accentBg,
-                        padding: '0.2rem 0.55rem',
-                        borderRadius: '4px',
-                    }}>
-                        {resource.gradeLevel}
-                    </span>
-                    <span style={{
-                        fontSize: '0.75rem',
-                        fontWeight: '600',
-                        color: '#94a3b8',
-                        letterSpacing: '0.04em',
-                    }}>
-                        {resource.type}
-                    </span>
-                </div>
-
-                {/* Title */}
-                <h3 style={{
-                    fontSize: '1rem',
-                    fontWeight: '700',
-                    color: '#1c1108',
-                    lineHeight: 1.4,
-                }}>
-                    {resource.title}
-                </h3>
-
-                {/* Description */}
-                <p style={{
-                    fontSize: '0.85rem',
-                    color: '#6b7280',
-                    lineHeight: 1.65,
-                    flex: 1,
-                }}>
-                    {resource.description}
-                </p>
-
-                {/* Button */}
-                <button
-                    onClick={() => hasLink && window.open(resource.url, '_blank')}
-                    disabled={!hasLink}
-                    style={{
-                        marginTop: '0.5rem',
-                        padding: '0.55rem 1rem',
-                        borderRadius: '7px',
-                        border: 'none',
-                        backgroundColor: hasLink ? accentColor : '#f3f4f6',
-                        color: hasLink ? '#ffffff' : '#9ca3af',
-                        fontWeight: '600',
-                        fontSize: '0.85rem',
-                        cursor: hasLink ? 'pointer' : 'default',
-                        transition: 'opacity 0.2s',
-                        opacity: hovered && hasLink ? 0.88 : 1,
-                    }}
-                >
-                    {hasLink ? 'Open Resource →' : 'Coming Soon'}
-                </button>
-            </div>
-        </div>
-    );
+// Convert Google Drive /view link to /preview for iframe embedding
+const toEmbedUrl = (url) => {
+    if (!url || url === '#') return url;
+    return url.replace(/\/view(\?.*)?$/, '/preview');
 };
 
-const EmptyState = ({ cat }) => (
-    <div style={{
-        gridColumn: '1 / -1',
-        textAlign: 'center',
-        padding: '4rem 2rem',
-        backgroundColor: cat.bg,
-        borderRadius: '16px',
-        border: `1.5px dashed ${cat.light}`,
-    }}>
-        <div style={{ fontSize: '2.8rem', marginBottom: '1rem' }}>{cat.icon}</div>
-        <p style={{ fontSize: '1rem', fontWeight: '700', color: cat.color, marginBottom: '0.4rem' }}>
-            {cat.key} materials are on the way
-        </p>
-        <p style={{ fontSize: '0.875rem', color: '#6b7280' }}>
-            We'll add resources here as they're created. Check back soon!
-        </p>
-    </div>
-);
+// Convert Google Drive link to direct download URL
+const toDownloadUrl = (url) => {
+    if (!url || url === '#') return null;
+    const match = url.match(/\/d\/([^/]+)/);
+    if (!match) return url;
+    return `https://drive.google.com/uc?export=download&id=${match[1]}`;
+};
 
-const FeaturedAppCard = ({ app, onOpenUrl }) => {
-    const [hovered, setHovered] = useState(false);
-    return (
-        <div
-            onMouseEnter={() => setHovered(true)}
-            onMouseLeave={() => setHovered(false)}
-            style={{
-                position: 'relative',
-                background: '#ffffff',
-                border: '1px solid #e2e8f0',
-                borderRadius: '16px',
-                padding: '1.75rem',
-                display: 'flex',
-                flexDirection: 'column',
-                gap: '1.25rem',
-                transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
-                transform: hovered ? 'translateY(-6px)' : 'translateY(0)',
-                boxShadow: hovered 
-                    ? '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)' 
-                    : '0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03)',
-                overflow: 'hidden'
-            }}
-        >
-            {/* Glowing top line with app gradient */}
-            <div style={{ 
-                position: 'absolute', 
-                top: 0, 
-                left: 0, 
-                right: 0, 
-                height: '6px', 
-                background: app.gradient 
-            }} />
+// Math Platform & App data (inline — no longer imported from resources.js)
+const MATH_PLATFORM = {
+    title: 'Elementary Math Learning Platform',
+    description: 'A digital learning platform developed by Heartitude for use in math tutoring volunteer work, referencing MEDUCA national curriculum guidelines. It covers the elementary school range, providing structured units and guided exercises.',
+    url: 'https://jy-matematica-panama.vercel.app/',
+    pdfUrl: 'https://drive.google.com/file/d/13oXMoK-uR1h-LdfQWPyWmw-7-Pv6e2_h/view?usp=drive_link',
+};
 
-            {/* Header info */}
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: '1rem' }}>
-                <div>
-                    <span style={{ 
-                        fontSize: '0.72rem', 
-                        fontWeight: '700', 
-                        textTransform: 'uppercase', 
-                        color: '#64748b',
-                        letterSpacing: '0.06em'
-                    }}>
-                        {app.subtitle}
-                    </span>
-                    <h3 style={{ 
-                        fontSize: '1.15rem', 
-                        fontWeight: '800', 
-                        color: '#1c1108',
-                        marginTop: '0.2rem',
-                        lineHeight: 1.3
-                    }}>
-                        {app.title}
-                    </h3>
-                </div>
-                <div style={{
-                    width: '44px',
-                    height: '44px',
-                    borderRadius: '12px',
-                    background: app.gradient,
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    fontSize: '1.4rem',
-                    color: '#ffffff',
-                    boxShadow: '0 4px 10px rgba(0,0,0,0.1)',
-                    flexShrink: 0
-                }}>
-                    {app.icon}
-                </div>
-            </div>
-
-            {/* Description */}
-            <p style={{ 
-                fontSize: '0.85rem', 
-                color: '#475569', 
-                lineHeight: 1.6,
-                flex: 1
-            }}>
-                {app.description}
-            </p>
-
-            {/* Bottom row: Badge + Button */}
-            <div style={{ 
-                marginTop: '0.5rem', 
-                display: 'flex', 
-                flexDirection: 'column', 
-                gap: '1rem' 
-            }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                    <span style={{
-                        fontSize: '0.7rem',
-                        fontWeight: '700',
-                        color: '#0f172a',
-                        background: '#f1f5f9',
-                        padding: '0.25rem 0.65rem',
-                        borderRadius: '999px',
-                        display: 'inline-flex',
-                        alignItems: 'center',
-                        gap: '0.35rem'
-                    }}>
-                        {app.id === 'fa2' && (
-                            <span style={{
-                                width: '6px',
-                                height: '6px',
-                                background: '#10b981',
-                                borderRadius: '50%',
-                                display: 'inline-block',
-                                animation: 'pulse 1.8s infinite'
-                            }} />
-                        )}
-                        {app.badge}
-                    </span>
-                </div>
-
-                <button
-                    onClick={() => onOpenUrl(app.url, app.title)}
-                    style={{
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        padding: '0.75rem',
-                        borderRadius: '8px',
-                        background: app.gradient,
-                        color: '#ffffff',
-                        fontWeight: '700',
-                        fontSize: '0.875rem',
-                        border: 'none',
-                        cursor: 'pointer',
-                        textAlign: 'center',
-                        boxShadow: hovered ? '0 10px 15px -3px rgba(0,0,0,0.15)' : 'none',
-                        transition: 'all 0.2s ease',
-                        opacity: hovered ? 0.92 : 1
-                    }}
-                >
-                    {app.btnText}
-                </button>
-            </div>
-        </div>
-    );
+const KIDS_APP = {
+    title: 'Kids Math Practice App',
+    description: 'A mobile-friendly web app developed to engage pediatric cardiac patients in Panama in fun math learning (numbers and operations). It features number recognition, basic arithmetic, and interactive games, enabling in-person tutoring without the need for additional physical materials.',
+    url: 'https://latidos-ninos.vercel.app/index.html',
 };
 
 const Resources = () => {
-    const [activeKey, setActiveKey] = useState('Math');
+    const { t } = useTranslation();
+    const location = useLocation();
     const [embedUrl, setEmbedUrl] = useState(null);
-    const [embedTitle, setEmbedTitle] = useState('');
-    const activeCat = CATEGORIES.find(c => c.key === activeKey);
-    const filtered = resources.filter(r => r.category === activeKey);
+    const [embedTitle] = useState('');
+    const [showMaterials, setShowMaterials] = useState(false);
+    const [showKidsMaterials, setShowKidsMaterials] = useState(false);
+    const [showEnglishMaterials, setShowEnglishMaterials] = useState(false);
+    const [activeGradeId, setActiveGradeId] = useState('mg1');
+    const [activeKidsGradeId] = useState('pk1');
+
+    // Handle hash scrolling from navbar dropdown
+    useEffect(() => {
+        const scrollToHash = () => {
+            const hash = window.location.hash || location.hash;
+            if (!hash) return;
+            const id = hash.replace('#', '');
+
+            setTimeout(() => {
+                const el = document.getElementById(id);
+                if (el) {
+                    const navHeader = document.querySelector('header');
+                    const navHeight = navHeader ? navHeader.getBoundingClientRect().height : 112;
+                    const y = el.getBoundingClientRect().top + window.scrollY - navHeight - 16;
+                    window.scrollTo({ top: Math.max(0, y), behavior: 'smooth' });
+                }
+            }, 80);
+        };
+
+        scrollToHash();
+        window.addEventListener('hashchange', scrollToHash);
+        return () => window.removeEventListener('hashchange', scrollToHash);
+    }, [location.hash, location.pathname]);
+
 
     return (
         <>
+            {/* ── Page Hero ── */}
             <PageHero
-                title="Resources"
-                subtitle="Free learning materials for students and families — added as we create them."
-                imageSrc="/images/hero-resources.jpg"
+                theme="light"
+                height="180px"
+                title={t('resources.heroTitle', 'Resources')}
+                subtitle={t('resources.heroSubtitle', "Math learning platforms, an English conversation curriculum, and the Latidos patient management system\n— tools built and maintained by Heartitude for our programs in Panama.")}
             />
 
-            <Section>
-                {/* Category Tabs */}
-                <div style={{
-                    display: 'flex',
-                    justifyContent: 'center',
-                    gap: '0.75rem',
-                    marginBottom: '3rem',
-                    flexWrap: 'wrap',
-                }}>
-                    {CATEGORIES.map(cat => (
-                        <CategoryTab
-                            key={cat.key}
-                            cat={cat}
-                            active={activeKey === cat.key}
-                            onClick={() => setActiveKey(cat.key)}
-                        />
-                    ))}
-                </div>
+            {/* ── Main Content Area ── */}
+            <div style={{ background: '#ffffff', padding: '3.5rem 0 6rem' }}>
+                <div className="container">
 
-                {/* CSS Micro-animations */}
-                <style>{`
-                    @keyframes pulse {
-                        0% { transform: scale(0.95); opacity: 1; }
-                        50% { transform: scale(1.3); opacity: 0.5; }
-                        100% { transform: scale(0.95); opacity: 1; }
-                    }
-                    @keyframes fadeIn {
-                        from { opacity: 0; }
-                        to { opacity: 1; }
-                    }
-                    @keyframes slideUp {
-                        from { transform: translateY(20px); opacity: 0; }
-                        to { transform: translateY(0); opacity: 1; }
-                    }
-                `}</style>
+                    {/* ══════════════════════════════════════════════════════════════
+                        MATH
+                    ══════════════════════════════════════════════════════════════ */}
+                    <div id="math" style={{ marginBottom: '5.5rem', scrollMarginTop: '120px' }}>
 
-                {/* Featured Apps Section for Math */}
-                {activeKey === 'Math' && (
-                    <div style={{ marginBottom: '3.5rem' }}>
-                        <h2 style={{
-                            fontSize: '1.25rem',
-                            fontWeight: '800',
-                            color: '#1c1108',
-                            marginBottom: '1.25rem',
-                            display: 'flex',
-                            alignItems: 'center',
-                            gap: '0.5rem',
-                            letterSpacing: '0.01em',
-                            borderBottom: '2px solid #f1f5f9',
-                            paddingBottom: '0.75rem'
-                        }}>
-                            ✨ Recommended Learning Apps
-                        </h2>
-                        <div style={{
-                            display: 'grid',
-                            gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-                            gap: '1.5rem',
-                        }}>
-                            {featuredApps.filter(app => app.category === 'Math').map(app => (
-                                <FeaturedAppCard 
-                                    key={app.id} 
-                                    app={app} 
-                                    onOpenUrl={(url, title) => {
-                                        setEmbedUrl(url);
-                                        setEmbedTitle(title);
+
+
+                            {/* ── Math Cards ── */}
+                            <div
+                                style={{ marginBottom: '2.5rem' }}
+                            >
+                                <div style={{
+                                    display: 'grid',
+                                    gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+                                    gap: '1.25rem',
+                                }}>
+
+                                    {/* ── Card 1: Learning Platform ── */}
+                                    <div style={{
+                                        background: '#ffffff',
+                                        border: '1px solid #e2e8f0',
+                                        padding: '2rem',
+                                        display: 'flex',
+                                        flexDirection: 'column',
+                                        gap: '1.25rem',
+                                        transition: 'border-color 0.2s ease',
                                     }}
-                                />
-                            ))}
+                                    onMouseEnter={e => e.currentTarget.style.borderColor = '#0f172a'}
+                                    onMouseLeave={e => e.currentTarget.style.borderColor = '#e2e8f0'}
+                                    >
+                                        {/* Top row: label + QR placeholder */}
+                                        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: '1rem' }}>
+                                            <div style={{ flex: 1 }}>
+                                                <span style={{
+                                                    display: 'inline-block',
+                                                    fontSize: '0.68rem',
+                                                    fontWeight: '700',
+                                                    textTransform: 'uppercase',
+                                                    letterSpacing: '0.12em',
+                                                    color: '#64748b',
+                                                    marginBottom: '0.4rem',
+                                                }}>Web Platform</span>
+                                                <h3 style={{ fontSize: '1.15rem', fontWeight: '700', color: '#0f172a', margin: '0 0 0.55rem', lineHeight: 1.3, fontFamily: 'var(--font-heading)' }}>
+                                                    {MATH_PLATFORM.title}
+                                                </h3>
+                                                <p style={{ fontSize: '0.875rem', color: '#475569', lineHeight: 1.65, margin: 0 }}>
+                                                    {MATH_PLATFORM.description}
+                                                </p>
+                                            </div>
+                                            {/* QR Code — Math Platform */}
+                                            <a
+                                                href={MATH_PLATFORM.url}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                title="Scan to open Math Platform"
+                                                style={{
+                                                    flexShrink: 0,
+                                                    display: 'flex',
+                                                    flexDirection: 'column',
+                                                    alignItems: 'center',
+                                                    gap: '0.3rem',
+                                                    textDecoration: 'none',
+                                                }}
+                                            >
+                                                <img
+                                                    src="https://api.qrserver.com/v1/create-qr-code/?size=192x192&data=https://jy-matematica-panama.vercel.app/&margin=4&color=0f172a&bgcolor=ffffff"
+                                                    alt="QR code for Math Learning Platform"
+                                                    style={{
+                                                        width: '96px',
+                                                        height: '96px',
+                                                        borderRadius: '2px',
+                                                        border: '1px solid #e2e8f0',
+                                                        display: 'block',
+                                                    }}
+                                                />
+                                                <span style={{ fontSize: '0.6rem', color: '#94a3b8', fontWeight: '600', textAlign: 'center', lineHeight: 1.2 }}>Scan / Open</span>
+                                            </a>
+                                        </div>
+
+                                        {/* Action buttons */}
+                                        <div style={{ display: 'flex', gap: '0.6rem', flexWrap: 'wrap', paddingTop: '0.5rem', borderTop: '1px solid #f1f5f9' }}>
+                                            <a
+                                                href={MATH_PLATFORM.url}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                style={{
+                                                    display: 'inline-flex',
+                                                    alignItems: 'center',
+                                                    gap: '0.4rem',
+                                                    padding: '0.55rem 1.1rem',
+                                                    background: '#0f172a',
+                                                    color: '#ffffff',
+                                                    borderRadius: '4px',
+                                                    fontSize: '0.82rem',
+                                                    fontWeight: '600',
+                                                    textDecoration: 'none',
+                                                    transition: 'opacity 0.15s',
+                                                }}
+                                                onMouseEnter={e => e.currentTarget.style.opacity = '0.85'}
+                                                onMouseLeave={e => e.currentTarget.style.opacity = '1'}
+                                            >
+                                                <ExternalLink size={13} />
+                                                Visit Platform
+                                            </a>
+                                            <button
+                                                onClick={() => setShowMaterials(v => !v)}
+                                                style={{
+                                                    display: 'inline-flex',
+                                                    alignItems: 'center',
+                                                    gap: '0.4rem',
+                                                    padding: '0.55rem 1.1rem',
+                                                    background: showMaterials ? '#0f172a' : '#ffffff',
+                                                    color: showMaterials ? '#ffffff' : '#334155',
+                                                    border: '1px solid #cbd5e1',
+                                                    borderRadius: '4px',
+                                                    fontSize: '0.82rem',
+                                                    fontWeight: '600',
+                                                    cursor: 'pointer',
+                                                    transition: 'all 0.15s',
+                                                }}
+                                            >
+                                                <Download size={13} />
+                                                Learning Materials
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    {/* ── Card 2: Kids App ── */}
+                                    <div style={{
+                                        background: '#ffffff',
+                                        border: '1px solid #e2e8f0',
+                                        padding: '2rem',
+                                        display: 'flex',
+                                        flexDirection: 'column',
+                                        gap: '1.25rem',
+                                        transition: 'border-color 0.2s ease',
+                                    }}
+                                    onMouseEnter={e => e.currentTarget.style.borderColor = '#0f172a'}
+                                    onMouseLeave={e => e.currentTarget.style.borderColor = '#e2e8f0'}
+                                    >
+                                        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: '1rem' }}>
+                                            <div style={{ flex: 1 }}>
+                                                <span style={{
+                                                    display: 'inline-block',
+                                                    fontSize: '0.68rem',
+                                                    fontWeight: '700',
+                                                    textTransform: 'uppercase',
+                                                    letterSpacing: '0.12em',
+                                                    color: '#64748b',
+                                                    marginBottom: '0.4rem',
+                                                }}>Mobile App</span>
+                                                <h3 style={{ fontSize: '1.15rem', fontWeight: '700', color: '#0f172a', margin: '0 0 0.55rem', lineHeight: 1.3, fontFamily: 'var(--font-heading)' }}>
+                                                    {KIDS_APP.title}
+                                                </h3>
+                                                <p style={{ fontSize: '0.875rem', color: '#475569', lineHeight: 1.65, margin: 0 }}>
+                                                    {KIDS_APP.description}
+                                                </p>
+                                            </div>
+                                            {/* QR Code — Kids App */}
+                                            <a
+                                                href={KIDS_APP.url}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                title="Scan to open Kids App"
+                                                style={{
+                                                    flexShrink: 0,
+                                                    display: 'flex',
+                                                    flexDirection: 'column',
+                                                    alignItems: 'center',
+                                                    gap: '0.3rem',
+                                                    textDecoration: 'none',
+                                                }}
+                                            >
+                                                <img
+                                                    src="https://api.qrserver.com/v1/create-qr-code/?size=192x192&data=https://latidos-ninos.vercel.app/index.html&margin=4&color=0f172a&bgcolor=ffffff"
+                                                    alt="QR code for Kids Math Practice App"
+                                                    style={{
+                                                        width: '96px',
+                                                        height: '96px',
+                                                        borderRadius: '2px',
+                                                        border: '1px solid #e2e8f0',
+                                                        display: 'block',
+                                                    }}
+                                                />
+                                                <span style={{ fontSize: '0.6rem', color: '#94a3b8', fontWeight: '600', textAlign: 'center', lineHeight: 1.2 }}>Scan / Open</span>
+                                            </a>
+                                        </div>
+
+                                        {/* Action buttons */}
+                                        <div style={{ display: 'flex', gap: '0.6rem', flexWrap: 'wrap', paddingTop: '0.5rem', borderTop: '1px solid #f1f5f9' }}>
+                                            <a
+                                                href={KIDS_APP.url}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                style={{
+                                                    display: 'inline-flex',
+                                                    alignItems: 'center',
+                                                    gap: '0.4rem',
+                                                    padding: '0.55rem 1.1rem',
+                                                    background: '#0f172a',
+                                                    color: '#ffffff',
+                                                    borderRadius: '4px',
+                                                    fontSize: '0.82rem',
+                                                    fontWeight: '600',
+                                                    textDecoration: 'none',
+                                                    transition: 'opacity 0.15s',
+                                                }}
+                                                onMouseEnter={e => e.currentTarget.style.opacity = '0.85'}
+                                                onMouseLeave={e => e.currentTarget.style.opacity = '1'}
+                                            >
+                                                <ExternalLink size={13} />
+                                                Open App
+                                            </a>
+                                            <button
+                                                onClick={() => setShowKidsMaterials(v => !v)}
+                                                style={{
+                                                    display: 'inline-flex',
+                                                    alignItems: 'center',
+                                                    gap: '0.4rem',
+                                                    padding: '0.55rem 1.1rem',
+                                                    background: showKidsMaterials ? '#0f172a' : '#ffffff',
+                                                    color: showKidsMaterials ? '#ffffff' : '#334155',
+                                                    border: '1px solid #cbd5e1',
+                                                    borderRadius: '4px',
+                                                    fontSize: '0.82rem',
+                                                    fontWeight: '600',
+                                                    cursor: 'pointer',
+                                                    transition: 'all 0.15s',
+                                                }}
+                                            >
+                                                <Download size={13} />
+                                                Pre-K Worksheets
+                                            </button>
+                                    </div>
+
+                                </div>
+                            </div>
                         </div>
                     </div>
-                )}
 
-                {/* Count label */}
-                {filtered.length > 0 && (
-                    <p style={{
-                        textAlign: 'center',
-                        fontSize: '0.8rem',
-                        color: '#9ca3af',
-                        marginBottom: '1.5rem',
-                        fontWeight: '500',
-                        letterSpacing: '0.04em',
-                    }}>
-                        {filtered.length} resource{filtered.length > 1 ? 's' : ''} available
-                    </p>
-                )}
 
-                {/* Resource Grid */}
-                <div style={{
-                    display: 'grid',
-                    gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))',
-                    gap: '1.5rem',
-                }}>
-                    {filtered.length === 0
-                        ? <EmptyState cat={activeCat} />
-                        : filtered.map(r => (
-                            <ResourceCard
-                                key={r.id}
-                                resource={r}
-                                accentColor={activeCat.color}
-                                accentBg={activeCat.bg}
-                            />
-                        ))
-                    }
+
+
+
+                    {/* Divider between groups */}
+                    <div style={{ borderBottom: '1px solid #e2e8f0', marginBottom: '3.5rem' }} />
+
+                            {/* ── English + Latidos Cards ── */}
+                            <div
+                                id="english"
+                                style={{
+                                    scrollMarginTop: '120px',
+                                    marginBottom: '2.5rem',
+                                    display: 'grid',
+                                    gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+                                    gap: '1.25rem',
+                                }}
+                            >
+                                {/* English Card */}
+                                <div style={{
+                                    background: '#ffffff',
+                                    border: '1px solid #e2e8f0',
+                                    padding: '2rem',
+                                    display: 'flex',
+                                    flexDirection: 'column',
+                                    gap: '1.25rem',
+                                    transition: 'border-color 0.2s ease',
+                                }}
+                                onMouseEnter={e => e.currentTarget.style.borderColor = '#0f172a'}
+                                onMouseLeave={e => e.currentTarget.style.borderColor = '#e2e8f0'}
+                                >
+                                    {/* Label + title + description */}
+                                    <div>
+                                        <span style={{
+                                            display: 'inline-block',
+                                            fontSize: '0.68rem',
+                                            fontWeight: '700',
+                                            textTransform: 'uppercase',
+                                            letterSpacing: '0.12em',
+                                            color: '#64748b',
+                                            marginBottom: '0.4rem',
+                                        }}>English Conversation Program</span>
+                                        <h3 style={{ fontSize: '1.15rem', fontWeight: '700', color: '#0f172a', margin: '0 0 0.55rem', lineHeight: 1.3, fontFamily: 'var(--font-heading)' }}>
+                                            Virtual English Conversation Curriculum
+                                        </h3>
+                                        <p style={{ fontSize: '0.875rem', color: '#475569', lineHeight: 1.65, margin: 0 }}>
+                                            A 10-topic curriculum created and used during online English conversation sessions with public school students, in partnership with Fundación Gabriel Lewis Galindo (FGLG). The materials cover real-world dialogue, daily routines, and cultural topics, and are available for PDF download.
+                                        </p>
+                                    </div>
+
+                                    {/* Action buttons */}
+                                    <div style={{ paddingTop: '0.5rem', borderTop: '1px solid #f1f5f9', marginTop: 'auto' }}>
+                                        <button
+                                            onClick={() => setShowEnglishMaterials(true)}
+                                            style={{
+                                                display: 'inline-flex',
+                                                alignItems: 'center',
+                                                gap: '0.4rem',
+                                                padding: '0.55rem 1.1rem',
+                                                background: '#ffffff',
+                                                color: '#334155',
+                                                border: '1px solid #cbd5e1',
+                                                borderRadius: '4px',
+                                                fontSize: '0.82rem',
+                                                fontWeight: '600',
+                                                cursor: 'pointer',
+                                                transition: 'all 0.15s',
+                                            }}
+                                            onMouseEnter={e => e.currentTarget.style.borderColor = '#94a3b8'}
+                                            onMouseLeave={e => e.currentTarget.style.borderColor = '#cbd5e1'}
+                                        >
+                                            <Download size={13} />
+                                            Learning Materials
+                                        </button>
+                                    </div>
+                                </div>
+
+                                {/* Latidos Card */}
+                                <div style={{
+                                    background: '#ffffff',
+                                    border: '1px solid #e2e8f0',
+                                    padding: '2rem',
+                                    display: 'flex',
+                                    flexDirection: 'column',
+                                    gap: '1.25rem',
+                                    transition: 'border-color 0.2s ease',
+                                }}
+                                onMouseEnter={e => e.currentTarget.style.borderColor = '#0f172a'}
+                                onMouseLeave={e => e.currentTarget.style.borderColor = '#e2e8f0'}
+                                >
+                                    {/* Top row: label + QR */}
+                                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: '1rem' }}>
+                                        <div style={{ flex: 1 }}>
+                                            <span style={{
+                                                display: 'inline-block',
+                                                fontSize: '0.68rem',
+                                                fontWeight: '700',
+                                                textTransform: 'uppercase',
+                                                letterSpacing: '0.12em',
+                                                color: '#64748b',
+                                                marginBottom: '0.4rem',
+                                            }}>Web Platform</span>
+                                            <h3 style={{ fontSize: '1.15rem', fontWeight: '700', color: '#0f172a', margin: '0 0 0.55rem', lineHeight: 1.3, fontFamily: 'var(--font-heading)' }}>
+                                                Latidos Patient Management Platform
+                                            </h3>
+                                            <p style={{ fontSize: '0.875rem', color: '#475569', lineHeight: 1.65, margin: 0 }}>
+                                                Integrated management system for Fundación Latidos — tracking pediatric cardiac patient records, beneficiary follow-up, volunteer coordination, donation ledgers, and material aid distribution.
+                                            </p>
+                                        </div>
+                                        {/* QR Code */}
+                                        <a
+                                            href="https://latidos-platform.vercel.app/"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            title="Scan to open Latidos Platform"
+                                            style={{
+                                                flexShrink: 0,
+                                                display: 'flex',
+                                                flexDirection: 'column',
+                                                alignItems: 'center',
+                                                gap: '0.3rem',
+                                                textDecoration: 'none',
+                                            }}
+                                        >
+                                            <img
+                                                src="https://api.qrserver.com/v1/create-qr-code/?size=192x192&data=https://latidos-platform.vercel.app/&margin=4&color=0f172a&bgcolor=ffffff"
+                                                alt="QR code for Latidos Management Platform"
+                                                style={{
+                                                    width: '96px',
+                                                    height: '96px',
+                                                    borderRadius: '2px',
+                                                    border: '1px solid #e2e8f0',
+                                                    display: 'block',
+                                                }}
+                                            />
+                                            <span style={{ fontSize: '0.6rem', color: '#94a3b8', fontWeight: '600', textAlign: 'center', lineHeight: 1.2 }}>Scan / Open</span>
+                                        </a>
+                                    </div>
+
+                                    {/* Action button */}
+                                    <div style={{ display: 'flex', gap: '0.6rem', flexWrap: 'wrap', paddingTop: '0.5rem', borderTop: '1px solid #f1f5f9', marginTop: 'auto' }}>
+                                        <a
+                                            href="https://latidos-platform.vercel.app/"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            style={{
+                                                display: 'inline-flex',
+                                                alignItems: 'center',
+                                                gap: '0.4rem',
+                                                padding: '0.55rem 1.1rem',
+                                                background: '#0f172a',
+                                                color: '#ffffff',
+                                                borderRadius: '4px',
+                                                fontSize: '0.82rem',
+                                                fontWeight: '600',
+                                                textDecoration: 'none',
+                                                transition: 'opacity 0.15s',
+                                            }}
+                                            onMouseEnter={e => e.currentTarget.style.opacity = '0.85'}
+                                            onMouseLeave={e => e.currentTarget.style.opacity = '1'}
+                                        >
+                                            <ExternalLink size={13} />
+                                            Visit Platform
+                                        </a>
+                                    </div>
+                            </div>
+                    </div>
                 </div>
-            </Section>
+            </div>
 
-            {/* Embedded Iframe Modal Viewer */}
+            {/* ── English Learning Materials Modal ── */}
+            {showEnglishMaterials && (
+                <div
+                    onClick={() => setShowEnglishMaterials(false)}
+                    style={{
+                        position: 'fixed',
+                        inset: 0,
+                        backgroundColor: 'rgba(15, 23, 42, 0.7)',
+                        backdropFilter: 'blur(5px)',
+                        zIndex: 9999,
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        padding: '1.5rem',
+                    }}
+                >
+                    <div
+                        onClick={e => e.stopPropagation()}
+                        style={{
+                            width: '100%',
+                            maxWidth: '680px',
+                            maxHeight: '80vh',
+                            backgroundColor: '#ffffff',
+                            borderRadius: '12px',
+                            boxShadow: '0 25px 50px -12px rgba(0,0,0,0.25)',
+                            overflow: 'hidden',
+                            display: 'flex',
+                            flexDirection: 'column',
+                        }}
+                    >
+                        {/* Modal Header */}
+                        <div style={{
+                            display: 'flex',
+                            justifyContent: 'space-between',
+                            alignItems: 'center',
+                            padding: '1rem 1.25rem',
+                            borderBottom: '1px solid #e2e8f0',
+                            background: '#0f172a',
+                            color: '#ffffff',
+                            flexShrink: 0,
+                        }}>
+                            <span style={{ fontWeight: '700', fontSize: '0.95rem' }}>
+                                English Curriculum — Session Materials (10 Sessions)
+                            </span>
+                            <button
+                                onClick={() => setShowEnglishMaterials(false)}
+                                style={{
+                                    background: 'transparent',
+                                    border: 'none',
+                                    color: '#cbd5e1',
+                                    cursor: 'pointer',
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    justifyContent: 'center',
+                                    width: '32px',
+                                    height: '32px',
+                                    borderRadius: '4px',
+                                }}
+                                onMouseEnter={e => e.currentTarget.style.color = '#ffffff'}
+                                onMouseLeave={e => e.currentTarget.style.color = '#cbd5e1'}
+                            >
+                                <X size={18} />
+                            </button>
+                        </div>
+
+                        {/* Grade subtitle */}
+                        <div style={{ padding: '0.65rem 1.25rem', background: '#f8fafc', borderBottom: '1px solid #e2e8f0', flexShrink: 0 }}>
+                            <span style={{ fontSize: '0.78rem', color: '#64748b', fontWeight: '500' }}>
+                                Virtual English Conversation Program · Fundación Gabriel Lewis Galindo (FGLG)
+                            </span>
+                        </div>
+
+                        {/* Session Rows */}
+                        <div style={{ overflowY: 'auto', flex: 1 }}>
+                            {englishResources.map((session, idx) => {
+                                const dlUrl = toDownloadUrl(session.url);
+                                return (
+                                    <div
+                                        key={session.id}
+                                        style={{
+                                            display: 'flex',
+                                            alignItems: 'center',
+                                            justifyContent: 'space-between',
+                                            padding: '1rem 1.25rem',
+                                            borderBottom: idx < englishResources.length - 1 ? '1px solid #f1f5f9' : 'none',
+                                            gap: '1rem',
+                                            transition: 'background 0.12s',
+                                        }}
+                                        onMouseEnter={e => e.currentTarget.style.background = '#f8fafc'}
+                                        onMouseLeave={e => e.currentTarget.style.background = 'transparent'}
+                                    >
+                                        <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+                                            <span style={{
+                                                fontSize: '0.68rem',
+                                                fontWeight: '700',
+                                                color: '#475569',
+                                                background: '#f1f5f9',
+                                                padding: '0.2rem 0.5rem',
+                                                borderRadius: '4px',
+                                                minWidth: '52px',
+                                                textAlign: 'center',
+                                            }}>
+                                                S{session.sessionNum}
+                                            </span>
+                                            <span style={{ fontSize: '0.9rem', fontWeight: '600', color: '#1e293b' }}>
+                                                {session.title}
+                                            </span>
+                                        </div>
+                                        <a
+                                            href={dlUrl}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            style={{
+                                                display: 'inline-flex',
+                                                alignItems: 'center',
+                                                gap: '0.35rem',
+                                                padding: '0.42rem 0.9rem',
+                                                background: '#0f172a',
+                                                color: '#ffffff',
+                                                borderRadius: '6px',
+                                                fontSize: '0.78rem',
+                                                fontWeight: '600',
+                                                textDecoration: 'none',
+                                                whiteSpace: 'nowrap',
+                                                flexShrink: 0,
+                                            }}
+                                            onMouseEnter={e => e.currentTarget.style.opacity = '0.85'}
+                                            onMouseLeave={e => e.currentTarget.style.opacity = '1'}
+                                        >
+                                            <Download size={13} />
+                                            Download PDF
+                                        </a>
+                                    </div>
+                                );
+                            })}
+                        </div>
+                    </div>
+                </div>
+            )}
+
+            {/* ── Learning Materials Modal ── */}
+            {showMaterials && (() => {
+                const activeGrade = mathGrades.find(g => g.id === activeGradeId) || mathGrades[0];
+                return (
+                    <div
+                        onClick={() => setShowMaterials(false)}
+                        style={{
+                            position: 'fixed',
+                            inset: 0,
+                            backgroundColor: 'rgba(15, 23, 42, 0.7)',
+                            backdropFilter: 'blur(5px)',
+                            zIndex: 9999,
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            padding: '1.5rem',
+                        }}
+                    >
+                        <div
+                            onClick={e => e.stopPropagation()}
+                            style={{
+                                width: '100%',
+                                maxWidth: '680px',
+                                maxHeight: '80vh',
+                                backgroundColor: '#ffffff',
+                                borderRadius: '12px',
+                                boxShadow: '0 25px 50px -12px rgba(0,0,0,0.25)',
+                                overflow: 'hidden',
+                                display: 'flex',
+                                flexDirection: 'column',
+                            }}
+                        >
+                            {/* Modal Header */}
+                            <div style={{
+                                display: 'flex',
+                                justifyContent: 'space-between',
+                                alignItems: 'center',
+                                padding: '1rem 1.25rem',
+                                borderBottom: '1px solid #e2e8f0',
+                                background: '#0f172a',
+                                color: '#ffffff',
+                                flexShrink: 0,
+                            }}>
+                                <span style={{ fontWeight: '700', fontSize: '0.95rem' }}>
+                                    Math Curriculum — Learning Materials
+                                </span>
+                                <button
+                                    onClick={() => setShowMaterials(false)}
+                                    style={{
+                                        background: 'transparent',
+                                        border: 'none',
+                                        color: '#cbd5e1',
+                                        cursor: 'pointer',
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        justifyContent: 'center',
+                                        width: '32px',
+                                        height: '32px',
+                                        borderRadius: '4px',
+                                    }}
+                                    onMouseEnter={e => e.currentTarget.style.color = '#ffffff'}
+                                    onMouseLeave={e => e.currentTarget.style.color = '#cbd5e1'}
+                                >
+                                    <X size={18} />
+                                </button>
+                            </div>
+
+                            {/* Grade Tabs */}
+                            <div style={{ display: 'flex', overflowX: 'auto', borderBottom: '1px solid #e2e8f0', background: '#f8fafc', flexShrink: 0 }}>
+                                {mathGrades.map(grade => {
+                                    const isActive = grade.id === activeGradeId;
+                                    return (
+                                        <button
+                                            key={grade.id}
+                                            onClick={() => setActiveGradeId(grade.id)}
+                                            style={{
+                                                padding: '0.65rem 1.1rem',
+                                                border: 'none',
+                                                background: 'transparent',
+                                                color: isActive ? '#0f172a' : '#64748b',
+                                                fontWeight: isActive ? '700' : '500',
+                                                fontSize: '0.82rem',
+                                                cursor: 'pointer',
+                                                borderBottom: isActive ? '2px solid #0f172a' : '2px solid transparent',
+                                                whiteSpace: 'nowrap',
+                                                transition: 'all 0.15s',
+                                            }}
+                                        >
+                                            {grade.label}
+                                        </button>
+                                    );
+                                })}
+                            </div>
+
+                            {/* Grade subtitle */}
+                            <div style={{ padding: '0.65rem 1.25rem', background: '#f8fafc', borderBottom: '1px solid #e2e8f0', flexShrink: 0 }}>
+                                <span style={{ fontSize: '0.78rem', color: '#64748b' }}>{activeGrade.subtext}</span>
+                            </div>
+
+                            {/* Unit Rows — scrollable */}
+                            <div style={{ overflowY: 'auto', flex: 1 }}>
+                                {activeGrade.units.map((unit, idx) => {
+                                    const dlUrl = toDownloadUrl(unit.url);
+                                    return (
+                                        <div
+                                            key={unit.id}
+                                            style={{
+                                                display: 'flex',
+                                                alignItems: 'center',
+                                                justifyContent: 'space-between',
+                                                padding: '1rem 1.25rem',
+                                                borderBottom: idx < activeGrade.units.length - 1 ? '1px solid #f1f5f9' : 'none',
+                                                gap: '1rem',
+                                                transition: 'background 0.12s',
+                                            }}
+                                            onMouseEnter={e => e.currentTarget.style.background = '#f8fafc'}
+                                            onMouseLeave={e => e.currentTarget.style.background = 'transparent'}
+                                        >
+                                            <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+                                                <span style={{
+                                                    fontSize: '0.68rem',
+                                                    fontWeight: '700',
+                                                    color: '#475569',
+                                                    background: '#f1f5f9',
+                                                    padding: '0.2rem 0.5rem',
+                                                    borderRadius: '4px',
+                                                    minWidth: '52px',
+                                                    textAlign: 'center',
+                                                }}>
+                                                    {unit.code || `U${idx + 1}`}
+                                                </span>
+                                                <span style={{ fontSize: '0.9rem', fontWeight: '600', color: '#1e293b' }}>
+                                                    {unit.title}
+                                                </span>
+                                            </div>
+                                            <a
+                                                href={dlUrl}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                style={{
+                                                    display: 'inline-flex',
+                                                    alignItems: 'center',
+                                                    gap: '0.35rem',
+                                                    padding: '0.42rem 0.9rem',
+                                                    background: '#0f172a',
+                                                    color: '#ffffff',
+                                                    borderRadius: '6px',
+                                                    fontSize: '0.78rem',
+                                                    fontWeight: '600',
+                                                    textDecoration: 'none',
+                                                    whiteSpace: 'nowrap',
+                                                    flexShrink: 0,
+                                                }}
+                                                onMouseEnter={e => e.currentTarget.style.opacity = '0.85'}
+                                                onMouseLeave={e => e.currentTarget.style.opacity = '1'}
+                                            >
+                                                <Download size={13} />
+                                                Download PDF
+                                            </a>
+                                        </div>
+                                    );
+                                })}
+                            </div>
+                        </div>
+                    </div>
+                );
+            })()}
+
+            {/* ── Kids Learning Materials Modal (Pre-K) ── */}
+            {showKidsMaterials && (() => {
+                const activeGrade = preKGrades.find(g => g.id === activeKidsGradeId) || preKGrades[0];
+                return (
+                    <div
+                        onClick={() => setShowKidsMaterials(false)}
+                        style={{
+                            position: 'fixed',
+                            inset: 0,
+                            backgroundColor: 'rgba(15, 23, 42, 0.7)',
+                            backdropFilter: 'blur(5px)',
+                            zIndex: 9999,
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            padding: '1.5rem',
+                        }}
+                    >
+                        <div
+                            onClick={e => e.stopPropagation()}
+                            style={{
+                                width: '100%',
+                                maxWidth: '580px',
+                                maxHeight: '80vh',
+                                backgroundColor: '#ffffff',
+                                borderRadius: '12px',
+                                boxShadow: '0 25px 50px -12px rgba(0,0,0,0.25)',
+                                overflow: 'hidden',
+                                display: 'flex',
+                                flexDirection: 'column',
+                            }}
+                        >
+                            {/* Modal Header */}
+                            <div style={{
+                                display: 'flex',
+                                justifyContent: 'space-between',
+                                alignItems: 'center',
+                                padding: '1rem 1.25rem',
+                                borderBottom: '1px solid #e2e8f0',
+                                background: '#0f172a',
+                                color: '#ffffff',
+                                flexShrink: 0,
+                            }}>
+                                <span style={{ fontWeight: '700', fontSize: '0.95rem' }}>
+                                    Kids Math App — Pre-K Learning Materials
+                                </span>
+                                <button
+                                    onClick={() => setShowKidsMaterials(false)}
+                                    style={{
+                                        background: 'transparent',
+                                        border: 'none',
+                                        color: '#cbd5e1',
+                                        cursor: 'pointer',
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        justifyContent: 'center',
+                                        width: '32px',
+                                        height: '32px',
+                                        borderRadius: '4px',
+                                    }}
+                                    onMouseEnter={e => e.currentTarget.style.color = '#ffffff'}
+                                    onMouseLeave={e => e.currentTarget.style.color = '#cbd5e1'}
+                                >
+                                    <X size={18} />
+                                </button>
+                            </div>
+
+                            {/* Grade subtitle */}
+                            <div style={{ padding: '0.65rem 1.25rem', background: '#f8fafc', borderBottom: '1px solid #e2e8f0', flexShrink: 0 }}>
+                                <span style={{ fontSize: '0.78rem', color: '#64748b', fontWeight: '500' }}>{activeGrade.subtext}</span>
+                            </div>
+
+                            {/* Unit Rows */}
+                            <div style={{ overflowY: 'auto', flex: 1 }}>
+                                {activeGrade.units.map((unit, idx) => {
+                                    const dlUrl = toDownloadUrl(unit.url);
+                                    return (
+                                        <div
+                                            key={unit.id}
+                                            style={{
+                                                display: 'flex',
+                                                alignItems: 'center',
+                                                justifyContent: 'space-between',
+                                                padding: '1rem 1.25rem',
+                                                borderBottom: idx < activeGrade.units.length - 1 ? '1px solid #f1f5f9' : 'none',
+                                                gap: '1rem',
+                                                transition: 'background 0.12s',
+                                            }}
+                                            onMouseEnter={e => e.currentTarget.style.background = '#f8fafc'}
+                                            onMouseLeave={e => e.currentTarget.style.background = 'transparent'}
+                                        >
+                                            <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+                                                <span style={{
+                                                    fontSize: '0.68rem',
+                                                    fontWeight: '700',
+                                                    color: '#475569',
+                                                    background: '#f1f5f9',
+                                                    padding: '0.2rem 0.5rem',
+                                                    borderRadius: '4px',
+                                                    minWidth: '52px',
+                                                    textAlign: 'center',
+                                                }}>
+                                                    {unit.code || `U${idx + 1}`}
+                                                </span>
+                                                <span style={{ fontSize: '0.9rem', fontWeight: '600', color: '#1e293b' }}>
+                                                    {unit.title}
+                                                </span>
+                                            </div>
+                                            <a
+                                                href={dlUrl}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                style={{
+                                                    display: 'inline-flex',
+                                                    alignItems: 'center',
+                                                    gap: '0.35rem',
+                                                    padding: '0.42rem 0.9rem',
+                                                    background: '#0f172a',
+                                                    color: '#ffffff',
+                                                    borderRadius: '6px',
+                                                    fontSize: '0.78rem',
+                                                    fontWeight: '600',
+                                                    textDecoration: 'none',
+                                                    whiteSpace: 'nowrap',
+                                                    flexShrink: 0,
+                                                }}
+                                                onMouseEnter={e => e.currentTarget.style.opacity = '0.85'}
+                                                onMouseLeave={e => e.currentTarget.style.opacity = '1'}
+                                            >
+                                                <Download size={13} />
+                                                Download PDF
+                                            </a>
+                                        </div>
+                                    );
+                                })}
+                            </div>
+                        </div>
+                    </div>
+                );
+            })()}
+
+            {/* ── Embedded Modal Viewer ── */}
             {embedUrl && (
                 <div
                     onClick={() => setEmbedUrl(null)}
                     style={{
                         position: 'fixed',
                         inset: 0,
-                        backgroundColor: 'rgba(15, 23, 42, 0.65)',
-                        backdropFilter: 'blur(4px)',
+                        backgroundColor: 'rgba(15, 23, 42, 0.7)',
+                        backdropFilter: 'blur(5px)',
                         zIndex: 9999,
                         display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'center',
                         padding: '1.5rem',
-                        animation: 'fadeIn 0.22s ease-out'
                     }}
                 >
                     <div
@@ -450,13 +975,12 @@ const Resources = () => {
                             maxWidth: '1200px',
                             height: '85vh',
                             backgroundColor: '#ffffff',
-                            borderRadius: '16px',
+                            borderRadius: '12px',
                             boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25)',
                             overflow: 'hidden',
                             display: 'flex',
                             flexDirection: 'column',
                             border: '1px solid #e2e8f0',
-                            animation: 'slideUp 0.3s cubic-bezier(0.34, 1.56, 0.64, 1)'
                         }}
                     >
                         {/* Title Bar */}
@@ -464,57 +988,96 @@ const Resources = () => {
                             display: 'flex',
                             justifyContent: 'space-between',
                             alignItems: 'center',
-                            padding: '1rem 1.5rem',
+                            padding: '0.9rem 1.25rem',
                             borderBottom: '1px solid #e2e8f0',
-                            background: '#f8fafc',
-                            userSelect: 'none'
+                            background: '#0f172a',
+                            color: '#ffffff',
                         }}>
-                            <span style={{ fontWeight: '800', color: '#1c1108', fontSize: '1rem' }}>
+                            <span style={{ fontWeight: '700', fontSize: '0.95rem', flex: 1, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', paddingRight: '1rem' }}>
                                 {embedTitle}
                             </span>
-                            <button
-                                onClick={() => setEmbedUrl(null)}
-                                style={{
-                                    background: 'none',
-                                    border: 'none',
-                                    fontSize: '1.25rem',
-                                    cursor: 'pointer',
-                                    color: '#64748b',
-                                    display: 'flex',
-                                    alignItems: 'center',
-                                    justifyContent: 'center',
-                                    width: '32px',
-                                    height: '32px',
-                                    borderRadius: '50%',
-                                    transition: 'all 0.2s',
-                                }}
-                                onMouseEnter={e => {
-                                    e.currentTarget.style.background = '#e2e8f0';
-                                    e.currentTarget.style.color = '#0f172a';
-                                }}
-                                onMouseLeave={e => {
-                                    e.currentTarget.style.background = 'none';
-                                    e.currentTarget.style.color = '#64748b';
-                                }}
-                            >
-                                ✕
-                            </button>
+                            <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
+                                {embedUrl.includes('drive.google.com') ? (
+                                    <a
+                                        href={toDownloadUrl(embedUrl)}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        style={{
+                                            display: 'inline-flex',
+                                            alignItems: 'center',
+                                            gap: '0.35rem',
+                                            padding: '0.4rem 0.85rem',
+                                            borderRadius: '5px',
+                                            background: '#ffffff',
+                                            color: '#0f172a',
+                                            fontWeight: '600',
+                                            fontSize: '0.78rem',
+                                            textDecoration: 'none',
+                                        }}
+                                    >
+                                        <Download size={13} />
+                                        Download PDF
+                                    </a>
+                                ) : (
+                                    <a
+                                        href={embedUrl}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        style={{
+                                            display: 'inline-flex',
+                                            alignItems: 'center',
+                                            gap: '0.35rem',
+                                            padding: '0.4rem 0.85rem',
+                                            borderRadius: '5px',
+                                            background: '#ffffff',
+                                            color: '#0f172a',
+                                            fontWeight: '600',
+                                            fontSize: '0.78rem',
+                                            textDecoration: 'none',
+                                        }}
+                                    >
+                                        <ExternalLink size={13} />
+                                        Open in New Tab
+                                    </a>
+                                )}
+                                <button
+                                    onClick={() => setEmbedUrl(null)}
+                                    style={{
+                                        background: 'transparent',
+                                        border: 'none',
+                                        color: '#cbd5e1',
+                                        cursor: 'pointer',
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        justifyContent: 'center',
+                                        width: '32px',
+                                        height: '32px',
+                                        borderRadius: '4px',
+                                    }}
+                                    onMouseEnter={e => e.currentTarget.style.color = '#ffffff'}
+                                    onMouseLeave={e => e.currentTarget.style.color = '#cbd5e1'}
+                                >
+                                    <X size={18} />
+                                </button>
+                            </div>
                         </div>
-                        {/* Iframe View */}
+
+                        {/* Iframe content */}
                         <iframe
-                            src={embedUrl}
+                            src={toEmbedUrl(embedUrl)}
                             title={embedTitle}
                             style={{
                                 flex: 1,
                                 border: 'none',
                                 width: '100%',
                                 height: '100%',
-                                background: '#ffffff'
+                                background: '#ffffff',
                             }}
                         />
                     </div>
                 </div>
             )}
+
         </>
     );
 };
