@@ -160,24 +160,30 @@ const PROGRAMS = [
         id: "environment-research",
         navId: "grow-research",
         title: "BioRhythm Research",
-        subtitle: "Acoustic, Lighting & Climate Environmental Study for Learning & Care Spaces",
+        subtitle: "Chemical Air Quality, Acoustic, Lighting & Climate Environmental Study for Learning & Care Spaces",
         partner: "Hospital del Niño · Fundación Casita de Mausi",
         status: "Research in Progress",
         heroSrc: "/images/programs/hero/3-1.jpg",
         description:
-            "Where a child learns or recovers shapes how well they can focus, feel calm, and grow. Through our BioRhythm Research initiative, we investigate the physical environments of schools and pediatric care spaces — measuring ambient noise, light, temperature, and humidity — to develop practical, low-cost guidelines for healthier spaces.",
+            "Where a child learns or recovers shapes how well they can focus, feel calm, and grow. Through our BioRhythm Research initiative, we investigate both the chemical and physical environments of pediatric care spaces — measuring indoor air quality (CO₂, volatile organic compounds, particulate matter), ambient noise, light, temperature, and humidity — to develop practical, low-cost guidelines for healthier spaces.",
         activities: [
             {
+                schedule: "Chemical Analysis · Ongoing",
+                title: "Indoor Air Chemistry (CO₂, VOC, PM2.5)",
+                desc: "Measuring carbon dioxide concentration (ppm), volatile organic compounds from cleaning agents and medical materials, and fine particulate matter (PM2.5) in pediatric wards. Comparing readings against WHO and ASHRAE standards to quantify chemical exposure risks and ventilation adequacy in healing environments.",
+                stat: "Hospital del Niño · WHO/ASHRAE Benchmarked",
+            },
+            {
                 schedule: "Field Research · Ongoing",
-                title: "BioRhythm Environmental Factor Analysis",
-                desc: "Systematic measurement of ambient noise (dB), illuminance (lux), temperature, and humidity in classrooms and hospital wards using smartphones and our BioRhythm checklist. Examining the direct impact of these factors on concentration and emotional recovery.",
+                title: "Physical Environmental Factor Analysis (dB, Lux, Climate)",
+                desc: "Systematic measurement of ambient noise (dB), illuminance (lux), temperature, and humidity in classrooms and hospital wards using calibrated instruments and our BioRhythm checklist. Examining the direct impact of these factors on concentration and emotional recovery.",
                 stat: "Hospital del Niño · Fundación Casita de Mausi",
             },
             {
                 schedule: "Guidelines · In Development",
-                title: "Low-Cost Improvement Recommendations",
-                desc: "Translating research findings into actionable, affordable checklists for schools and care centers — covering desk layout, sound dampening, lighting adjustments, and airflow optimisation.",
-                stat: "Low-cost · Scalable",
+                title: "Evidence-Based Improvement Recommendations",
+                desc: "Translating chemical and physical measurement data into actionable, affordable checklists for schools and care centers — covering ventilation improvement, chemical exposure reduction, sound dampening, lighting adjustments, and airflow optimisation.",
+                stat: "Low-cost · Scalable · Evidence-based",
             },
         ],
         photos: [

@@ -66,7 +66,7 @@
       "grow": {
         "title": "Grow",
         "subtitle": "Environmental Science",
-        "desc": "Investigating noise (dB), lighting (Lux), and micro-climate conditions across pediatric wards at Hospital del Niño and Casita de Mausi to study how environments affect recovery.",
+        "desc": "Investigating chemical air quality (CO₂, VOC), noise (dB), lighting (Lux), and micro-climate conditions across pediatric wards at Hospital del Niño and Casita de Mausi to study how chemical and physical environments affect recovery.",
         "stat": "Hospital del Niño · Multi-parameter Survey",
         "link": "Explore Grow"
       }
@@ -151,7 +151,7 @@
       "digital": "Interactive online elementary math platform and printed workbook distribution for schools nationwide.",
       "patients": "Digital health database tracking 700+ pediatric cardiac patient records to safeguard continuity of care.",
       "hospital": "Weekly hospital bedside visits with emotional support, face painting, and essential medical fundraising.",
-      "environment": "Investigating noise, light, and climate in healing and learning spaces to propose actionable guidelines."
+      "environment": "Investigating chemical air quality, noise, light, and climate in healing and learning spaces to propose actionable guidelines."
     },
     "introTitle": "Three Pillars, One Commitment",
     "introDesc": "We believe education cannot be separated from well-being and environment. Our three programs work in harmony to address the root obstacles holding children back.",
@@ -221,9 +221,14 @@
         "num": "03",
         "tag": "Healthy Spaces",
         "title": "Grow: Optimizing Spaces Where Children Heal & Learn",
-        "subtitle": "BioRhythm environmental research investigating noise, illumination, and micro-climates in healing spaces.",
-        "desc": "Where a child learns or recovers deeply shapes their ability to focus and heal. We research physical environmental parameters and propose practical, low-cost interventions.",
+        "subtitle": "BioRhythm environmental research investigating chemical air quality, noise, illumination, and micro-climates in healing spaces.",
+        "desc": "Where a child learns or recovers deeply shapes their ability to focus and heal. We research both chemical and physical environmental parameters — from CO₂ concentration and volatile organic compounds to noise and lighting — and propose practical, low-cost interventions.",
         "features": [
+          {
+            "badge": "Chemical Air Quality Analysis",
+            "title": "Indoor Air Chemistry (CO₂, VOC, PM2.5)",
+            "desc": "Measuring carbon dioxide concentration (ppm), volatile organic compounds from cleaning agents and medical materials, and fine particulate matter in pediatric wards to quantify chemical exposure and ventilation adequacy."
+          },
           {
             "badge": "Acoustic Noise Analysis",
             "title": "Sound Level Monitoring (dB)",
@@ -235,13 +240,14 @@
             "desc": "Studying natural and artificial light exposure to prevent visual fatigue, support sleep-wake cycles, and optimize concentration."
           },
           {
-            "badge": "Low-Cost Implementation",
+            "badge": "Evidence-Based Implementation",
             "title": "Practical Environmental Guidelines",
-            "desc": "Actionable guidelines and checklists for schools and care centers to optimize desk placement, airflow, and quiet zones on minimal budgets."
+            "desc": "Translating chemical and physical measurement data into actionable, affordable checklists for schools and care centers — covering ventilation improvement, chemical exposure reduction, sound dampening, and lighting optimization on minimal budgets."
           }
         ],
         "metrics": [
-          { "value": "4", "label": "Key Factors Analyzed" },
+          { "value": "7", "label": "Parameters Analyzed" },
+          { "value": "3", "label": "Chemical Factors" },
           { "value": "100%", "label": "Low-Cost Focus" },
           { "value": "Ongoing", "label": "Field Research" }
         ],

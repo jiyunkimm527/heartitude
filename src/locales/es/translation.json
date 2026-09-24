@@ -66,7 +66,7 @@
       "grow": {
         "title": "Crecer",
         "subtitle": "Ciencia Ambiental",
-        "desc": "Investigación de niveles de ruido (dB), iluminación (Lux) y microclima en salas pediátricas del Hospital del Niño y Casita de Mausi para evaluar cómo el entorno afecta la recuperación.",
+        "desc": "Investigación de calidad química del aire (CO₂, COV), niveles de ruido (dB), iluminación (Lux) y microclima en salas pediátricas del Hospital del Niño y Casita de Mausi para evaluar cómo los entornos químicos y físicos afectan la recuperación.",
         "stat": "Hospital del Niño · Estudio Multiparamétrico",
         "link": "Explorar Crecer"
       }
@@ -151,7 +151,7 @@
       "digital": "Plataforma web interactiva de matemáticas y distribución de cuadernos de trabajo alineados al currículo nacional.",
       "patients": "Sistema de registro médico digital con más de 700 pacientes pediátricos para asegurar la continuidad de la atención.",
       "hospital": "Visitas hospitalarias semanales con apoyo emocional, actividades recreativas y recaudación de insumos médicos.",
-      "environment": "Investigación de factores ambientales (ruido, luz, clima) en espacios de aprendizaje y recuperación infantil."
+      "environment": "Investigación de calidad química del aire, ruido, luz y clima en espacios de aprendizaje y recuperación infantil."
     },
     "introTitle": "Tres Pilares, Un Solo Compromiso",
     "introDesc": "Creemos que la educación no puede separarse del bienestar y del entorno. Nuestros tres programas trabajan en armonía para abordar los obstáculos fundamentales que enfrentan los niños.",
@@ -221,9 +221,14 @@
         "num": "03",
         "tag": "Espacios Saludables",
         "title": "Crecer: Optimizando los Espacios de Sanación y Estudio",
-        "subtitle": "Investigación ambiental BioRhythm sobre niveles de ruido acústico, iluminación y microclimas en espacios de cuidado.",
-        "desc": "El espacio físico donde un niño aprende o se recupera influye directamente en su bienestar y concentración. Investigamos parámetros ambientales e implementamos soluciones de bajo costo.",
+        "subtitle": "Investigación ambiental BioRhythm sobre calidad química del aire, niveles de ruido acústico, iluminación y microclimas en espacios de cuidado.",
+        "desc": "El espacio físico donde un niño aprende o se recupera influye directamente en su bienestar y concentración. Investigamos parámetros ambientales químicos y físicos — desde concentración de CO₂ y compuestos orgánicos volátiles hasta ruido e iluminación — e implementamos soluciones de bajo costo.",
         "features": [
+          {
+            "badge": "Análisis Químico del Aire",
+            "title": "Química del Aire Interior (CO₂, COV, PM2.5)",
+            "desc": "Medición de concentración de dióxido de carbono (ppm), compuestos orgánicos volátiles de agentes de limpieza y materiales médicos, y material particulado fino en salas pediátricas para cuantificar la exposición química y la adecuación de la ventilación."
+          },
           {
             "badge": "Análisis Acústico",
             "title": "Monitoreo de Ruido Ambiental (dB)",
@@ -235,13 +240,14 @@
             "desc": "Estudio de la luz natural y artificial para prevenir la fatiga visual, proteger los ciclos de sueño y descanso, y optimizar el enfoque cognitivo."
           },
           {
-            "badge": "Implementación de Bajo Costo",
+            "badge": "Implementación Basada en Evidencia",
             "title": "Guías Prácticas de Optimización Ambiental",
-            "desc": "Pautas y listas de verificación prácticas para que escuelas y centros de cuidado optimicen la ventilación, ubicación de pupitres y zonas silenciosas con recursos mínimos."
+            "desc": "Traducción de datos de medición química y física en listas de verificación prácticas y accesibles para escuelas y centros de cuidado — cubriendo mejora de ventilación, reducción de exposición química, amortiguación de sonido y optimización de iluminación con presupuestos mínimos."
           }
         ],
         "metrics": [
-          { "value": "4", "label": "Factores Analizados" },
+          { "value": "7", "label": "Parámetros Analizados" },
+          { "value": "3", "label": "Factores Químicos" },
           { "value": "100%", "label": "Enfoque de Bajo Costo" },
           { "value": "En Curso", "label": "Investigación de Campo" }
         ],
